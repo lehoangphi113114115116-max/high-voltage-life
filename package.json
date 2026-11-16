@@ -7,7 +7,9 @@
     "studio": "remotion studio src/index.ts",
     "typecheck": "tsc --noEmit",
     "render": "remotion render src/index.ts HIGH-VOLTAGE-LIFE out/high-voltage-life.mp4 --codec=h264 --browser-executable=/usr/bin/chromium --is-production=false",
-    "probe": "ffprobe -v error -show_entries format=filename,format_name,duration,size,bit_rate -show_entries stream=index,codec_name,codec_type,width,height,r_frame_rate,avg_frame_rate,nb_frames,pix_fmt -of json out/high-voltage-life.mp4"
+    "probe": "ffprobe -v error -show_entries format=filename,format_name,duration,size,bit_rate -show_entries stream=index,codec_name,codec_type,width,height,r_frame_rate,avg_frame_rate,nb_frames,pix_fmt -of json out/high-voltage-life.mp4",
+    "render:87l": "remotion render src/index.ts HV-LIFE-87L-DEMO out/high-voltage-life-87l-demo.mp4 --codec=h264 --browser-executable=/usr/bin/chromium --jpeg-quality=100 --crf=16 --x264-preset=slow --concurrency=1 --is-production=false",
+    "probe:87l": "ffprobe -v error -show_entries format=filename,format_name,duration,size,bit_rate -show_entries stream=index,codec_name,codec_type,width,height,r_frame_rate,avg_frame_rate,nb_frames,pix_fmt -of json out/high-voltage-life-87l-demo.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",

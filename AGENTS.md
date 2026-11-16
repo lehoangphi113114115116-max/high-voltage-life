@@ -21,6 +21,8 @@ Sau khi thay đổi mã nguồn, chạy:
 npm run typecheck
 npm run render
 npm run probe
+npm run render:87l
+npm run probe:87l
 ```
 
-Composition chính phải giữ ID `HIGH-VOLTAGE-LIFE`, tỷ lệ 9:16, kích thước 1080 × 1920, tốc độ 30 FPS và thời lượng 150 frame, trừ khi người dùng yêu cầu thay đổi.
+Giữ composition kiểm tra `HIGH-VOLTAGE-LIFE` ở 150 frame. Demo kỹ thuật `HV-LIFE-87L-DEMO` dùng 450 frame. Cả hai giữ tỷ lệ 9:16, kích thước 1080 × 1920 và tốc độ 30 FPS, trừ khi người dùng yêu cầu thay đổi.

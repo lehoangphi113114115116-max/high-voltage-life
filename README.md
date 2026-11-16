@@ -11,6 +11,14 @@ Project Remotion thử nghiệm để xác minh Codex Cloud có thể dựng vid
 - Nội dung: nền xanh navy, tiêu đề **HIGH VOLTAGE LIFE** và đường dây truyền tải điện được animate bằng SVG
 - Âm thanh, TTS và 3D: không sử dụng
 
+## Demo bảo vệ so lệch đường dây 87L
+
+- ID: `HV-LIFE-87L-DEMO`
+- Kích thước: `1080 × 1920`, 30 FPS
+- Thời lượng: `15 giây` (`450 frame`)
+- Nội dung: sơ đồ hai đầu đường dây, dòng điện, kênh tín hiệu, vùng bảo vệ, đặc tính tác động và lệnh cắt hai đầu
+- Phong cách: animation kỹ thuật 2D theo hệ nhận diện HIGH VOLTAGE LIFE
+
 ## Yêu cầu
 
 - Node.js 20 trở lên
@@ -33,6 +41,7 @@ Studio mặc định chạy tại địa chỉ cục bộ mà Remotion in ra tro
 
 ```bash
 npm run render
+npm run render:87l
 ```
 
 File đầu ra được tạo tại `out/high-voltage-life.mp4`. Đây là test render cục bộ, script dùng `--is-production=false` và không gọi dịch vụ render trả phí.
@@ -41,6 +50,7 @@ Kiểm tra file thực tế:
 
 ```bash
 npm run probe
+npm run probe:87l
 ```
 
 ## Remotion Skills
