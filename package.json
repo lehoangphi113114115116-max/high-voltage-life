@@ -1,0 +1,23 @@
+{
+  "name": "high-voltage-life",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Video thử nghiệm HIGH VOLTAGE LIFE được dựng bằng Remotion trên Codex Cloud.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts HIGH-VOLTAGE-LIFE out/high-voltage-life.mp4 --codec=h264 --browser-executable=/usr/bin/chromium --is-production=false",
+    "probe": "ffprobe -v error -show_entries format=filename,format_name,duration,size,bit_rate -show_entries stream=index,codec_name,codec_type,width,height,r_frame_rate,avg_frame_rate,nb_frames,pix_fmt -of json out/high-voltage-life.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.3"
+  }
+}
