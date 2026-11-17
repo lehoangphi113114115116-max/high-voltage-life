@@ -3,6 +3,7 @@ import {BirdIllustration, DepthGrid, PotentialDiagram, TransmissionPole} from '.
 import {AnimatedTransmissionLine, CurrentFlow, RelaySymbol, TechnicalLabel, Watermark} from '../components/technical';
 import currentVideo from '../generated/current-video.json';
 import {colors, technicalFont} from '../theme';
+import {StoryMotion, type MotionScene} from './StoryMotion';
 
 type KaraokeWord = {text: string; startMs: number; endMs: number};
 const videoData = currentVideo as unknown as Omit<typeof currentVideo, 'karaoke'> & {karaoke: KaraokeWord[]};
@@ -69,7 +70,7 @@ const GenericElectricalScene = ({category}: {category: string}) => {
   );
 };
 
-export const AutonomousExplainer = () => {
+export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: boolean}) => {
   const frame = useCurrentFrame();
   const {durationInFrames} = useVideoConfig();
   const progress = frame / durationInFrames;
@@ -82,7 +83,7 @@ export const AutonomousExplainer = () => {
     <AbsoluteFill style={{background: `radial-gradient(circle at 50% 30%, #173a58 0%, ${colors.navy} 54%, #050d18 100%)`, color: colors.white, overflow: 'hidden'}}>
       <Audio src={staticFile(currentVideo.audioPath)} />
       <DepthGrid />
-      {isBird ? <div style={{position: 'absolute', inset: 0, transform: `translateX(${pan}px)`}}>
+      {motionPreview ? <StoryMotion scenes={(currentVideo.scenes as unknown as MotionScene[]).filter(scene => scene.startFrame < durationInFrames)} /> : isBird ? <div style={{position: 'absolute', inset: 0, transform: `translateX(${pan}px)`}}>
         <svg width="1080" height="1540" viewBox="0 0 1080 1540" style={{position: 'absolute', top: 190}}>
           <TransmissionPole x={105} scale={0.86} opacity={0.68} />
           <TransmissionPole x={975} scale={0.86} opacity={0.68} />
@@ -100,7 +101,7 @@ export const AutonomousExplainer = () => {
         <div style={{fontFamily: technicalFont, fontSize: 59, fontWeight: 950, lineHeight: 1.02, marginTop: 26, maxWidth: 950, textTransform: 'uppercase'}}>{currentVideo.headline}</div>
         <div style={{width: 230, height: 7, marginTop: 22, background: colors.yellow, boxShadow: `0 0 20px ${colors.yellow}`}} />
       </div>
-      {isBird ? <div style={{position: 'absolute', top: 950, left: 72, opacity: diagram ? 1 : 0, color: danger ? colors.arcOrange : colors.green, fontFamily: technicalFont, fontSize: 27, fontWeight: 900, letterSpacing: 2}}>
+      {isBird && !motionPreview ? <div style={{position: 'absolute', top: 950, left: 72, opacity: diagram ? 1 : 0, color: danger ? colors.arcOrange : colors.green, fontFamily: technicalFont, fontSize: 27, fontWeight: 900, letterSpacing: 2}}>
         {danger ? 'NGUY HIỂM: CHẠM HAI ĐIỆN THẾ KHÁC NHAU' : 'HAI CHÂN GẦN NHƯ CÙNG ĐIỆN THẾ'}
       </div> : null}
       <Karaoke />

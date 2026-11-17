@@ -7,6 +7,7 @@ import currentVideo from './generated/current-video.json';
 export const RemotionRoot = () => {
   return (
     <>
+      <Composition id="HVL-MOTION-PREVIEW" component={AutonomousExplainer} defaultProps={{motionPreview: true}} durationInFrames={520} fps={30} width={1080} height={1920} />
       <Composition
         id="HIGH-VOLTAGE-LIFE"
         component={HighVoltageLife}

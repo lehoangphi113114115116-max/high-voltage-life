@@ -20,40 +20,58 @@
   "audioDurationMs": 26681,
   "scenes": [
     {
-      "id": "hook",
-      "from": 0,
-      "to": 0.2,
-      "visual": "Chim và đường dây có chiều sâu, câu hỏi mở đầu",
-      "camera": "slow push-in",
+      "id": "sentence-0",
+      "text": "Chim đậu trên một sợi dây điện thường không bị giật, vì hai chân của nó gần như cùng một điện thế.",
+      "mode": "depth",
       "startFrame": 0,
-      "endFrame": 162
+      "endFrame": 158,
+      "transition": "directional-reveal",
+      "camera": "parallax-dolly"
     },
     {
-      "id": "same-potential",
-      "from": 0.2,
-      "to": 0.52,
-      "visual": "Hai chân trên cùng dây, V1 gần bằng V2",
-      "camera": "technical close-up",
-      "startFrame": 162,
-      "endFrame": 422
+      "id": "sentence-1",
+      "text": "Dòng điện chỉ chạy mạnh qua cơ thể khi có chênh lệch điện áp giữa hai điểm tiếp xúc.",
+      "mode": "principle",
+      "startFrame": 158,
+      "endFrame": 289,
+      "transition": "cross-dissolve",
+      "camera": "diagram-push"
     },
     {
-      "id": "voltage-difference",
-      "from": 0.52,
-      "to": 0.76,
-      "visual": "Sơ đồ ΔV = V1 - V2 gần bằng 0",
-      "camera": "diagram lock",
-      "startFrame": 422,
-      "endFrame": 616
+      "id": "sentence-2",
+      "text": "Trên đoạn dây rất ngắn giữa hai chân chim, điện trở của dây nhỏ nên độ sụt áp gần như bằng không.",
+      "mode": "wire-detail",
+      "startFrame": 289,
+      "endFrame": 442,
+      "transition": "directional-reveal",
+      "camera": "macro-track"
     },
     {
-      "id": "danger",
-      "from": 0.76,
-      "to": 1,
-      "visual": "Chạm hai điện thế khác nhau, đường dòng điện cảnh báo",
-      "camera": "pull-back warning",
-      "startFrame": 616,
-      "endFrame": 811
+      "id": "sentence-3",
+      "text": "Vì vậy, dòng điện đi qua cơ thể chim cực thấp.",
+      "mode": "principle",
+      "startFrame": 441,
+      "endFrame": 521,
+      "transition": "cross-dissolve",
+      "camera": "diagram-push"
+    },
+    {
+      "id": "sentence-4",
+      "text": "Nguy hiểm xuất hiện nếu chim đồng thời chạm vào dây khác điện thế, hoặc chạm dây điện và cột nối đất.",
+      "mode": "danger",
+      "startFrame": 520,
+      "endFrame": 665,
+      "transition": "directional-reveal",
+      "camera": "diagram-push"
+    },
+    {
+      "id": "sentence-5",
+      "text": "Khi đó cơ thể tạo thành một đường dẫn, dòng điện có thể chạy qua và gây điện giật.",
+      "mode": "principle",
+      "startFrame": 664,
+      "endFrame": 801,
+      "transition": "cross-dissolve",
+      "camera": "diagram-push"
     }
   ],
   "karaoke": [

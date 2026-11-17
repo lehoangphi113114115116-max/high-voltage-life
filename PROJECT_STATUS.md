@@ -10,8 +10,8 @@ Cập nhật: 2026-11-17
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
 | Agent Skills chuyên môn | Hoàn thành | `social`, `scientific-critical-thinking`, `anatomy`; định tuyến theo chủ đề và khóa phiên bản |
-| Storyboard Generator | Hoàn thành v1 | Sinh cảnh, narration, visual mode và thời lượng |
-| Visual Director | Hoàn thành v1 | 2D kỹ thuật + depth illustration; 3D chỉ chọn khi thực sự cần |
+| Storyboard Generator | Preview v2 chờ duyệt | Chia cảnh theo câu và timestamp lời đọc; số cảnh không cố định |
+| Visual Director | Preview v2 chờ duyệt | Dolly/parallax, animation SVG, cross-dissolve và directional reveal; chưa áp dụng video đầy đủ |
 | Karaoke theo audio | Hoàn thành v1 | Dùng duration và vùng không im lặng của audio thực tế |
 | Automated Pipeline | Hoàn thành v1 | `npm run agent -- --topic "..."` |
 | QC | Hoàn thành v1 | Kiểm tra spec, audio, karaoke, H.264/1080×1920/30 FPS |

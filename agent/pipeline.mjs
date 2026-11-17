@@ -4,6 +4,7 @@ import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {selectAgentSkills} from './skill-router.mjs';
+import {buildStoryboard} from './storyboard.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -184,7 +185,7 @@ const project = {
   height: 1920,
   durationInFrames,
   audioDurationMs: Math.round(audioDuration * 1000),
-  scenes: content.scenes.map((scene) => ({...scene, startFrame: Math.round(scene.from * durationInFrames), endFrame: Math.round(scene.to * durationInFrames)})),
+  scenes: buildStoryboard(karaoke, fps),
   karaoke,
 };
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);
