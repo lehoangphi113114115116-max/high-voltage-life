@@ -6,10 +6,12 @@ import currentVideo from './generated/current-video.json';
 import {NaturalBirdDemo} from './compositions/NaturalBirdDemo';
 import {PowerJourney} from './compositions/PowerJourney';
 import {SF6BreakerScene} from './examples/sf6-v2/SF6BreakerScene';
+import {SF6Principle15} from './compositions/SF6Principle15';
 
 export const RemotionRoot = () => {
   return (
     <>
+      <Composition id="HVL-SF6-PRINCIPLE-15S" component={SF6Principle15} durationInFrames={450} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-SF6-V2-REFERENCE" component={SF6BreakerScene} durationInFrames={540} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-POWER-JOURNEY-15S" component={PowerJourney} durationInFrames={450} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-NATURAL-BIRD-15S" component={NaturalBirdDemo} durationInFrames={450} fps={30} width={1080} height={1920}/>

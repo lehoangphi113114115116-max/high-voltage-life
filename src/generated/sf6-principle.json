@@ -1,0 +1,272 @@
+{
+  "topic": "Nguyên lý máy cắt SF6",
+  "durationInFrames": 450,
+  "audioDuration": 12.222,
+  "voice": "Thái Sơn",
+  "alignment": "sentence-silence-assisted-estimated-word-timestamps",
+  "scenes": [
+    {
+      "id": "sentence-0",
+      "text": "Bình thường, tiếp điểm đóng và dẫn điện.",
+      "mode": "depth",
+      "startFrame": 0,
+      "endFrame": 60,
+      "transition": "directional-reveal",
+      "camera": "parallax-dolly"
+    },
+    {
+      "id": "sentence-1",
+      "text": "Khi mở, hồ quang xuất hiện giữa hai tiếp điểm.",
+      "mode": "depth",
+      "startFrame": 70,
+      "endFrame": 139,
+      "transition": "cross-dissolve",
+      "camera": "parallax-dolly"
+    },
+    {
+      "id": "sentence-2",
+      "text": "Luồng khí SF6 giúp làm nguội và khử ion.",
+      "mode": "depth",
+      "startFrame": 150,
+      "endFrame": 228,
+      "transition": "directional-reveal",
+      "camera": "parallax-dolly"
+    },
+    {
+      "id": "sentence-3",
+      "text": "Tại điểm dòng xoay chiều bằng không, hồ quang tắt; cách điện phục hồi, ngăn tái phóng điện.",
+      "mode": "depth",
+      "startFrame": 242,
+      "endFrame": 367,
+      "transition": "cross-dissolve",
+      "camera": "parallax-dolly"
+    }
+  ],
+  "karaoke": [
+    {
+      "text": "Bình",
+      "startMs": 0,
+      "endMs": 238
+    },
+    {
+      "text": "thường,",
+      "startMs": 238,
+      "endMs": 656
+    },
+    {
+      "text": "tiếp",
+      "startMs": 656,
+      "endMs": 894
+    },
+    {
+      "text": "điểm",
+      "startMs": 894,
+      "endMs": 1133
+    },
+    {
+      "text": "đóng",
+      "startMs": 1133,
+      "endMs": 1371
+    },
+    {
+      "text": "và",
+      "startMs": 1371,
+      "endMs": 1490
+    },
+    {
+      "text": "dẫn",
+      "startMs": 1490,
+      "endMs": 1669
+    },
+    {
+      "text": "điện.",
+      "startMs": 1669,
+      "endMs": 1967
+    },
+    {
+      "text": "Khi",
+      "startMs": 2331,
+      "endMs": 2516
+    },
+    {
+      "text": "mở,",
+      "startMs": 2516,
+      "endMs": 2701
+    },
+    {
+      "text": "hồ",
+      "startMs": 2701,
+      "endMs": 2824
+    },
+    {
+      "text": "quang",
+      "startMs": 2824,
+      "endMs": 3133
+    },
+    {
+      "text": "xuất",
+      "startMs": 3133,
+      "endMs": 3379
+    },
+    {
+      "text": "hiện",
+      "startMs": 3379,
+      "endMs": 3626
+    },
+    {
+      "text": "giữa",
+      "startMs": 3626,
+      "endMs": 3873
+    },
+    {
+      "text": "hai",
+      "startMs": 3873,
+      "endMs": 4058
+    },
+    {
+      "text": "tiếp",
+      "startMs": 4058,
+      "endMs": 4304
+    },
+    {
+      "text": "điểm.",
+      "startMs": 4304,
+      "endMs": 4613
+    },
+    {
+      "text": "Luồng",
+      "startMs": 5003,
+      "endMs": 5406
+    },
+    {
+      "text": "khí",
+      "startMs": 5406,
+      "endMs": 5648
+    },
+    {
+      "text": "SF6",
+      "startMs": 5648,
+      "endMs": 5890
+    },
+    {
+      "text": "giúp",
+      "startMs": 5890,
+      "endMs": 6212
+    },
+    {
+      "text": "làm",
+      "startMs": 6212,
+      "endMs": 6454
+    },
+    {
+      "text": "nguội",
+      "startMs": 6454,
+      "endMs": 6857
+    },
+    {
+      "text": "và",
+      "startMs": 6857,
+      "endMs": 7018
+    },
+    {
+      "text": "khử",
+      "startMs": 7018,
+      "endMs": 7260
+    },
+    {
+      "text": "ion.",
+      "startMs": 7260,
+      "endMs": 7582
+    },
+    {
+      "text": "Tại",
+      "startMs": 8064,
+      "endMs": 8232
+    },
+    {
+      "text": "điểm",
+      "startMs": 8232,
+      "endMs": 8457
+    },
+    {
+      "text": "dòng",
+      "startMs": 8457,
+      "endMs": 8682
+    },
+    {
+      "text": "xoay",
+      "startMs": 8682,
+      "endMs": 8906
+    },
+    {
+      "text": "chiều",
+      "startMs": 8906,
+      "endMs": 9187
+    },
+    {
+      "text": "bằng",
+      "startMs": 9187,
+      "endMs": 9412
+    },
+    {
+      "text": "không,",
+      "startMs": 9412,
+      "endMs": 9749
+    },
+    {
+      "text": "hồ",
+      "startMs": 9749,
+      "endMs": 9862
+    },
+    {
+      "text": "quang",
+      "startMs": 9862,
+      "endMs": 10143
+    },
+    {
+      "text": "tắt;",
+      "startMs": 10143,
+      "endMs": 10368
+    },
+    {
+      "text": "cách",
+      "startMs": 10368,
+      "endMs": 10592
+    },
+    {
+      "text": "điện",
+      "startMs": 10592,
+      "endMs": 10817
+    },
+    {
+      "text": "phục",
+      "startMs": 10817,
+      "endMs": 11042
+    },
+    {
+      "text": "hồi,",
+      "startMs": 11042,
+      "endMs": 11267
+    },
+    {
+      "text": "ngăn",
+      "startMs": 11267,
+      "endMs": 11491
+    },
+    {
+      "text": "tái",
+      "startMs": 11491,
+      "endMs": 11660
+    },
+    {
+      "text": "phóng",
+      "startMs": 11660,
+      "endMs": 11941
+    },
+    {
+      "text": "điện.",
+      "startMs": 11941,
+      "endMs": 12222
+    }
+  ]
+}

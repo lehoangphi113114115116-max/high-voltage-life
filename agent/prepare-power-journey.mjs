@@ -1,11 +1,14 @@
 import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import {buildStoryboard} from './storyboard.mjs';
-const manifest=JSON.parse(await readFile('voice/output/power-journey.manifest.json','utf8'));
-const report=JSON.parse(await readFile('voice/output/power-journey.report.json','utf8'));
+const id=process.argv[2]??'power-journey';
+const topic=process.argv[3]??'Từ nhà máy điện đến nhà dân';
+if(!/^[a-z0-9-]+$/.test(id)) throw new Error('Invalid media ID');
+const manifest=JSON.parse(await readFile(`voice/output/${id}.manifest.json`,'utf8'));
+const report=JSON.parse(await readFile(`voice/output/${id}.report.json`,'utf8'));
 if(report.durationSeconds>14.85) throw new Error('Audio dài quá 15 giây; chỉnh kịch bản, không cắt ngang lời đọc.');
 const sentences=manifest.displayText.match(/[^.!?]+[.!?]?/gu).map(s=>s.trim());
-const log=spawnSync('ffmpeg',['-hide_banner','-nostats','-i','voice/output/power-journey.wav','-af','silencedetect=noise=-38dB:d=0.18','-f','null','-'],{encoding:'utf8'}).stderr;
+const log=spawnSync('ffmpeg',['-hide_banner','-nostats','-i',`voice/output/${id}.wav`,'-af','silencedetect=noise=-38dB:d=0.18','-f','null','-'],{encoding:'utf8'}).stderr;
 const starts=[...log.matchAll(/silence_start: ([0-9.]+)/g)].map(m=>Number(m[1]));
 const ends=[...log.matchAll(/silence_end: ([0-9.]+)/g)].map(m=>Number(m[1]));
 const gaps=starts.map((start,i)=>({start,end:ends[i]??report.durationSeconds}));
@@ -24,8 +27,8 @@ for(let i=0;i<sentences.length;i++) {
   tokens.forEach((text,j)=>{const next=t+weights[j]/sum*(end-cursor);words.push({text,startMs:Math.round(t*1000),endMs:Math.round(next*1000)});t=next;});
   cursor=gap&&i<sentences.length-1?gap.end:end;
 }
-await mkdir('public/generated/power-journey',{recursive:true});
-await copyFile('voice/output/power-journey.wav','public/generated/power-journey/voice.wav');
-const data={topic:'Từ nhà máy điện đến nhà dân',durationInFrames:450,audioDuration:report.durationSeconds,voice:report.voice,alignment:'sentence-silence-assisted-estimated-word-timestamps',scenes:buildStoryboard(words,30),karaoke:words};
-await writeFile('src/generated/power-journey.json',JSON.stringify(data,null,2)+'\n');
+await mkdir(`public/generated/${id}`,{recursive:true});
+await copyFile(`voice/output/${id}.wav`,`public/generated/${id}/voice.wav`);
+const data={topic,durationInFrames:450,audioDuration:report.durationSeconds,voice:report.voice,alignment:'sentence-silence-assisted-estimated-word-timestamps',scenes:buildStoryboard(words,30),karaoke:words};
+await writeFile(`src/generated/${id}.json`,JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({audioDuration:report.durationSeconds,scenes:data.scenes.map(s=>({text:s.text,startFrame:s.startFrame}))}));
