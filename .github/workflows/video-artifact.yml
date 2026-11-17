@@ -1,0 +1,54 @@
+name: Video artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: Remotion composition ID
+        required: true
+        default: HVL-CORONA-RAIN
+      output_name:
+        description: MP4 filename stored in the artifact
+        required: true
+        default: hvl-corona-rain.mp4
+
+permissions:
+  contents: read
+
+jobs:
+  render-and-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Verify source assets
+        run: |
+          test -f src/index.ts
+          test -f src/generated/corona-rain.json
+          test -f public/generated/corona-rain/voice.wav || {
+            echo 'Required generated audio is not in Git; create it in the CI preparation step before rendering.' >&2
+            exit 1
+          }
+      - name: Render MP4
+        run: |
+          npx remotion render src/index.ts "${{ inputs.composition }}" "out/${{ inputs.output_name }}" \
+            --codec=h264 --crf=18 --concurrency=2 --is-production=false
+      - name: Verify MP4
+        run: |
+          test -s "out/${{ inputs.output_name }}"
+          ffprobe -v error -show_entries format=duration,size \
+            -show_entries stream=codec_name,codec_type,width,height,avg_frame_rate \
+            -of json "out/${{ inputs.output_name }}"
+      - name: Upload MP4 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hvl-video-${{ github.run_number }}
+          path: out/${{ inputs.output_name }}
+          if-no-files-found: error
+          retention-days: 14
