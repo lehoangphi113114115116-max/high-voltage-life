@@ -1,0 +1,31 @@
+import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import {buildStoryboard} from './storyboard.mjs';
+const manifest=JSON.parse(await readFile('voice/output/power-journey.manifest.json','utf8'));
+const report=JSON.parse(await readFile('voice/output/power-journey.report.json','utf8'));
+if(report.durationSeconds>14.85) throw new Error('Audio dài quá 15 giây; chỉnh kịch bản, không cắt ngang lời đọc.');
+const sentences=manifest.displayText.match(/[^.!?]+[.!?]?/gu).map(s=>s.trim());
+const log=spawnSync('ffmpeg',['-hide_banner','-nostats','-i','voice/output/power-journey.wav','-af','silencedetect=noise=-38dB:d=0.18','-f','null','-'],{encoding:'utf8'}).stderr;
+const starts=[...log.matchAll(/silence_start: ([0-9.]+)/g)].map(m=>Number(m[1]));
+const ends=[...log.matchAll(/silence_end: ([0-9.]+)/g)].map(m=>Number(m[1]));
+const gaps=starts.map((start,i)=>({start,end:ends[i]??report.durationSeconds}));
+const total=sentences.reduce((n,s)=>n+s.length,0);
+let cumulative=0, cursor=0;
+const words=[];
+for(let i=0;i<sentences.length;i++) {
+  cumulative+=sentences[i].length;
+  const target=cumulative/total*report.durationSeconds;
+  const gap=gaps.filter(g=>g.start>cursor+.5&&Math.abs(g.start-target)<1).sort((a,b)=>Math.abs(a.start-target)-Math.abs(b.start-target))[0];
+  const end=i===sentences.length-1?report.durationSeconds:(gap?.start??target);
+  const tokens=sentences[i].split(/\s+/u);
+  const weights=tokens.map(t=>Math.max(1,t.length));
+  const sum=weights.reduce((a,b)=>a+b,0);
+  let t=cursor;
+  tokens.forEach((text,j)=>{const next=t+weights[j]/sum*(end-cursor);words.push({text,startMs:Math.round(t*1000),endMs:Math.round(next*1000)});t=next;});
+  cursor=gap&&i<sentences.length-1?gap.end:end;
+}
+await mkdir('public/generated/power-journey',{recursive:true});
+await copyFile('voice/output/power-journey.wav','public/generated/power-journey/voice.wav');
+const data={topic:'Từ nhà máy điện đến nhà dân',durationInFrames:450,audioDuration:report.durationSeconds,voice:report.voice,alignment:'sentence-silence-assisted-estimated-word-timestamps',scenes:buildStoryboard(words,30),karaoke:words};
+await writeFile('src/generated/power-journey.json',JSON.stringify(data,null,2)+'\n');
+console.log(JSON.stringify({audioDuration:report.durationSeconds,scenes:data.scenes.map(s=>({text:s.text,startFrame:s.startFrame}))}));

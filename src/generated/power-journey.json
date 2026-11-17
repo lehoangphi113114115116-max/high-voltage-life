@@ -1,0 +1,308 @@
+{
+  "topic": "Từ nhà máy điện đến nhà dân",
+  "durationInFrames": 450,
+  "audioDuration": 13.182,
+  "voice": "Thái Sơn",
+  "alignment": "sentence-silence-assisted-estimated-word-timestamps",
+  "scenes": [
+    {
+      "id": "sentence-0",
+      "text": "Tại nhà máy điện, máy phát biến cơ năng thành điện năng.",
+      "mode": "depth",
+      "startFrame": 0,
+      "endFrame": 105,
+      "transition": "directional-reveal",
+      "camera": "parallax-dolly"
+    },
+    {
+      "id": "sentence-1",
+      "text": "Sau đó, máy biến áp nâng điện áp, giúp giảm tổn thất khi truyền tải đi xa.",
+      "mode": "depth",
+      "startFrame": 114,
+      "endFrame": 214,
+      "transition": "cross-dissolve",
+      "camera": "parallax-dolly"
+    },
+    {
+      "id": "sentence-2",
+      "text": "Qua đường dây đến khu dân cư, điện áp được hạ xuống nhiều cấp, rồi phân phối qua công tơ để thắp sáng nhà bạn.",
+      "mode": "depth",
+      "startFrame": 226,
+      "endFrame": 396,
+      "transition": "directional-reveal",
+      "camera": "parallax-dolly"
+    }
+  ],
+  "karaoke": [
+    {
+      "text": "Tại",
+      "startMs": 0,
+      "endMs": 233
+    },
+    {
+      "text": "nhà",
+      "startMs": 233,
+      "endMs": 465
+    },
+    {
+      "text": "máy",
+      "startMs": 465,
+      "endMs": 698
+    },
+    {
+      "text": "điện,",
+      "startMs": 698,
+      "endMs": 1086
+    },
+    {
+      "text": "máy",
+      "startMs": 1086,
+      "endMs": 1319
+    },
+    {
+      "text": "phát",
+      "startMs": 1319,
+      "endMs": 1629
+    },
+    {
+      "text": "biến",
+      "startMs": 1629,
+      "endMs": 1939
+    },
+    {
+      "text": "cơ",
+      "startMs": 1939,
+      "endMs": 2095
+    },
+    {
+      "text": "năng",
+      "startMs": 2095,
+      "endMs": 2405
+    },
+    {
+      "text": "thành",
+      "startMs": 2405,
+      "endMs": 2793
+    },
+    {
+      "text": "điện",
+      "startMs": 2793,
+      "endMs": 3103
+    },
+    {
+      "text": "năng.",
+      "startMs": 3103,
+      "endMs": 3491
+    },
+    {
+      "text": "Sau",
+      "startMs": 3792,
+      "endMs": 3965
+    },
+    {
+      "text": "đó,",
+      "startMs": 3965,
+      "endMs": 4138
+    },
+    {
+      "text": "máy",
+      "startMs": 4138,
+      "endMs": 4310
+    },
+    {
+      "text": "biến",
+      "startMs": 4310,
+      "endMs": 4541
+    },
+    {
+      "text": "áp",
+      "startMs": 4541,
+      "endMs": 4656
+    },
+    {
+      "text": "nâng",
+      "startMs": 4656,
+      "endMs": 4886
+    },
+    {
+      "text": "điện",
+      "startMs": 4886,
+      "endMs": 5116
+    },
+    {
+      "text": "áp,",
+      "startMs": 5116,
+      "endMs": 5289
+    },
+    {
+      "text": "giúp",
+      "startMs": 5289,
+      "endMs": 5519
+    },
+    {
+      "text": "giảm",
+      "startMs": 5519,
+      "endMs": 5749
+    },
+    {
+      "text": "tổn",
+      "startMs": 5749,
+      "endMs": 5922
+    },
+    {
+      "text": "thất",
+      "startMs": 5922,
+      "endMs": 6152
+    },
+    {
+      "text": "khi",
+      "startMs": 6152,
+      "endMs": 6325
+    },
+    {
+      "text": "truyền",
+      "startMs": 6325,
+      "endMs": 6670
+    },
+    {
+      "text": "tải",
+      "startMs": 6670,
+      "endMs": 6843
+    },
+    {
+      "text": "đi",
+      "startMs": 6843,
+      "endMs": 6958
+    },
+    {
+      "text": "xa.",
+      "startMs": 6958,
+      "endMs": 7131
+    },
+    {
+      "text": "Qua",
+      "startMs": 7544,
+      "endMs": 7740
+    },
+    {
+      "text": "đường",
+      "startMs": 7740,
+      "endMs": 8068
+    },
+    {
+      "text": "dây",
+      "startMs": 8068,
+      "endMs": 8265
+    },
+    {
+      "text": "đến",
+      "startMs": 8265,
+      "endMs": 8462
+    },
+    {
+      "text": "khu",
+      "startMs": 8462,
+      "endMs": 8658
+    },
+    {
+      "text": "dân",
+      "startMs": 8658,
+      "endMs": 8855
+    },
+    {
+      "text": "cư,",
+      "startMs": 8855,
+      "endMs": 9052
+    },
+    {
+      "text": "điện",
+      "startMs": 9052,
+      "endMs": 9314
+    },
+    {
+      "text": "áp",
+      "startMs": 9314,
+      "endMs": 9445
+    },
+    {
+      "text": "được",
+      "startMs": 9445,
+      "endMs": 9707
+    },
+    {
+      "text": "hạ",
+      "startMs": 9707,
+      "endMs": 9838
+    },
+    {
+      "text": "xuống",
+      "startMs": 9838,
+      "endMs": 10166
+    },
+    {
+      "text": "nhiều",
+      "startMs": 10166,
+      "endMs": 10494
+    },
+    {
+      "text": "cấp,",
+      "startMs": 10494,
+      "endMs": 10756
+    },
+    {
+      "text": "rồi",
+      "startMs": 10756,
+      "endMs": 10953
+    },
+    {
+      "text": "phân",
+      "startMs": 10953,
+      "endMs": 11215
+    },
+    {
+      "text": "phối",
+      "startMs": 11215,
+      "endMs": 11477
+    },
+    {
+      "text": "qua",
+      "startMs": 11477,
+      "endMs": 11674
+    },
+    {
+      "text": "công",
+      "startMs": 11674,
+      "endMs": 11936
+    },
+    {
+      "text": "tơ",
+      "startMs": 11936,
+      "endMs": 12067
+    },
+    {
+      "text": "để",
+      "startMs": 12067,
+      "endMs": 12199
+    },
+    {
+      "text": "thắp",
+      "startMs": 12199,
+      "endMs": 12461
+    },
+    {
+      "text": "sáng",
+      "startMs": 12461,
+      "endMs": 12723
+    },
+    {
+      "text": "nhà",
+      "startMs": 12723,
+      "endMs": 12920
+    },
+    {
+      "text": "bạn.",
+      "startMs": 12920,
+      "endMs": 13182
+    }
+  ]
+}

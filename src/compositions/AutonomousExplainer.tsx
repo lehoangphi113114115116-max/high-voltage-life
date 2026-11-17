@@ -8,11 +8,11 @@ import {StoryMotion, type MotionScene} from './StoryMotion';
 type KaraokeWord = {text: string; startMs: number; endMs: number};
 const videoData = currentVideo as unknown as Omit<typeof currentVideo, 'karaoke'> & {karaoke: KaraokeWord[]};
 
-export const Karaoke = ({untilMs = Infinity}: {untilMs?: number}) => {
+export const Karaoke = ({untilMs = Infinity, words: inputWords = videoData.karaoke}: {untilMs?: number; words?: KaraokeWord[]}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const now = (frame / fps) * 1000;
-  const words = videoData.karaoke.filter(word => word.startMs < untilMs);
+  const words = inputWords.filter(word => word.startMs < untilMs);
   const active = now >= (words.at(-1)?.endMs ?? 0) ? words.length - 1 : Math.max(0, words.findIndex((word) => now >= word.startMs && now < word.endMs));
   const start = Math.max(0, active - 3);
   const visible = words.slice(start, start + 8);
