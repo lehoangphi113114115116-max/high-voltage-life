@@ -1,0 +1,636 @@
+{
+  "topic": "Vì sao chim đậu trên dây điện mà không bị giật?",
+  "category": "electricity-in-life",
+  "audience": "đại chúng tò mò về điện",
+  "depth": "giải thích trực quan",
+  "visualMode": "technical-depth-illustration",
+  "headline": "VÌ SAO CHIM ĐẬU TRÊN DÂY ĐIỆN KHÔNG BỊ GIẬT?",
+  "narration": "Chim đậu trên một sợi dây điện thường không bị giật, vì hai chân của nó gần như cùng một điện thế. Dòng điện chỉ chạy mạnh qua cơ thể khi có chênh lệch điện áp giữa hai điểm tiếp xúc. Trên đoạn dây rất ngắn giữa hai chân chim, điện trở của dây nhỏ nên độ sụt áp gần như bằng không. Vì vậy, dòng điện đi qua cơ thể chim cực thấp. Nguy hiểm xuất hiện nếu chim đồng thời chạm vào dây khác điện thế, hoặc chạm dây điện và cột nối đất. Khi đó cơ thể tạo thành một đường dẫn, dòng điện có thể chạy qua và gây điện giật.",
+  "spokenNarration": "Chim đậu trên một sợi dây điện thường không bị giật, vì hai chân của nó gần như cùng một điện thế. Dòng điện chỉ chạy mạnh qua cơ thể khi có chênh lệch điện áp giữa hai điểm tiếp xúc. Trên đoạn dây rất ngắn giữa hai chân chim, điện trở của dây nhỏ nên độ sụt áp gần như bằng không. Vì vậy, dòng điện đi qua cơ thể chim cực thấp. Nguy hiểm xuất hiện nếu chim đồng thời chạm vào dây khác điện thế, hoặc chạm dây điện và cột nối đất. Khi đó cơ thể tạo thành một đường dẫn, dòng điện có thể chạy qua và gây điện giật.",
+  "research": [
+    "Dòng qua cơ thể phụ thuộc chênh lệch điện thế giữa hai điểm tiếp xúc: I = ΔV / R.",
+    "Hai chân gần nhau trên cùng dây dẫn có ΔV rất nhỏ vì điện trở đoạn dây rất thấp.",
+    "Chạm đồng thời hai điện thế khác nhau hoặc dây pha và đất tạo đường dẫn nguy hiểm."
+  ],
+  "audioPath": "generated/current/voice.wav",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationInFrames": 811,
+  "audioDurationMs": 26681,
+  "scenes": [
+    {
+      "id": "hook",
+      "from": 0,
+      "to": 0.2,
+      "visual": "Chim và đường dây có chiều sâu, câu hỏi mở đầu",
+      "camera": "slow push-in",
+      "startFrame": 0,
+      "endFrame": 162
+    },
+    {
+      "id": "same-potential",
+      "from": 0.2,
+      "to": 0.52,
+      "visual": "Hai chân trên cùng dây, V1 gần bằng V2",
+      "camera": "technical close-up",
+      "startFrame": 162,
+      "endFrame": 422
+    },
+    {
+      "id": "voltage-difference",
+      "from": 0.52,
+      "to": 0.76,
+      "visual": "Sơ đồ ΔV = V1 - V2 gần bằng 0",
+      "camera": "diagram lock",
+      "startFrame": 422,
+      "endFrame": 616
+    },
+    {
+      "id": "danger",
+      "from": 0.76,
+      "to": 1,
+      "visual": "Chạm hai điện thế khác nhau, đường dòng điện cảnh báo",
+      "camera": "pull-back warning",
+      "startFrame": 616,
+      "endFrame": 811
+    }
+  ],
+  "karaoke": [
+    {
+      "text": "Chim",
+      "startMs": 0,
+      "endMs": 213
+    },
+    {
+      "text": "đậu",
+      "startMs": 213,
+      "endMs": 372
+    },
+    {
+      "text": "trên",
+      "startMs": 372,
+      "endMs": 585
+    },
+    {
+      "text": "một",
+      "startMs": 585,
+      "endMs": 744
+    },
+    {
+      "text": "sợi",
+      "startMs": 744,
+      "endMs": 904
+    },
+    {
+      "text": "dây",
+      "startMs": 904,
+      "endMs": 1063
+    },
+    {
+      "text": "điện",
+      "startMs": 1063,
+      "endMs": 1276
+    },
+    {
+      "text": "thường",
+      "startMs": 1276,
+      "endMs": 1595
+    },
+    {
+      "text": "không",
+      "startMs": 1595,
+      "endMs": 1861
+    },
+    {
+      "text": "bị",
+      "startMs": 1861,
+      "endMs": 2411
+    },
+    {
+      "text": "giật,",
+      "startMs": 2411,
+      "endMs": 2730
+    },
+    {
+      "text": "vì",
+      "startMs": 2730,
+      "endMs": 2836
+    },
+    {
+      "text": "hai",
+      "startMs": 2836,
+      "endMs": 2996
+    },
+    {
+      "text": "chân",
+      "startMs": 2996,
+      "endMs": 3208
+    },
+    {
+      "text": "của",
+      "startMs": 3208,
+      "endMs": 3368
+    },
+    {
+      "text": "nó",
+      "startMs": 3368,
+      "endMs": 3474
+    },
+    {
+      "text": "gần",
+      "startMs": 3474,
+      "endMs": 3634
+    },
+    {
+      "text": "như",
+      "startMs": 3634,
+      "endMs": 3793
+    },
+    {
+      "text": "cùng",
+      "startMs": 3793,
+      "endMs": 4006
+    },
+    {
+      "text": "một",
+      "startMs": 4006,
+      "endMs": 4165
+    },
+    {
+      "text": "điện",
+      "startMs": 4165,
+      "endMs": 4378
+    },
+    {
+      "text": "thế.",
+      "startMs": 4378,
+      "endMs": 5253
+    },
+    {
+      "text": "Dòng",
+      "startMs": 5253,
+      "endMs": 5466
+    },
+    {
+      "text": "điện",
+      "startMs": 5466,
+      "endMs": 5678
+    },
+    {
+      "text": "chỉ",
+      "startMs": 5678,
+      "endMs": 5838
+    },
+    {
+      "text": "chạy",
+      "startMs": 5838,
+      "endMs": 6050
+    },
+    {
+      "text": "mạnh",
+      "startMs": 6050,
+      "endMs": 6263
+    },
+    {
+      "text": "qua",
+      "startMs": 6263,
+      "endMs": 6423
+    },
+    {
+      "text": "cơ",
+      "startMs": 6423,
+      "endMs": 6529
+    },
+    {
+      "text": "thể",
+      "startMs": 6529,
+      "endMs": 6990
+    },
+    {
+      "text": "khi",
+      "startMs": 6990,
+      "endMs": 7149
+    },
+    {
+      "text": "có",
+      "startMs": 7149,
+      "endMs": 7256
+    },
+    {
+      "text": "chênh",
+      "startMs": 7256,
+      "endMs": 7521
+    },
+    {
+      "text": "lệch",
+      "startMs": 7521,
+      "endMs": 7734
+    },
+    {
+      "text": "điện",
+      "startMs": 7734,
+      "endMs": 7947
+    },
+    {
+      "text": "áp",
+      "startMs": 7947,
+      "endMs": 8053
+    },
+    {
+      "text": "giữa",
+      "startMs": 8053,
+      "endMs": 8266
+    },
+    {
+      "text": "hai",
+      "startMs": 8266,
+      "endMs": 8425
+    },
+    {
+      "text": "điểm",
+      "startMs": 8425,
+      "endMs": 8638
+    },
+    {
+      "text": "tiếp",
+      "startMs": 8638,
+      "endMs": 9252
+    },
+    {
+      "text": "xúc.",
+      "startMs": 9252,
+      "endMs": 9624
+    },
+    {
+      "text": "Trên",
+      "startMs": 9624,
+      "endMs": 9837
+    },
+    {
+      "text": "đoạn",
+      "startMs": 9837,
+      "endMs": 10050
+    },
+    {
+      "text": "dây",
+      "startMs": 10050,
+      "endMs": 10209
+    },
+    {
+      "text": "rất",
+      "startMs": 10209,
+      "endMs": 10369
+    },
+    {
+      "text": "ngắn",
+      "startMs": 10369,
+      "endMs": 10581
+    },
+    {
+      "text": "giữa",
+      "startMs": 10581,
+      "endMs": 10794
+    },
+    {
+      "text": "hai",
+      "startMs": 10794,
+      "endMs": 10953
+    },
+    {
+      "text": "chân",
+      "startMs": 10953,
+      "endMs": 11324
+    },
+    {
+      "text": "chim,",
+      "startMs": 11324,
+      "endMs": 11643
+    },
+    {
+      "text": "điện",
+      "startMs": 11643,
+      "endMs": 11856
+    },
+    {
+      "text": "trở",
+      "startMs": 11856,
+      "endMs": 12016
+    },
+    {
+      "text": "của",
+      "startMs": 12016,
+      "endMs": 12175
+    },
+    {
+      "text": "dây",
+      "startMs": 12175,
+      "endMs": 12335
+    },
+    {
+      "text": "nhỏ",
+      "startMs": 12335,
+      "endMs": 12494
+    },
+    {
+      "text": "nên",
+      "startMs": 12494,
+      "endMs": 12827
+    },
+    {
+      "text": "độ",
+      "startMs": 12827,
+      "endMs": 12933
+    },
+    {
+      "text": "sụt",
+      "startMs": 12933,
+      "endMs": 13093
+    },
+    {
+      "text": "áp",
+      "startMs": 13093,
+      "endMs": 13199
+    },
+    {
+      "text": "gần",
+      "startMs": 13199,
+      "endMs": 13359
+    },
+    {
+      "text": "như",
+      "startMs": 13359,
+      "endMs": 13518
+    },
+    {
+      "text": "bằng",
+      "startMs": 13518,
+      "endMs": 13731
+    },
+    {
+      "text": "không.",
+      "startMs": 13731,
+      "endMs": 14703
+    },
+    {
+      "text": "Vì",
+      "startMs": 14703,
+      "endMs": 14810
+    },
+    {
+      "text": "vậy,",
+      "startMs": 14810,
+      "endMs": 15075
+    },
+    {
+      "text": "dòng",
+      "startMs": 15075,
+      "endMs": 15288
+    },
+    {
+      "text": "điện",
+      "startMs": 15288,
+      "endMs": 15501
+    },
+    {
+      "text": "đi",
+      "startMs": 15501,
+      "endMs": 15607
+    },
+    {
+      "text": "qua",
+      "startMs": 15607,
+      "endMs": 15767
+    },
+    {
+      "text": "cơ",
+      "startMs": 15767,
+      "endMs": 15873
+    },
+    {
+      "text": "thể",
+      "startMs": 15873,
+      "endMs": 16033
+    },
+    {
+      "text": "chim",
+      "startMs": 16033,
+      "endMs": 16245
+    },
+    {
+      "text": "cực",
+      "startMs": 16245,
+      "endMs": 16405
+    },
+    {
+      "text": "thấp.",
+      "startMs": 16405,
+      "endMs": 17334
+    },
+    {
+      "text": "Nguy",
+      "startMs": 17334,
+      "endMs": 17547
+    },
+    {
+      "text": "hiểm",
+      "startMs": 17547,
+      "endMs": 17759
+    },
+    {
+      "text": "xuất",
+      "startMs": 17759,
+      "endMs": 17972
+    },
+    {
+      "text": "hiện",
+      "startMs": 17972,
+      "endMs": 18185
+    },
+    {
+      "text": "nếu",
+      "startMs": 18185,
+      "endMs": 18344
+    },
+    {
+      "text": "chim",
+      "startMs": 18344,
+      "endMs": 18557
+    },
+    {
+      "text": "đồng",
+      "startMs": 18557,
+      "endMs": 18770
+    },
+    {
+      "text": "thời",
+      "startMs": 18770,
+      "endMs": 18982
+    },
+    {
+      "text": "chạm",
+      "startMs": 18982,
+      "endMs": 19195
+    },
+    {
+      "text": "vào",
+      "startMs": 19195,
+      "endMs": 19354
+    },
+    {
+      "text": "dây",
+      "startMs": 19354,
+      "endMs": 19514
+    },
+    {
+      "text": "khác",
+      "startMs": 19514,
+      "endMs": 19727
+    },
+    {
+      "text": "điện",
+      "startMs": 19727,
+      "endMs": 19939
+    },
+    {
+      "text": "thế,",
+      "startMs": 19939,
+      "endMs": 20205
+    },
+    {
+      "text": "hoặc",
+      "startMs": 20205,
+      "endMs": 20418
+    },
+    {
+      "text": "chạm",
+      "startMs": 20418,
+      "endMs": 20784
+    },
+    {
+      "text": "dây",
+      "startMs": 20784,
+      "endMs": 20944
+    },
+    {
+      "text": "điện",
+      "startMs": 20944,
+      "endMs": 21156
+    },
+    {
+      "text": "và",
+      "startMs": 21156,
+      "endMs": 21263
+    },
+    {
+      "text": "cột",
+      "startMs": 21263,
+      "endMs": 21613
+    },
+    {
+      "text": "nối",
+      "startMs": 21613,
+      "endMs": 21773
+    },
+    {
+      "text": "đất.",
+      "startMs": 21773,
+      "endMs": 22145
+    },
+    {
+      "text": "Khi",
+      "startMs": 22145,
+      "endMs": 22696
+    },
+    {
+      "text": "đó",
+      "startMs": 22696,
+      "endMs": 22803
+    },
+    {
+      "text": "cơ",
+      "startMs": 22803,
+      "endMs": 22909
+    },
+    {
+      "text": "thể",
+      "startMs": 22909,
+      "endMs": 23068
+    },
+    {
+      "text": "tạo",
+      "startMs": 23068,
+      "endMs": 23228
+    },
+    {
+      "text": "thành",
+      "startMs": 23228,
+      "endMs": 23494
+    },
+    {
+      "text": "một",
+      "startMs": 23494,
+      "endMs": 23653
+    },
+    {
+      "text": "đường",
+      "startMs": 23653,
+      "endMs": 23919
+    },
+    {
+      "text": "dẫn,",
+      "startMs": 23919,
+      "endMs": 24476
+    },
+    {
+      "text": "dòng",
+      "startMs": 24476,
+      "endMs": 24689
+    },
+    {
+      "text": "điện",
+      "startMs": 24689,
+      "endMs": 24902
+    },
+    {
+      "text": "có",
+      "startMs": 24902,
+      "endMs": 25008
+    },
+    {
+      "text": "thể",
+      "startMs": 25008,
+      "endMs": 25167
+    },
+    {
+      "text": "chạy",
+      "startMs": 25167,
+      "endMs": 25380
+    },
+    {
+      "text": "qua",
+      "startMs": 25380,
+      "endMs": 25777
+    },
+    {
+      "text": "và",
+      "startMs": 25777,
+      "endMs": 25884
+    },
+    {
+      "text": "gây",
+      "startMs": 25884,
+      "endMs": 26043
+    },
+    {
+      "text": "điện",
+      "startMs": 26043,
+      "endMs": 26256
+    },
+    {
+      "text": "giật.",
+      "startMs": 26256,
+      "endMs": 26681
+    }
+  ]
+}

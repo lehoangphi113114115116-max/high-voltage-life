@@ -39,3 +39,17 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Voice samples, generated audio, local IDs and consent records
+voice/private/
+voice/reference/
+voice/output/
+voice/config/voice-profile.local.json
+.venv-tts/
+voice/models/
+__pycache__/
+*.pyc
+
+# Autonomous agent generated assets and run reports
+agent/runs/
+public/generated/

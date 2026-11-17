@@ -62,3 +62,33 @@ npx --yes skills@latest experimental_install --frozen-lockfile --agent codex
 ```
 
 Thư mục `.agents/skills` được bỏ qua trong Git vì đây là bản sao sinh ra từ lockfile.
+
+## Module giọng đọc
+
+`high-voltage-life-voice` nằm trong `src/voice` và `voice/`. Module chuẩn hóa cách đọc thuật ngữ điện, định dạng timestamp karaoke và cung cấp giao diện adapter cho nhà cung cấp TTS/Voice Cloning.
+
+Module đang ở chế độ an toàn `disabled`: không gọi API, không gửi mẫu giọng và không thể tổng hợp khi chưa có xác nhận quyền sử dụng. Chuẩn bị kịch bản cục bộ bằng:
+
+```bash
+npm run voice:prepare -- script.txt voice/output/script.manifest.json
+```
+
+Sau khi một nhà cung cấp được phê duyệt và trả về alignment, chuẩn hóa timestamp cho Remotion bằng:
+
+```bash
+npm run voice:timestamps -- alignment.json voice/output/script.karaoke.json
+```
+
+Không commit file mẫu, audio sinh ra, API key, Voice ID hoặc hồ sơ đồng thuận. Xem hướng dẫn và đánh giá dịch vụ tại `voice/README.md` và `docs/voice-service-evaluation.md`.
+
+TTS cục bộ CPU dùng VieNeu-TTS v3 Turbo, không clone và không gọi API trả phí. Thiết lập/chạy bằng `npm run voice:setup-local` và `npm run voice:synthesize-local`; xem chi tiết tại `docs/local-tts-evaluation.md`.
+
+## AI Video Agent
+
+Tạo video mới từ một chủ đề bằng một lệnh:
+
+```bash
+npm run agent -- --topic "Vì sao chim đậu trên dây điện mà không bị giật?"
+```
+
+Pipeline phân loại chủ đề, tạo research brief/kịch bản/storyboard, chọn visual mode, tổng hợp giọng Thái Sơn, căn karaoke theo audio thực tế, render H.264 và chạy QC. MP4 nằm trong `out/`; project/QC report nằm trong `agent/runs/`. Xem tiến độ module tại `PROJECT_STATUS.md`.

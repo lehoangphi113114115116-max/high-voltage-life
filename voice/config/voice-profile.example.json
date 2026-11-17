@@ -1,0 +1,18 @@
+{
+  "profileId": "high-voltage-life-vi",
+  "provider": "disabled",
+  "language": "vi-VN",
+  "voiceIdEnv": "HVL_VOICE_ID",
+  "apiKeyEnv": "HVL_TTS_API_KEY",
+  "model": null,
+  "audio": {
+    "format": "mp3",
+    "sampleRate": 48000,
+    "channels": 1
+  },
+  "consent": {
+    "confirmed": false,
+    "scope": null,
+    "confirmedAt": null
+  }
+}

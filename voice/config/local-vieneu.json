@@ -1,0 +1,23 @@
+{
+  "profileId": "hvl-science-male-v1",
+  "displayName": "HVL Science Male v1",
+  "provider": "local",
+  "engine": "vieneu-v3-turbo",
+  "modelRepository": "pnnbao-ump/VieNeu-TTS-v3-Turbo",
+  "modelVersion": "v3 Turbo",
+  "voice": "Thái Sơn",
+  "voiceKind": "built-in-preset",
+  "language": "vi-VN",
+  "backend": "onnx",
+  "precision": "fp32",
+  "threads": 5,
+  "sampleRate": 48000,
+  "speed": 1.166,
+  "temperature": 0.72,
+  "topK": 25,
+  "topP": 0.92,
+  "repetitionPenalty": 1.2,
+  "targetLufs": -16,
+  "cloning": false,
+  "paidService": false
+}

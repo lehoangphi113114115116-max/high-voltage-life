@@ -1,0 +1,1 @@
+Khi xảy ra ngắn mạch trên đường dây 500 kilôvôn, dòng điện có thể tăng lên hàng chục nghìn ampe. Lúc này, hệ thống bảo vệ phải nhanh chóng phát hiện sự cố và ra lệnh cắt máy cắt.

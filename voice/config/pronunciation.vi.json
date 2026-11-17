@@ -1,0 +1,33 @@
+[
+  {
+    "display": "500\\s?kV",
+    "spoken": "năm trăm ki lô vôn",
+    "match": "regex",
+    "flags": "giu"
+  },
+  {
+    "display": "SF6",
+    "spoken": "ét ép sáu",
+    "match": "literal"
+  },
+  {
+    "display": "87L",
+    "spoken": "tám mươi bảy eo",
+    "match": "literal"
+  },
+  {
+    "display": "rơ le",
+    "spoken": "rơ-le",
+    "match": "literal"
+  },
+  {
+    "display": "máy biến áp",
+    "spoken": "máy biến áp",
+    "match": "literal"
+  },
+  {
+    "display": "dòng ngắn mạch",
+    "spoken": "dòng ngắn mạch",
+    "match": "literal"
+  }
+]
