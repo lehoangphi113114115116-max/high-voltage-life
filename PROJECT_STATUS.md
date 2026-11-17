@@ -13,6 +13,7 @@ Cập nhật: 2026-11-17
 | Storyboard Generator | Preview v2 chờ duyệt | Chia cảnh theo câu và timestamp lời đọc; số cảnh không cố định |
 | Visual Director | Preview v2 chờ duyệt | Dolly/parallax, animation SVG, cross-dissolve và directional reveal; chưa áp dụng video đầy đủ |
 | Phong cách sản xuất mặc định | Đã cấu hình | Visual-first, màu tự nhiên, footage có quyền, ít chữ; video đầy đủ mặc định, preview khi yêu cầu. Chỉ dẫn được đưa vào storyboard/project; chưa render xác minh phong cách mới |
+| Demo màu tự nhiên 15 giây | Đã render, chờ đánh giá | `HVL-NATURAL-BIRD-15S`; ảnh mẫu + camera, lá/SVG động, sơ đồ nền sáng, Thái Sơn/karaoke; H.264 1080×1920/30 FPS |
 | Karaoke theo audio | Hoàn thành v1 | Dùng duration và vùng không im lặng của audio thực tế |
 | Automated Pipeline | Hoàn thành v1 | `npm run agent -- --topic "..."` |
 | QC | Hoàn thành v1 | Kiểm tra spec, audio, karaoke, H.264/1080×1920/30 FPS |

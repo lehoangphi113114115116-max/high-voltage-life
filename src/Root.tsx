@@ -3,10 +3,12 @@ import {LineDifferential87LDemo} from './compositions/LineDifferential87LDemo';
 import {AutonomousExplainer} from './compositions/AutonomousExplainer';
 import {HighVoltageLife} from './HighVoltageLife';
 import currentVideo from './generated/current-video.json';
+import {NaturalBirdDemo} from './compositions/NaturalBirdDemo';
 
 export const RemotionRoot = () => {
   return (
     <>
+      <Composition id="HVL-NATURAL-BIRD-15S" component={NaturalBirdDemo} durationInFrames={450} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-MOTION-PREVIEW" component={AutonomousExplainer} defaultProps={{motionPreview: true}} durationInFrames={520} fps={30} width={1080} height={1920} />
       <Composition
         id="HIGH-VOLTAGE-LIFE"
