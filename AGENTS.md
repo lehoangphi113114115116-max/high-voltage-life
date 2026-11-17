@@ -8,9 +8,11 @@
 
 ## Phong cách mặc định cho mọi video mới
 
+Phong cách đã chốt: **Colorful Technical Animation** — Remotion + React + SVG, đối tượng riêng có thể animate độc lập, màu tự nhiên rõ ràng, nhiều lớp phối cảnh/parallax, camera mượt. Hành động phải phù hợp lời thoại: chim bay/đáp/vỗ cánh, mây trôi, khói bốc tan ở nơi thực sự có khói, thiết bị đổi trạng thái, hạt năng lượng chạy trên dây. Không ghép toàn cảnh thành ảnh tĩnh rồi chỉ di chuyển camera hoặc thêm chữ. Tái sử dụng component; chỉ bổ sung phần thiếu. Footage/3D chỉ bổ trợ khi chủ đề cần. Không tự tạo preview; nhiệm vụ cập nhật cấu hình không render video.
+
 Đọc và áp dụng `agent/visual-defaults.json` và `docs/visual-direction.md` khi lập storyboard hoặc dựng video. Mặc định sản xuất video hoàn chỉnh; chỉ làm preview khi người dùng yêu cầu. Yêu cầu cập nhật cấu hình/tài liệu không tự cấp phép render.
 
-Ưu tiên kể chuyện bằng hoạt cảnh, minh họa có chiều sâu và footage ngắn phù hợp có quyền sử dụng được xác minh. Cảnh vật dùng màu tự nhiên, đa dạng theo bối cảnh/vật liệu; màu thương hiệu chỉ dành cho nhận diện, nhãn kỹ thuật và karaoke. Hạn chế chữ, không giữ tiêu đề lớn xuyên suốt; chỉ hiện sơ đồ/công thức/đồ thị ở câu cần giải thích nguyên lý.
+Ưu tiên kể chuyện bằng hoạt cảnh minh họa màu sắc có chiều sâu; footage chỉ dùng khi cần và có quyền sử dụng được xác minh. Cảnh vật dùng màu tự nhiên, đa dạng theo bối cảnh/vật liệu; màu thương hiệu chỉ dành cho nhận diện, nhãn kỹ thuật và karaoke. Hạn chế chữ, không giữ tiêu đề lớn xuyên suốt; chỉ hiện sơ đồ/công thức/đồ thị ở câu cần giải thích nguyên lý.
 
 Chia cảnh theo nội dung và timestamp lời đọc, số cảnh không cố định. Mỗi cảnh có chuyển động đối tượng và camera phù hợp, chuyển cảnh mượt có liên kết; không đứng hình quá 3 giây nếu thiếu lý do kỹ thuật. Chọn 2D/2.5D/3D theo nhu cầu giải thích, giữ đúng nguyên lý và cấu tạo có tài liệu. Khi bắt đầu video mới, đưa các chỉ dẫn `visualDirection` trong storyboard vào renderer thực tế; không coi metadata là hình ảnh đã được triển khai.
 

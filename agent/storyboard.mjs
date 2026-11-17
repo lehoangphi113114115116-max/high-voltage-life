@@ -19,7 +19,11 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null) => {
       camera: mode === 'depth' ? 'parallax-dolly' : mode === 'wire-detail' ? 'macro-track' : 'diagram-push',
       ...(visualDefaults ? {visualDirection: {
         style: visualDefaults.style,
+        styleName: visualDefaults.styleName,
         primaryVisuals: visualDefaults.primaryVisuals,
+        componentArchitecture: visualDefaults.componentArchitecture,
+        actionDirection: visualDefaults.actionDirection,
+        depthDirection: visualDefaults.depthDirection,
         electricalAnimation: visualDefaults.electricalAnimation,
         palette: visualDefaults.palette.scene,
         brandScope: visualDefaults.palette.brandScope,
@@ -29,7 +33,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null) => {
         onScreenText: ['karaoke', 'essential-technical-labels'],
         representation: mode === 'principle' ? 'animated-2D' : 'depth-illustration',
         formulaPolicy: mode === 'principle' || mode === 'wire-detail' ? 'only-if-needed-for-this-sentence' : 'omit',
-        footage: {status: mode === 'depth' ? 'consider-relevant-licensed-clip' : 'prefer-explanatory-animation', assets: [], requireVerifiedRights: true, fallback: 'original-animation'},
+        footage: {status: 'optional-only-if-topic-requires', policy: visualDefaults.footage.selection, assets: [], requireVerifiedRights: true, fallback: 'original-animation'},
         synchronizeTo: 'scene-narration-timestamps',
       }} : {}),
     };
