@@ -21,6 +21,7 @@ Cập nhật: 2026-11-17
 | Nguyên lý SF6 15 giây | Đã render/QC | `HVL-SF6-PRINCIPLE-15S`; 450 frame H.264/AAC 1080×1920/30 FPS, Thái Sơn/karaoke; đóng → mở/hồ quang → khử ion → phục hồi cách điện |
 | Corona khi mưa | Đã render/QC | `HVL-CORONA-RAIN`, 84,3 giây, 2529 frame H.264/AAC 1080×1920/30 FPS; Thái Sơn/karaoke, SVG corona cục bộ và inset CC BY 2.0 đã review; xem `docs/corona-rain.md` |
 | TokenEconomizer | Bị chặn có chủ đích | Codex `0.167.0-alpha.4` nằm ngoài dải upstream đã kiểm thử `0.153.1–0.164.0`; chưa cài giả/cưỡng ép. Xem `docs/token-economizer.md`; dùng `AGENTS.md` + `PROJECT_STATUS.md` làm phương án ghi nhớ hiện tại |
+| Bàn giao MP4 | Đã chuẩn hóa | `agent/deliver-video.mjs` tạo bản fast-start từ MP4 có sẵn; artifact Cloud là kênh chính, GitHub Release chỉ dự phòng khi token có quyền upload |
 | Karaoke theo audio | Hoàn thành v1 | Dùng duration và vùng không im lặng của audio thực tế |
 | Automated Pipeline | Hoàn thành v1 | `npm run agent -- --topic "..."` |
 | QC | Hoàn thành v1 | Kiểm tra spec, audio, karaoke, H.264/1080×1920/30 FPS |
