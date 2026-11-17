@@ -1,5 +1,5 @@
 // Scene boundaries come from narrated sentences, not a fixed scene count.
-export const buildStoryboard = (words, fps = 30) => {
+export const buildStoryboard = (words, fps = 30, visualDefaults = null) => {
   const groups = [];
   let sentence = [];
   for (const word of words) {
@@ -17,6 +17,19 @@ export const buildStoryboard = (words, fps = 30) => {
       endFrame: Math.ceil(group.at(-1).endMs * fps / 1000),
       transition: index % 2 ? 'cross-dissolve' : 'directional-reveal',
       camera: mode === 'depth' ? 'parallax-dolly' : mode === 'wire-detail' ? 'macro-track' : 'diagram-push',
+      ...(visualDefaults ? {visualDirection: {
+        style: visualDefaults.style,
+        palette: visualDefaults.palette.scene,
+        brandScope: visualDefaults.palette.brandScope,
+        lighting: visualDefaults.lighting,
+        objectAnimationRequired: visualDefaults.motion.objectAnimationRequired,
+        maxUnmotivatedStillSeconds: visualDefaults.motion.maxUnmotivatedStillSeconds,
+        onScreenText: ['karaoke', 'essential-technical-labels'],
+        representation: mode === 'principle' ? 'animated-2D' : 'depth-illustration',
+        formulaPolicy: mode === 'principle' || mode === 'wire-detail' ? 'only-if-needed-for-this-sentence' : 'omit',
+        footage: {status: mode === 'depth' ? 'consider-relevant-licensed-clip' : 'prefer-explanatory-animation', assets: [], requireVerifiedRights: true, fallback: 'original-animation'},
+        synchronizeTo: 'scene-narration-timestamps',
+      }} : {}),
     };
   });
 };

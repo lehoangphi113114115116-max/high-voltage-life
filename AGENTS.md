@@ -6,6 +6,14 @@
 
 Đọc `PROJECT_STATUS.md` trước khi làm việc. Chỉ mở module liên quan đến nhiệm vụ hiện tại; không xây lại module đã đánh dấu hoàn thành.
 
+## Phong cách mặc định cho mọi video mới
+
+Đọc và áp dụng `agent/visual-defaults.json` và `docs/visual-direction.md` khi lập storyboard hoặc dựng video. Mặc định sản xuất video hoàn chỉnh; chỉ làm preview khi người dùng yêu cầu. Yêu cầu cập nhật cấu hình/tài liệu không tự cấp phép render.
+
+Ưu tiên kể chuyện bằng hoạt cảnh, minh họa có chiều sâu và footage ngắn phù hợp có quyền sử dụng được xác minh. Cảnh vật dùng màu tự nhiên, đa dạng theo bối cảnh/vật liệu; màu thương hiệu chỉ dành cho nhận diện, nhãn kỹ thuật và karaoke. Hạn chế chữ, không giữ tiêu đề lớn xuyên suốt; chỉ hiện sơ đồ/công thức/đồ thị ở câu cần giải thích nguyên lý.
+
+Chia cảnh theo nội dung và timestamp lời đọc, số cảnh không cố định. Mỗi cảnh có chuyển động đối tượng và camera phù hợp, chuyển cảnh mượt có liên kết; không đứng hình quá 3 giây nếu thiếu lý do kỹ thuật. Chọn 2D/2.5D/3D theo nhu cầu giải thích, giữ đúng nguyên lý và cấu tạo có tài liệu. Khi bắt đầu video mới, đưa các chỉ dẫn `visualDirection` trong storyboard vào renderer thực tế; không coi metadata là hình ảnh đã được triển khai.
+
 ## Quy tắc làm việc
 
 - Đọc Skills liên quan trong `.agents/skills` trước khi thay đổi composition hoặc quy trình render.
@@ -22,7 +30,7 @@
 
 ## Kiểm tra khi thay đổi video
 
-Sau khi thay đổi mã nguồn, chạy:
+Khi sửa composition, kiểm tra phần vừa sửa và sản phẩm được yêu cầu. Các lệnh dưới đây chỉ dùng cho composition liên quan; không render lại các video cũ không liên quan:
 
 ```bash
 npm run typecheck
@@ -35,3 +43,5 @@ npm run probe:87l
 Giữ composition kiểm tra `HIGH-VOLTAGE-LIFE` ở 150 frame. Demo kỹ thuật `HV-LIFE-87L-DEMO` dùng 450 frame. Cả hai giữ tỷ lệ 9:16, kích thước 1080 × 1920 và tốc độ 30 FPS, trừ khi người dùng yêu cầu thay đổi.
 
 Nếu chỉ thay đổi bộ định tuyến Agent Skills, chạy `npm run agent:skills:test`; không render lại video cũ.
+
+Nếu chỉ cập nhật phong cách/storyboard, kiểm tra cú pháp, dữ liệu cấu hình và kết quả storyboard mới; không render trừ khi người dùng yêu cầu.

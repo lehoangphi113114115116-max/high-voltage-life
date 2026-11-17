@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "production": {"defaultOutput": "full-video", "previewOnlyOnRequest": true},
+  "style": "depth-technical-illustration",
+  "storytelling": "visual-first",
+  "palette": {
+    "scene": "natural-contextual-material-colors",
+    "brandScope": ["logo", "technical-labels", "karaoke", "identity-overlays"],
+    "brand": {"navy": "#0a1626", "technicalBlue": "#9fd8ff", "yellow": "#f5b921", "arcOrange": "#ff9a3c"},
+    "examples": {"sky": "natural blue", "vegetation": "natural green", "animals": "species-appropriate natural colors", "equipment": "documented real material colors", "electricalEffects": "physically appropriate to the phenomenon"}
+  },
+  "lighting": "natural-coherent-with-scene",
+  "motion": {"sentenceAligned": true, "fixedSceneCount": false, "objectAnimationRequired": true, "camera": ["pan", "zoom", "parallax", "dolly"], "transitions": "smooth-motivated-by-story", "maxUnmotivatedStillSeconds": 3},
+  "text": {"allowed": ["karaoke", "essential-keywords", "essential-technical-labels"], "persistentHeadline": false, "paragraphs": false},
+  "explanation": {"schematics": "only-when-needed", "formulas": "only-when-needed", "charts": "only-when-needed"},
+  "dimensions": {"default": "2.5D-illustration", "principles": "animated-2D", "3D": "only-when-spatial-understanding-requires-it"},
+  "footage": {"selection": "proactively-consider-per-scene", "use": "short-relevant-consistent-clips", "requireVerifiedRights": true, "requiredMetadata": ["sourceUrl", "creator", "license", "licenseUrl", "attribution", "rightsVerified"], "missingRightsFallback": "reuse-original-animation", "paidAcquisitionAllowed": false},
+  "synchronization": ["narration", "objects", "camera", "transitions", "footage", "formulas", "labels", "karaoke"],
+  "accuracy": {"requireTechnicalEvidence": true, "inventEquipmentInternals": false},
+  "quality": ["sharp-images", "coherent-lighting", "natural-colors", "no-text-overlap", "no-object-distortion", "no-abrupt-cuts"]
+}

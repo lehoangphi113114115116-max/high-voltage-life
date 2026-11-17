@@ -152,6 +152,7 @@ await mkdir(runDir, {recursive: true});
 await mkdir(publicDir, {recursive: true});
 
 const profile = classify(topic);
+const visualDefaults = JSON.parse(await readFile(resolve(root, 'agent/visual-defaults.json'), 'utf8'));
 const content = directContent(topic, profile);
 const skillRouting = selectAgentSkills({topic, category: profile.id, visualMode: profile.visual});
 const narrationPath = resolve(runDir, 'narration.txt');
@@ -174,6 +175,7 @@ const project = {
   audience: profile.audience,
   depth: profile.depth,
   visualMode: profile.visual,
+  visualDefaults,
   skillRouting,
   headline: content.headline,
   narration: manifest.displayText,
@@ -185,7 +187,7 @@ const project = {
   height: 1920,
   durationInFrames,
   audioDurationMs: Math.round(audioDuration * 1000),
-  scenes: buildStoryboard(karaoke, fps),
+  scenes: buildStoryboard(karaoke, fps, visualDefaults),
   karaoke,
 };
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);
