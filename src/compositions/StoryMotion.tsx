@@ -1,6 +1,7 @@
 import {AbsoluteFill, Easing, interpolate, useCurrentFrame} from 'remotion';
 import {BirdIllustration, TransmissionPole} from '../components/depth';
 import {colors, technicalFont} from '../theme';
+import {CurrentFlow} from '../components/technical';
 
 export type MotionScene = {id: string; text: string; mode: string; startFrame: number; endFrame: number; transition: string; camera: string};
 const ease = (f: number, a: number, b: number) => interpolate(f, [a, b], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
@@ -24,6 +25,7 @@ export const StoryMotion = ({scenes}: {scenes: MotionScene[]}) => {
           <g transform={`translate(${540-(1+dolly*.35)*540} ${-dolly*210}) scale(${1+dolly*.35})`}>
             <TransmissionPole x={80} scale={.8} opacity={.5}/><TransmissionPole x={1010} scale={.8} opacity={.5}/>
             <path d="M -100 825 Q 540 790 1180 825" stroke={`url(#wire-${index})`} strokeWidth="13" fill="none"/>
+            <CurrentFlow x1={-100} x2={1180} y={825} controlY={790} count={14} radius={5} />
             <BirdIllustration x={535} y={710}/>
             <path d={`M 510 690 Q ${550+Math.sin(age/9)*20} ${720-Math.sin(age/9)*15} 580 740`} stroke="#e5b76c" strokeWidth="12" fill="none"/>
           </g>
@@ -40,7 +42,7 @@ export const StoryMotion = ({scenes}: {scenes: MotionScene[]}) => {
               <circle cx={310+((age*2)%460)} cy="800" r="26" fill="none" stroke={colors.yellow} strokeWidth="3"/>
             </g> : <path d="M 310 800 L 310 620 Q 540 490 770 620 L 770 800" fill="none" stroke={danger ? colors.arcOrange : colors.technicalBlue} strokeWidth="7" strokeDasharray="12 10" strokeDashoffset={-age*2}/>}
             {[310,770].map((x,i)=><g key={x}><circle cx={x} cy="800" r={16+Math.sin(age/10+i)*3} fill={colors.yellow}/><text x={x} y="870" textAnchor="middle" fill="white" fontSize="35">V{i ? '₂' : '₁'}</text></g>)}
-            {Array.from({length:9},(_,i)=><circle key={i} cx={140+((age*3+i*90)%800)} cy="800" r="7" fill={colors.yellow}/>)}
+            <CurrentFlow x1={140} x2={940} y={800} count={10} radius={5} terminalPulse />
             {!macro && <text x="540" y="690" textAnchor="middle" fill="white" fontSize="30">CƠ THỂ CHIM</text>}
             <text x="540" y="970" textAnchor="middle" fill={colors.yellow} fontSize="48" fontWeight="900">{macro ? 'R dây nhỏ → ΔV ≈ 0' : danger ? 'ΔV lớn → nguy hiểm' : 'I = ΔV / R cơ thể'}</text>
             <text x="540" y="1035" textAnchor="middle" fill={colors.technicalBlue} fontSize="29">{macro ? 'Đoạn dây rất ngắn giữa hai chân' : 'ΔV gần bằng 0 → dòng qua chim rất nhỏ'}</text>

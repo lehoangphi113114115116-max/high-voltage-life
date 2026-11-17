@@ -129,6 +129,10 @@ export const CurrentFlow = ({
   reverse = false,
   speed = 1,
   opacity = 1,
+  controlY = y,
+  count = 7,
+  radius = 5,
+  terminalPulse = false,
 }: {
   x1: number;
   x2: number;
@@ -137,18 +141,33 @@ export const CurrentFlow = ({
   reverse?: boolean;
   speed?: number;
   opacity?: number;
+  controlY?: number;
+  count?: number;
+  radius?: number;
+  terminalPulse?: boolean;
 }) => {
   const frame = useCurrentFrame();
-  const span = Math.abs(x2 - x1);
+  const {fps} = useVideoConfig();
+  const particles = Math.max(1, Math.floor(count));
+  const time = frame / fps;
 
   return (
     <g opacity={opacity}>
-      {[0, 1, 2, 3, 4].map((index) => {
-        const cycle = ((frame * speed + index * 18) % 90) / 90;
+      {Array.from({length: particles}, (_, index) => {
+        const cycle = ((time * speed / 3 + index / particles) % 1 + 1) % 1;
         const progress = reverse ? 1 - cycle : cycle;
-        const x = Math.min(x1, x2) + progress * span;
-        return <circle key={index} cx={x} cy={y} r="8" fill={color} style={{filter: `drop-shadow(0 0 8px ${color})`}} />;
+        const x = x1 + progress * (x2 - x1);
+        const particleY = y + 2 * progress * (1 - progress) * (controlY - y);
+        const fade = Math.min(1, cycle * 16, (1 - cycle) * 16);
+        return <g key={index} opacity={fade}>
+          <circle cx={x} cy={particleY} r={radius * 2.6} fill={color} opacity=".12" />
+          <circle cx={x} cy={particleY} r={radius} fill={color} />
+        </g>;
       })}
+      {terminalPulse ? [x1, x2].map((x, index) => <g key={index}>
+        <circle cx={x} cy={y} r={radius * (2 + .4 * Math.sin(time * Math.PI * 2 - index))} fill={color} opacity={.12 + .08 * Math.sin(time * Math.PI * 2 - index)} />
+        <circle cx={x} cy={y} r={radius * .7} fill={color} opacity={.6 + .3 * Math.sin(time * Math.PI * 2 - index)} />
+      </g>) : null}
     </g>
   );
 };

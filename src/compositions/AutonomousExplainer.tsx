@@ -89,6 +89,7 @@ export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: bo
           <TransmissionPole x={975} scale={0.86} opacity={0.68} />
           <path d="M 0 770 Q 540 710 1080 770" fill="none" stroke="#07101a" strokeWidth="24" opacity=".5" />
           <path d="M 0 750 Q 540 690 1080 750" fill="none" stroke={colors.technicalBlue} strokeWidth="9" style={{filter: `drop-shadow(0 0 15px ${colors.technicalBlue}88)`}} />
+          <CurrentFlow x1={0} x2={1080} y={750} controlY={690} count={12} radius={5} terminalPulse />
           <BirdIllustration y={655} danger={danger} />
           <circle cx="510" cy="746" r="12" fill={colors.yellow} />
           <circle cx="576" cy="744" r="12" fill={danger ? colors.arcOrange : colors.yellow} />

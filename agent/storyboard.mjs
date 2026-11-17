@@ -19,6 +19,8 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null) => {
       camera: mode === 'depth' ? 'parallax-dolly' : mode === 'wire-detail' ? 'macro-track' : 'diagram-push',
       ...(visualDefaults ? {visualDirection: {
         style: visualDefaults.style,
+        primaryVisuals: visualDefaults.primaryVisuals,
+        electricalAnimation: visualDefaults.electricalAnimation,
         palette: visualDefaults.palette.scene,
         brandScope: visualDefaults.palette.brandScope,
         lighting: visualDefaults.lighting,

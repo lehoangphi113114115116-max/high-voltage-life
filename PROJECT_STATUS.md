@@ -10,6 +10,7 @@ Cập nhật: 2026-11-17
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
 | Agent Skills chuyên môn | Hoàn thành | `social`, `scientific-critical-thinking`, `anatomy`; định tuyến theo chủ đề và khóa phiên bản |
+| Mặc định minh họa code động | Đã cập nhật | `CurrentFlow` hạt vàng theo dây thẳng/cong, chiều nguồn→tải, nháy đầu nối tùy chọn; tích hợp cảnh chim SVG và StoryMotion. Chưa render mới ở cập nhật này |
 | Storyboard Generator | Preview v2 chờ duyệt | Chia cảnh theo câu và timestamp lời đọc; số cảnh không cố định |
 | Visual Director | Preview v2 chờ duyệt | Dolly/parallax, animation SVG, cross-dissolve và directional reveal; chưa áp dụng video đầy đủ |
 | Phong cách sản xuất mặc định | Đã cấu hình | Visual-first, màu tự nhiên, footage có quyền, ít chữ; video đầy đủ mặc định, preview khi yêu cầu. Chỉ dẫn được đưa vào storyboard/project; chưa render xác minh phong cách mới |

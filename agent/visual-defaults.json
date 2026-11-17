@@ -1,7 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "production": {"defaultOutput": "full-video", "previewOnlyOnRequest": true},
-  "style": "depth-technical-illustration",
+  "style": "clean-code-driven-animated-technical-illustration",
+  "primaryRenderer": "Remotion",
+  "primaryVisuals": "reusable-SVG-and-code-illustration",
+  "scenePacing": "few-focused-scenes-with-motivated-transitions",
+  "electricalAnimation": {"requiredOnEnergizedWires": true, "particles": "small-yellow-dots-with-subtle-glow", "motion": "continuous-frame-driven-along-conductor", "direction": "declared-source-to-load-with-explicit-reverse", "terminalPulse": "subtle-optional", "deenergized": "no-flow", "meaning": "conventional-energy-flow-indicator-not-electron-speed-or-instantaneous-AC-current"},
   "storytelling": "visual-first",
   "palette": {
     "scene": "natural-contextual-material-colors",

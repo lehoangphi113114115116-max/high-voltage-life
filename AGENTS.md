@@ -16,6 +16,9 @@ Chia cảnh theo nội dung và timestamp lời đọc, số cảnh không cố 
 
 ## Quy tắc làm việc
 
+- Mặc định ưu tiên minh họa kỹ thuật sạch bằng code/SVG trong Remotion, ít cảnh có trọng tâm. Footage và ảnh chỉ bổ trợ khi phù hợp; chuyển động camera trên ảnh tĩnh không đủ thay thế hoạt cảnh đối tượng.
+- Dây đang mang điện phải có hạt vàng nhỏ chạy liên tục bám theo dây. Dùng `CurrentFlow` với `x1` là nguồn, `x2` là phía nhận; `reverse` đổi hướng, `controlY` khớp dây cong quadratic có control X tại trung điểm. Có thể bật `terminalPulse` ở đầu nối. Khi mất điện phải dừng/ẩn hạt. Hạt biểu diễn hướng truyền năng lượng quy ước, không phải vận tốc electron hay chiều dòng AC tức thời.
+
 - Đọc Skills liên quan trong `.agents/skills` trước khi thay đổi composition hoặc quy trình render.
 - Dùng `agent/skill-router.mjs` để chọn Skill: `social` cho nội dung video ngắn, `scientific-critical-thinking` để kiểm tra tuyên bố kỹ thuật, và `anatomy` chỉ khi cần minh họa cấu tạo/chiều sâu.
 - Anatomy chỉ cung cấp nguyên tắc bố cục. Không tự sáng tạo cấu tạo, kích thước hoặc chuyển động của thiết bị điện thật khi chưa có tài liệu kỹ thuật được chấp thuận; Remotion luôn là renderer chính.
