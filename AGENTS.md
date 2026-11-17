@@ -8,6 +8,8 @@
 
 Phương pháp dựng hình chung: đọc `docs/illustration-system.md`; import component/token/motion/transition từ `src/illustration/index.ts`. Tái sử dụng trước khi bổ sung. `src/examples/sf6-v2` giữ mã Remotion V2 người dùng cung cấp và cực máy cắt đã tách thành React; đây là ví dụ nguyên lý, không giới hạn hệ dựng hình vào SF6. Ví dụ tổng quát: `src/examples/ReusableIllustrationExample.tsx`.
 
+Auto Footage Director: `agent/footage/director.mjs`, hướng dẫn `docs/auto-footage-director.md`. Pipeline đã nối tìm/license/tải/cắt/khung footage; ưu tiên SVG, chỉ thêm clip khớp câu và có safe slot. Layout mới phải khai báo reserved areas (thiết bị, sơ đồ, nhãn, karaoke) và candidate rectangles. Kiểm tra contentMatch/clip thực tế và credits trong QC trước khi bàn giao; không coi metadata match là xác minh thị giác. Không dùng clip chưa xác minh license.
+
 ## Phong cách mặc định cho mọi video mới
 
 Phong cách đã chốt: **Colorful Technical Animation** — Remotion + React + SVG, đối tượng riêng có thể animate độc lập, màu tự nhiên rõ ràng, nhiều lớp phối cảnh/parallax, camera mượt. Hành động phải phù hợp lời thoại: chim bay/đáp/vỗ cánh, mây trôi, khói bốc tan ở nơi thực sự có khói, thiết bị đổi trạng thái, hạt năng lượng chạy trên dây. Không ghép toàn cảnh thành ảnh tĩnh rồi chỉ di chuyển camera hoặc thêm chữ. Tái sử dụng component; chỉ bổ sung phần thiếu. Footage/3D chỉ bổ trợ khi chủ đề cần. Không tự tạo preview; nhiệm vụ cập nhật cấu hình không render video.

@@ -6,6 +6,7 @@
   "styleName": "Colorful Technical Animation",
   "primaryRenderer": "Remotion",
   "primaryVisuals": "reusable-SVG-and-code-illustration",
+  "footageDirector": {"enabled": true, "entrypoint": "agent/footage/director.mjs", "component": "src/footage/FootageLayer.tsx", "provider": "wikimedia-commons", "safeLayoutRequired": true, "fallback": "SVG", "maxClips": 2, "maxSecondsPerClip": 5},
   "componentArchitecture": {"stack": ["Remotion", "React", "SVG"], "independentObjects": true, "flattenEntireSceneToStaticImage": false, "reuseExistingFirst": true, "buildOnlyMissingComponents": true},
   "actionDirection": {"selection": "choose-only-actions-relevant-to-narration-and-physical-state", "examples": {"bird": ["fly", "flap-wings", "land", "perch"], "cloud": ["drift"], "smoke": ["rise-and-dissipate-only-where-physically-appropriate"], "equipment": ["change-operating-state-with-technical-evidence"], "energizedWire": ["continuous-energy-particles"]}, "cameraMotionAloneIsInsufficient": true},
   "depthDirection": {"layers": ["background", "midground", "foreground"], "perspective": "coherent", "parallax": "layer-dependent", "camera": "smooth-pan-or-zoom-motivated-by-story"},

@@ -4,6 +4,7 @@ import {AnimatedTransmissionLine, CurrentFlow, RelaySymbol, TechnicalLabel, Wate
 import currentVideo from '../generated/current-video.json';
 import {colors, technicalFont} from '../theme';
 import {StoryMotion, type MotionScene} from './StoryMotion';
+import {FootageLayer, type FootagePlan} from '../footage/FootageLayer';
 
 type KaraokeWord = {text: string; startMs: number; endMs: number};
 const videoData = currentVideo as unknown as Omit<typeof currentVideo, 'karaoke'> & {karaoke: KaraokeWord[]};
@@ -107,6 +108,7 @@ export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: bo
       </div> : null}
       <Karaoke />
       <Watermark />
+      {!motionPreview && <FootageLayer plan={(currentVideo as unknown as {footage?:FootagePlan}).footage}/>}
     </AbsoluteFill>
   );
 };

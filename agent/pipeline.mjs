@@ -5,6 +5,8 @@ import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {selectAgentSkills} from './skill-router.mjs';
 import {buildStoryboard} from './storyboard.mjs';
+import {directFootage} from './footage/director.mjs';
+import {autonomousFootageLayout} from './footage/layout.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -190,12 +192,15 @@ const project = {
   scenes: buildStoryboard(karaoke, fps, visualDefaults),
   karaoke,
 };
+project.footage = visualDefaults.footageDirector?.enabled===false?{version:1,clips:[],decisions:[],requiresEditorialReview:false}:await directFootage({topic,scenes:project.scenes,fps,root,layout:autonomousFootageLayout(project.headline)});
+await writeFile(resolve(runDir,'footage-manifest.json'),`${JSON.stringify(project.footage,null,2)}\n`);
+await writeFile(resolve(runDir,'footage-credits.txt'),project.footage.clips.map(c=>`${c.rights.attribution}\nModifications: ${c.rights.modifications}`).join('\n\n')+'\n');
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);
 await writeFile(resolve(root, 'src/generated/current-video.json'), `${JSON.stringify(project, null, 2)}\n`);
 
 const output = resolve(root, 'out', `hvl-agent-${slug}.mp4`);
 run('node_modules/.bin/remotion', ['render', 'src/index.ts', 'HVL-AUTONOMOUS-EXPLAINER', output, '--codec=h264', '--browser-executable=/usr/bin/chromium', '--jpeg-quality=95', '--crf=18', '--concurrency=1', '--is-production=false']);
 const qc = qcVideo(output, durationInFrames);
-const report = {status: 'passed', topic, output, audioDuration, durationInFrames, karaokeWords: karaoke.length, ...qc};
+const report = {status: 'passed', topic, output, audioDuration, durationInFrames, karaokeWords: karaoke.length, footage:{selected:project.footage.clips.length,requiresEditorialReview:project.footage.requiresEditorialReview,manifest:resolve(runDir,'footage-manifest.json'),credits:resolve(runDir,'footage-credits.txt')}, ...qc};
 await writeFile(resolve(runDir, 'qc.json'), `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify({status: 'completed', topic, category: profile.id, output, durationSeconds: durationInFrames / fps, qc: qc.checks}, null, 2));

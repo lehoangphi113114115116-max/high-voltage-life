@@ -7,6 +7,7 @@ Cập nhật: 2026-11-17
 | Remotion Cloud render | Hoàn thành | 1080×1920, 30 FPS, H.264 |
 | Nhận diện hình ảnh + 2D MUSE 87L | Hoàn thành | Technical components tái sử dụng |
 | Hệ dựng hình reusable | Đã tích hợp | `src/illustration`: tokens/materials, layer/parallax, motion, transition, dây/hồ quang/tiếp điểm/khói; tái sử dụng object cũ. Mã SF6 V2 giữ tại `src/examples/sf6-v2`; không render trong lượt này |
+| Auto Footage Director | Đã tích hợp, kiểm thử mới đạt | Commons CC0/CC BY, lọc chủ đề theo câu, tải/cache/cắt clip, safe layout và FootageLayer. Live tải clip đạt; QC nội dung hình thực tế vẫn do Agent kiểm tra, chưa có model thị giác. Không render trong lượt này |
 | TTS cục bộ | Hoàn thành | VieNeu-TTS v3 Turbo 3.8.4, Thái Sơn, tốc độ 1,166× |
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
