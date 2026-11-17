@@ -1,6 +1,14 @@
 {
   "version": 2,
   "skills": {
+    "anatomy": {
+      "source": "wheresryan22/anatomy",
+      "commit": "1482e8469b0a9e0d8cc18ea2740a01423d29ae80",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "a9a04fcc6d8e5e8229657523b02779954821b31d630617cdb6457dfd34cd0993",
+      "installMode": "copy"
+    },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
@@ -90,6 +98,22 @@
       "sourceType": "github",
       "skillPath": "skills/remotion-upgrade/SKILL.md",
       "computedHash": "27e2c87253c65d0a8d5b8878a871c9d86814fa89bc4f962b2fbe3f8ad450928c",
+      "installMode": "copy"
+    },
+    "scientific-critical-thinking": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "commit": "ec59a29a03d5c40f73ab40878df04860bc00e876",
+      "sourceType": "github",
+      "skillPath": "skills/scientific-critical-thinking/SKILL.md",
+      "computedHash": "a79ae9c13bfd7fc39770c4500ee4b2ecf2808c1d77e4561071bee6f166efd1ec",
+      "installMode": "copy"
+    },
+    "social": {
+      "source": "coreyhaines31/marketingskills",
+      "commit": "1f837447b20bb6f0e72d87b80ece1c221c362c7d",
+      "sourceType": "github",
+      "skillPath": "skills/social/SKILL.md",
+      "computedHash": "91bfb578ae1c1c1d488a59bc734ff1716b1d924a8451be31021d1cb3a411f241",
       "installMode": "copy"
     }
   }

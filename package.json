@@ -16,7 +16,8 @@
     "voice:setup-local": "bash voice/scripts/setup-local-tts.sh",
     "voice:synthesize-local": ".venv-tts/bin/python voice/python/synthesize_vieneu.py",
     "agent": "node agent/pipeline.mjs",
-    "agent:demo": "node agent/pipeline.mjs --topic \"Vì sao chim đậu trên dây điện mà không bị giật?\""
+    "agent:demo": "node agent/pipeline.mjs --topic \"Vì sao chim đậu trên dây điện mà không bị giật?\"",
+    "agent:skills:test": "node agent/skill-router.test.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "scope": "project",
+  "installer": "skills@latest",
+  "skills": [
+    {
+      "id": "social",
+      "requestedAlias": "social-content",
+      "source": "coreyhaines31/marketingskills",
+      "path": "skills/social/SKILL.md",
+      "commit": "1f837447b20bb6f0e72d87b80ece1c221c362c7d",
+      "declaredVersion": "2.5.2",
+      "license": "MIT"
+    },
+    {
+      "id": "scientific-critical-thinking",
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/scientific-critical-thinking/SKILL.md",
+      "commit": "ec59a29a03d5c40f73ab40878df04860bc00e876",
+      "declaredVersion": "1.5",
+      "license": "MIT"
+    },
+    {
+      "id": "anatomy",
+      "source": "wheresryan22/anatomy",
+      "path": "SKILL.md",
+      "commit": "1482e8469b0a9e0d8cc18ea2740a01423d29ae80",
+      "declaredVersion": null,
+      "license": "MIT"
+    }
+  ]
+}

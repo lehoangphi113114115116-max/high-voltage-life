@@ -9,11 +9,14 @@ Cập nhật: 2026-11-17
 | TTS cục bộ | Hoàn thành | VieNeu-TTS v3 Turbo 3.8.4, Thái Sơn, tốc độ 1,166× |
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
+| Agent Skills chuyên môn | Hoàn thành | `social`, `scientific-critical-thinking`, `anatomy`; định tuyến theo chủ đề và khóa phiên bản |
 | Storyboard Generator | Hoàn thành v1 | Sinh cảnh, narration, visual mode và thời lượng |
 | Visual Director | Hoàn thành v1 | 2D kỹ thuật + depth illustration; 3D chỉ chọn khi thực sự cần |
 | Karaoke theo audio | Hoàn thành v1 | Dùng duration và vùng không im lặng của audio thực tế |
 | Automated Pipeline | Hoàn thành v1 | `npm run agent -- --topic "..."` |
 | QC | Hoàn thành v1 | Kiểm tra spec, audio, karaoke, H.264/1080×1920/30 FPS |
 | 3D thiết bị chân thật | Chưa triển khai | Không cần cho demo chim trên dây; chỉ bổ sung theo chủ đề có cấu tạo cơ khí |
+
+Anatomy chỉ hỗ trợ ngôn ngữ minh họa có chiều sâu. Pipeline không được mô tả cấu tạo thiết bị điện thật nếu chưa có tài liệu kỹ thuật được chấp thuận; Remotion vẫn là renderer duy nhất.
 
 Đầu ra sinh tự động nằm trong `agent/runs`, `public/generated` và `out`; không commit Git. File source, cấu hình và status được commit.

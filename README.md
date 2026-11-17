@@ -53,15 +53,17 @@ npm run probe
 npm run probe:87l
 ```
 
-## Remotion Skills
+## Agent Skills
 
-Bộ 13 Remotion Skills chính thức từ `remotion-dev/skills` được khóa nguồn và hash trong `skills-lock.json`. Khôi phục bản dành cho Codex bằng:
+Bộ 13 Remotion Skills chính thức cùng ba Skill chuyên môn đã chọn (`social`, `scientific-critical-thinking`, `anatomy`) được khóa nguồn, commit và hash trong `skills-lock.json`. Tên upstream của yêu cầu `social-content` là `social`. Khôi phục bản dành cho Codex bằng:
 
 ```bash
 npx --yes skills@latest experimental_install --frozen-lockfile --agent codex
 ```
 
 Thư mục `.agents/skills` được bỏ qua trong Git vì đây là bản sao sinh ra từ lockfile.
+
+Content Director tự định tuyến Skill theo chủ đề; Anatomy chỉ dùng cho minh họa có chiều sâu và không được tự suy diễn cấu tạo thiết bị thật. Xem nguồn, phiên bản, license và giới hạn tại `docs/agent-skills.md`.
 
 ## Module giọng đọc
 

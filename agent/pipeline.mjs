@@ -3,6 +3,7 @@ import {copyFile, mkdir, readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {selectAgentSkills} from './skill-router.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -151,6 +152,7 @@ await mkdir(publicDir, {recursive: true});
 
 const profile = classify(topic);
 const content = directContent(topic, profile);
+const skillRouting = selectAgentSkills({topic, category: profile.id, visualMode: profile.visual});
 const narrationPath = resolve(runDir, 'narration.txt');
 const manifestPath = resolve(runDir, 'voice.manifest.json');
 const audioPath = resolve(runDir, 'voice.wav');
@@ -171,6 +173,7 @@ const project = {
   audience: profile.audience,
   depth: profile.depth,
   visualMode: profile.visual,
+  skillRouting,
   headline: content.headline,
   narration: manifest.displayText,
   spokenNarration: manifest.spokenText,
