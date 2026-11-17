@@ -34,6 +34,7 @@ Chia cảnh theo nội dung và timestamp lời đọc, số cảnh không cố 
 - Không dùng CSS transition hoặc CSS animation cho nội dung render.
 - Không thêm TTS, 3D hoặc dịch vụ trả phí nếu chưa có yêu cầu và chấp thuận rõ ràng.
 - Không ghi secret, token hoặc thông tin xác thực vào repository.
+- TokenEconomizer: chỉ cài khi phiên bản Codex nằm trong dải upstream đã kiểm thử và hook trust có thể xác minh bằng status. Khi bị ngoài dải, không cài giả, không tự prune tool và không bật model side-call; tham khảo `docs/token-economizer.md`. Dùng `PROJECT_STATUS.md` làm bộ nhớ dự án tạm thời.
 - Không gửi mẫu giọng ra ngoài, kích hoạt Voice Cloning hoặc đổi `voice/config/voice-profile.example.json` khỏi trạng thái `disabled` nếu chưa có xác nhận quyền sử dụng và chấp thuận dịch vụ/chi phí của người dùng.
 - Giữ Voice ID và API key trong biến môi trường hoặc secret store; không commit các giá trị này.
 
