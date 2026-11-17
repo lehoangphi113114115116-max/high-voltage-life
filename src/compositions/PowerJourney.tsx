@@ -1,18 +1,7 @@
-import {AbsoluteFill, Audio, Easing, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {Cloud, GridTower, House, PowerPlant, Transformer, Tree} from '../components/PowerJourneyObjects';
-import {CurrentFlow} from '../components/technical';
+import {AbsoluteFill, Audio, staticFile, useCurrentFrame} from 'remotion';
+import {Cloud, GridTower, House, PowerPlant, Transformer, Tree, EnergyWire as Wire, motionProgress as smooth} from '../illustration';
 import {Karaoke} from './AutonomousExplainer';
 import data from '../generated/power-journey.json';
-
-const smooth = (f:number,a:number,b:number) => interpolate(f,[a,b],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.inOut(Easing.cubic)});
-const Wire = ({x1,y1,x2,y2,sag=25}: {x1:number;y1:number;x2:number;y2:number;sag?:number}) => {
-  const length=Math.hypot(x2-x1,y2-y1);
-  const angle=Math.atan2(y2-y1,x2-x1)*180/Math.PI;
-  return <g transform={`translate(${x1} ${y1}) rotate(${angle})`}>
-    <path d={`M 0 0 Q ${length/2} ${sag} ${length} 0`} fill="none" stroke="#4b6476" strokeWidth="7"/>
-    <CurrentFlow x1={0} x2={length} y={0} controlY={sag} radius={4} count={Math.max(3,Math.round(length/70))} speed={.85} terminalPulse/>
-  </g>;
-};
 
 export const PowerJourney = () => {
   const frame=useCurrentFrame();

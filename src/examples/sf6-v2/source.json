@@ -1,0 +1,11 @@
+{
+  "source": "user-upload",
+  "archive": "HIGH_VOLTAGE_LIFE_SF6_Remotion_V2.zip",
+  "archiveSha256": "8a38396de363d3096ad7fc8e20762fec465143665fe2e8afbd55386c184ae7a2",
+  "originalFiles": ["breakerSvg.mjs", "breakerSvg.d.mts", "SF6BreakerScene.tsx"],
+  "extractedReactParts": ["BreakerPole.tsx"],
+  "license": "not-specified-in-upload",
+  "technicalScope": "Stylized principle illustration, not manufacturer-specific construction or physical simulation",
+  "dependencies": ["existing-react", "existing-remotion"],
+  "previewAssetsImported": false
+}

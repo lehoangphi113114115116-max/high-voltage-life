@@ -87,6 +87,8 @@ TTS cục bộ CPU dùng VieNeu-TTS v3 Turbo, không clone và không gọi API 
 
 ## AI Video Agent
 
+Phương pháp dựng hình dùng chung tại `src/illustration/index.ts`: components, style token, motion và transition. Xem [hướng dẫn tái sử dụng](docs/illustration-system.md); mẫu SF6 Remotion V2 của người dùng giữ riêng trong `src/examples/sf6-v2`, ví dụ tổng quát trong `src/examples/ReusableIllustrationExample.tsx`.
+
 Phong cách đã chốt: **Colorful Technical Animation** — hoạt cảnh Remotion + React + SVG với các đối tượng chuyển động độc lập, màu tự nhiên, phối cảnh/parallax và hạt vàng biểu diễn truyền năng lượng (không phải chuyển động electron). Footage/3D chỉ bổ trợ khi cần; mặc định không tạo preview nếu chưa được yêu cầu. Xem `agent/visual-defaults.json` và `docs/visual-direction.md`.
 
 Phong cách mặc định cho video tiếp theo nằm trong `agent/visual-defaults.json` và `docs/visual-direction.md`: kể chuyện bằng chuyển động, màu cảnh vật tự nhiên, minh họa có chiều sâu, footage có quyền sử dụng và ít chữ. Mặc định dựng video hoàn chỉnh; preview chỉ khi được yêu cầu. Pipeline lưu các chỉ dẫn này cùng project/storyboard để Agent áp dụng khi sản xuất.

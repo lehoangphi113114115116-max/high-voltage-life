@@ -20,6 +20,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null) => {
       ...(visualDefaults ? {visualDirection: {
         style: visualDefaults.style,
         styleName: visualDefaults.styleName,
+        illustrationSystem: visualDefaults.illustrationSystem,
         primaryVisuals: visualDefaults.primaryVisuals,
         componentArchitecture: visualDefaults.componentArchitecture,
         actionDirection: visualDefaults.actionDirection,
