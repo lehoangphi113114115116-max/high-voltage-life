@@ -3,6 +3,7 @@ import {spawnSync} from 'node:child_process';
 import {buildStoryboard} from './storyboard.mjs';
 const id=process.argv[2]??'power-journey';
 const topic=process.argv[3]??'Từ nhà máy điện đến nhà dân';
+const outputDir=process.argv[4]??'src/generated';
 if(!/^[a-z0-9-]+$/.test(id)) throw new Error('Invalid media ID');
 const manifest=JSON.parse(await readFile(`voice/output/${id}.manifest.json`,'utf8'));
 const report=JSON.parse(await readFile(`voice/output/${id}.report.json`,'utf8'));
@@ -30,5 +31,6 @@ for(let i=0;i<sentences.length;i++) {
 await mkdir(`public/generated/${id}`,{recursive:true});
 await copyFile(`voice/output/${id}.wav`,`public/generated/${id}/voice.wav`);
 const data={topic,durationInFrames:450,audioDuration:report.durationSeconds,voice:report.voice,alignment:'sentence-silence-assisted-estimated-word-timestamps',scenes:buildStoryboard(words,30),karaoke:words};
-await writeFile(`src/generated/${id}.json`,JSON.stringify(data,null,2)+'\n');
+await mkdir(outputDir,{recursive:true});
+await writeFile(`${outputDir}/${id}.json`,JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({audioDuration:report.durationSeconds,scenes:data.scenes.map(s=>({text:s.text,startFrame:s.startFrame}))}));

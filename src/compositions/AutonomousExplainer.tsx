@@ -14,14 +14,15 @@ export const Karaoke = ({untilMs = Infinity, words: inputWords = videoData.karao
   const {fps} = useVideoConfig();
   const now = (frame / fps) * 1000;
   const words = inputWords.filter(word => word.startMs < untilMs);
-  const active = now >= (words.at(-1)?.endMs ?? 0) ? words.length - 1 : Math.max(0, words.findIndex((word) => now >= word.startMs && now < word.endMs));
+  const next = words.findIndex(word => word.startMs > now);
+  const active = Math.max(0, next === -1 ? words.length - 1 : next - 1);
   const start = Math.max(0, active - 3);
   const visible = words.slice(start, start + 8);
   return (
     <div style={{position: 'absolute', left: 65, right: 65, bottom: 150, minHeight: 150, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignContent: 'center', gap: '5px 12px', padding: '24px 28px', borderRadius: 24, background: 'rgba(5,15,27,.88)', border: `2px solid ${colors.technicalBlue}55`, boxShadow: '0 18px 60px rgba(0,0,0,.42)'}}>
       {visible.map((word, index) => {
         const absoluteIndex = start + index;
-        const isActive = absoluteIndex === active;
+        const isActive = absoluteIndex === active && now >= word.startMs && now < word.endMs;
         const spoken = now >= word.endMs;
         return <span key={`${word.text}-${absoluteIndex}`} style={{fontFamily: technicalFont, fontSize: 38, lineHeight: 1.25, fontWeight: 900, color: isActive ? colors.yellow : spoken ? colors.technicalBlue : colors.white, textShadow: isActive ? `0 0 18px ${colors.yellow}` : 'none', transform: isActive ? 'scale(1.06)' : 'scale(1)'}}>{word.text}</span>;
       })}

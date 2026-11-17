@@ -1,0 +1,2003 @@
+{
+  "topic": "Vì sao đường dây điện cao áp phát ra tiếng rè rè khi trời mưa?",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 2529,
+  "audioDuration": 83.799,
+  "voice": "Thái Sơn",
+  "audioPath": "generated/corona-rain/voice.wav",
+  "scenes": [
+    {
+      "id": "rain",
+      "title": "TIẾNG RÈ TỪ ĐÂU?",
+      "mode": "rain",
+      "text": "Bạn từng nghe tiếng rè rè dưới đường dây cao áp khi trời mưa chưa? Một nguyên nhân phổ biến là phóng điện vầng quang, hay corona. Không phải cứ nghe tiếng rè là đường dây đang ngắn mạch.",
+      "startFrame": 0,
+      "endFrame": 270
+    },
+    {
+      "id": "field",
+      "title": "ĐIỆN TRƯỜNG QUANH DÂY",
+      "mode": "field",
+      "text": "Quanh dây dẫn đang mang điện luôn có điện trường. Ở điện áp cao, điện trường gần bề mặt dây có thể rất mạnh. Nhưng phần lớn không khí xung quanh vẫn cách điện, chứ không biến thành một đường dẫn liên tục xuống đất.",
+      "startFrame": 270,
+      "endFrame": 567
+    },
+    {
+      "id": "water",
+      "title": "GIỌT NƯỚC LÀM GÌ?",
+      "mode": "droplet",
+      "text": "Khi mưa xuống, những giọt nước bám trên dây làm bề mặt không còn đều. Ở đầu giọt nước, điện trường có thể tập trung mạnh hơn. Những vùng rất nhỏ này dễ đạt điều kiện gây ion hóa không khí xung quanh.",
+      "startFrame": 567,
+      "endFrame": 872
+    },
+    {
+      "id": "ion",
+      "title": "CORONA: PHÓNG ĐIỆN CỤC BỘ",
+      "mode": "ion",
+      "text": "Trong vùng điện trường đủ mạnh, các hạt mang điện được gia tốc, va chạm với phân tử không khí và tạo thêm ion. Những đợt phóng điện nhỏ xuất hiện sát bề mặt dây. Đó là corona, không phải tia sét nối giữa hai dây.",
+      "startFrame": 872,
+      "endFrame": 1211
+    },
+    {
+      "id": "sound",
+      "title": "VÌ SAO NGHE TIẾNG RÈ?",
+      "mode": "sound",
+      "text": "Các xung phóng điện làm không khí biến đổi áp suất rất nhanh, tạo tiếng rít và lách tách. Nhiều điểm cùng hoạt động khiến ta nghe như tiếng rè kéo dài. Vì vậy, lúc dây bị ướt, âm thanh này thường rõ hơn.",
+      "startFrame": 1211,
+      "endFrame": 1522
+    },
+    {
+      "id": "contrast",
+      "title": "KHÁC HỒ QUANG SỰ CỐ",
+      "mode": "contrast",
+      "text": "Điểm quan trọng là corona chỉ xảy ra cục bộ quanh bề mặt dây. Nó không nhất thiết tạo cầu dẫn điện giữa các pha, hay từ dây xuống đất như hồ quang sự cố. Vầng sáng tím cũng thường khó thấy trong ánh sáng ban ngày.",
+      "startFrame": 1522,
+      "endFrame": 1877
+    },
+    {
+      "id": "mitigation",
+      "title": "GIẢM ĐIỆN TRƯỜNG CỤC BỘ",
+      "mode": "bundle",
+      "text": "Để hạn chế corona và tiếng ồn, kỹ sư lựa chọn kích thước dây, dùng dây phân pha khi phù hợp, và giữ bề mặt phụ kiện trơn nhẵn. Mục tiêu là giảm những vị trí tập trung điện trường quá mạnh.",
+      "startFrame": 1877,
+      "endFrame": 2178
+    },
+    {
+      "id": "safety",
+      "title": "NGHE TỪ NƠI AN TOÀN",
+      "mode": "safety",
+      "text": "Vậy tiếng rè khi mưa không có nghĩa dòng điện đang chảy theo nước xuống đất. Đó có thể là hàng loạt phóng điện nhỏ quanh dây. Hãy giữ khoảng cách an toàn; nếu có dây rơi hoặc dấu hiệu bất thường, tránh xa và báo điện lực.",
+      "startFrame": 2178,
+      "endFrame": 2514
+    }
+  ],
+  "karaoke": [
+    {
+      "text": "Bạn",
+      "startMs": 0,
+      "endMs": 176
+    },
+    {
+      "text": "từng",
+      "startMs": 176,
+      "endMs": 411
+    },
+    {
+      "text": "nghe",
+      "startMs": 411,
+      "endMs": 645
+    },
+    {
+      "text": "tiếng",
+      "startMs": 645,
+      "endMs": 938
+    },
+    {
+      "text": "rè",
+      "startMs": 938,
+      "endMs": 1056
+    },
+    {
+      "text": "rè",
+      "startMs": 1056,
+      "endMs": 1173
+    },
+    {
+      "text": "dưới",
+      "startMs": 1173,
+      "endMs": 1408
+    },
+    {
+      "text": "đường",
+      "startMs": 1408,
+      "endMs": 1701
+    },
+    {
+      "text": "dây",
+      "startMs": 1701,
+      "endMs": 1877
+    },
+    {
+      "text": "cao",
+      "startMs": 1877,
+      "endMs": 2053
+    },
+    {
+      "text": "áp",
+      "startMs": 2053,
+      "endMs": 2170
+    },
+    {
+      "text": "khi",
+      "startMs": 2170,
+      "endMs": 2346
+    },
+    {
+      "text": "trời",
+      "startMs": 2346,
+      "endMs": 2580
+    },
+    {
+      "text": "mưa",
+      "startMs": 2580,
+      "endMs": 2756
+    },
+    {
+      "text": "chưa?",
+      "startMs": 2756,
+      "endMs": 3050
+    },
+    {
+      "text": "Một",
+      "startMs": 3551,
+      "endMs": 3720
+    },
+    {
+      "text": "nguyên",
+      "startMs": 3720,
+      "endMs": 4059
+    },
+    {
+      "text": "nhân",
+      "startMs": 4059,
+      "endMs": 4284
+    },
+    {
+      "text": "phổ",
+      "startMs": 4284,
+      "endMs": 4453
+    },
+    {
+      "text": "biến",
+      "startMs": 4453,
+      "endMs": 4679
+    },
+    {
+      "text": "là",
+      "startMs": 4679,
+      "endMs": 4792
+    },
+    {
+      "text": "phóng",
+      "startMs": 4792,
+      "endMs": 5074
+    },
+    {
+      "text": "điện",
+      "startMs": 5074,
+      "endMs": 5300
+    },
+    {
+      "text": "vầng",
+      "startMs": 5300,
+      "endMs": 5525
+    },
+    {
+      "text": "quang,",
+      "startMs": 5525,
+      "endMs": 5864
+    },
+    {
+      "text": "hay",
+      "startMs": 5864,
+      "endMs": 6033
+    },
+    {
+      "text": "corona.",
+      "startMs": 6033,
+      "endMs": 6428
+    },
+    {
+      "text": "Không",
+      "startMs": 6622,
+      "endMs": 6870
+    },
+    {
+      "text": "phải",
+      "startMs": 6870,
+      "endMs": 7069
+    },
+    {
+      "text": "cứ",
+      "startMs": 7069,
+      "endMs": 7168
+    },
+    {
+      "text": "nghe",
+      "startMs": 7168,
+      "endMs": 7366
+    },
+    {
+      "text": "tiếng",
+      "startMs": 7366,
+      "endMs": 7615
+    },
+    {
+      "text": "rè",
+      "startMs": 7615,
+      "endMs": 7714
+    },
+    {
+      "text": "là",
+      "startMs": 7714,
+      "endMs": 7813
+    },
+    {
+      "text": "đường",
+      "startMs": 7813,
+      "endMs": 8062
+    },
+    {
+      "text": "dây",
+      "startMs": 8062,
+      "endMs": 8211
+    },
+    {
+      "text": "đang",
+      "startMs": 8211,
+      "endMs": 8409
+    },
+    {
+      "text": "ngắn",
+      "startMs": 8409,
+      "endMs": 8608
+    },
+    {
+      "text": "mạch.",
+      "startMs": 8608,
+      "endMs": 8856
+    },
+    {
+      "text": "Quanh",
+      "startMs": 9006,
+      "endMs": 9244
+    },
+    {
+      "text": "dây",
+      "startMs": 9244,
+      "endMs": 9387
+    },
+    {
+      "text": "dẫn",
+      "startMs": 9387,
+      "endMs": 9529
+    },
+    {
+      "text": "đang",
+      "startMs": 9529,
+      "endMs": 9720
+    },
+    {
+      "text": "mang",
+      "startMs": 9720,
+      "endMs": 9910
+    },
+    {
+      "text": "điện",
+      "startMs": 9910,
+      "endMs": 10100
+    },
+    {
+      "text": "luôn",
+      "startMs": 10100,
+      "endMs": 10291
+    },
+    {
+      "text": "có",
+      "startMs": 10291,
+      "endMs": 10386
+    },
+    {
+      "text": "điện",
+      "startMs": 10386,
+      "endMs": 10576
+    },
+    {
+      "text": "trường.",
+      "startMs": 10576,
+      "endMs": 10909
+    },
+    {
+      "text": "Ở",
+      "startMs": 11400,
+      "endMs": 11463
+    },
+    {
+      "text": "điện",
+      "startMs": 11463,
+      "endMs": 11714
+    },
+    {
+      "text": "áp",
+      "startMs": 11714,
+      "endMs": 11839
+    },
+    {
+      "text": "cao,",
+      "startMs": 11839,
+      "endMs": 12089
+    },
+    {
+      "text": "điện",
+      "startMs": 12089,
+      "endMs": 12340
+    },
+    {
+      "text": "trường",
+      "startMs": 12340,
+      "endMs": 12716
+    },
+    {
+      "text": "gần",
+      "startMs": 12716,
+      "endMs": 12903
+    },
+    {
+      "text": "bề",
+      "startMs": 12903,
+      "endMs": 13029
+    },
+    {
+      "text": "mặt",
+      "startMs": 13029,
+      "endMs": 13217
+    },
+    {
+      "text": "dây",
+      "startMs": 13217,
+      "endMs": 13404
+    },
+    {
+      "text": "có",
+      "startMs": 13404,
+      "endMs": 13530
+    },
+    {
+      "text": "thể",
+      "startMs": 13530,
+      "endMs": 13718
+    },
+    {
+      "text": "rất",
+      "startMs": 13718,
+      "endMs": 13906
+    },
+    {
+      "text": "mạnh.",
+      "startMs": 13906,
+      "endMs": 14219
+    },
+    {
+      "text": "Nhưng",
+      "startMs": 14670,
+      "endMs": 14910
+    },
+    {
+      "text": "phần",
+      "startMs": 14910,
+      "endMs": 15103
+    },
+    {
+      "text": "lớn",
+      "startMs": 15103,
+      "endMs": 15247
+    },
+    {
+      "text": "không",
+      "startMs": 15247,
+      "endMs": 15487
+    },
+    {
+      "text": "khí",
+      "startMs": 15487,
+      "endMs": 15631
+    },
+    {
+      "text": "xung",
+      "startMs": 15631,
+      "endMs": 15824
+    },
+    {
+      "text": "quanh",
+      "startMs": 15824,
+      "endMs": 16064
+    },
+    {
+      "text": "vẫn",
+      "startMs": 16064,
+      "endMs": 16208
+    },
+    {
+      "text": "cách",
+      "startMs": 16208,
+      "endMs": 16400
+    },
+    {
+      "text": "điện,",
+      "startMs": 16400,
+      "endMs": 16640
+    },
+    {
+      "text": "chứ",
+      "startMs": 16640,
+      "endMs": 16785
+    },
+    {
+      "text": "không",
+      "startMs": 16785,
+      "endMs": 17025
+    },
+    {
+      "text": "biến",
+      "startMs": 17025,
+      "endMs": 17217
+    },
+    {
+      "text": "thành",
+      "startMs": 17217,
+      "endMs": 17457
+    },
+    {
+      "text": "một",
+      "startMs": 17457,
+      "endMs": 17602
+    },
+    {
+      "text": "đường",
+      "startMs": 17602,
+      "endMs": 17842
+    },
+    {
+      "text": "dẫn",
+      "startMs": 17842,
+      "endMs": 17986
+    },
+    {
+      "text": "liên",
+      "startMs": 17986,
+      "endMs": 18178
+    },
+    {
+      "text": "tục",
+      "startMs": 18178,
+      "endMs": 18322
+    },
+    {
+      "text": "xuống",
+      "startMs": 18322,
+      "endMs": 18563
+    },
+    {
+      "text": "đất.",
+      "startMs": 18563,
+      "endMs": 18755
+    },
+    {
+      "text": "Khi",
+      "startMs": 18905,
+      "endMs": 19078
+    },
+    {
+      "text": "mưa",
+      "startMs": 19078,
+      "endMs": 19251
+    },
+    {
+      "text": "xuống,",
+      "startMs": 19251,
+      "endMs": 19598
+    },
+    {
+      "text": "những",
+      "startMs": 19598,
+      "endMs": 19886
+    },
+    {
+      "text": "giọt",
+      "startMs": 19886,
+      "endMs": 20117
+    },
+    {
+      "text": "nước",
+      "startMs": 20117,
+      "endMs": 20348
+    },
+    {
+      "text": "bám",
+      "startMs": 20348,
+      "endMs": 20521
+    },
+    {
+      "text": "trên",
+      "startMs": 20521,
+      "endMs": 20752
+    },
+    {
+      "text": "dây",
+      "startMs": 20752,
+      "endMs": 20925
+    },
+    {
+      "text": "làm",
+      "startMs": 20925,
+      "endMs": 21098
+    },
+    {
+      "text": "bề",
+      "startMs": 21098,
+      "endMs": 21214
+    },
+    {
+      "text": "mặt",
+      "startMs": 21214,
+      "endMs": 21387
+    },
+    {
+      "text": "không",
+      "startMs": 21387,
+      "endMs": 21675
+    },
+    {
+      "text": "còn",
+      "startMs": 21675,
+      "endMs": 21848
+    },
+    {
+      "text": "đều.",
+      "startMs": 21848,
+      "endMs": 22079
+    },
+    {
+      "text": "Ở",
+      "startMs": 22548,
+      "endMs": 22607
+    },
+    {
+      "text": "đầu",
+      "startMs": 22607,
+      "endMs": 22785
+    },
+    {
+      "text": "giọt",
+      "startMs": 22785,
+      "endMs": 23022
+    },
+    {
+      "text": "nước,",
+      "startMs": 23022,
+      "endMs": 23318
+    },
+    {
+      "text": "điện",
+      "startMs": 23318,
+      "endMs": 23555
+    },
+    {
+      "text": "trường",
+      "startMs": 23555,
+      "endMs": 23911
+    },
+    {
+      "text": "có",
+      "startMs": 23911,
+      "endMs": 24029
+    },
+    {
+      "text": "thể",
+      "startMs": 24029,
+      "endMs": 24207
+    },
+    {
+      "text": "tập",
+      "startMs": 24207,
+      "endMs": 24385
+    },
+    {
+      "text": "trung",
+      "startMs": 24385,
+      "endMs": 24681
+    },
+    {
+      "text": "mạnh",
+      "startMs": 24681,
+      "endMs": 24918
+    },
+    {
+      "text": "hơn.",
+      "startMs": 24918,
+      "endMs": 25155
+    },
+    {
+      "text": "Những",
+      "startMs": 25501,
+      "endMs": 25797
+    },
+    {
+      "text": "vùng",
+      "startMs": 25797,
+      "endMs": 26034
+    },
+    {
+      "text": "rất",
+      "startMs": 26034,
+      "endMs": 26211
+    },
+    {
+      "text": "nhỏ",
+      "startMs": 26211,
+      "endMs": 26388
+    },
+    {
+      "text": "này",
+      "startMs": 26388,
+      "endMs": 26566
+    },
+    {
+      "text": "dễ",
+      "startMs": 26566,
+      "endMs": 26684
+    },
+    {
+      "text": "đạt",
+      "startMs": 26684,
+      "endMs": 26861
+    },
+    {
+      "text": "điều",
+      "startMs": 26861,
+      "endMs": 27098
+    },
+    {
+      "text": "kiện",
+      "startMs": 27098,
+      "endMs": 27334
+    },
+    {
+      "text": "gây",
+      "startMs": 27334,
+      "endMs": 27512
+    },
+    {
+      "text": "ion",
+      "startMs": 27512,
+      "endMs": 27689
+    },
+    {
+      "text": "hóa",
+      "startMs": 27689,
+      "endMs": 27867
+    },
+    {
+      "text": "không",
+      "startMs": 27867,
+      "endMs": 28162
+    },
+    {
+      "text": "khí",
+      "startMs": 28162,
+      "endMs": 28340
+    },
+    {
+      "text": "xung",
+      "startMs": 28340,
+      "endMs": 28576
+    },
+    {
+      "text": "quanh.",
+      "startMs": 28576,
+      "endMs": 28931
+    },
+    {
+      "text": "Trong",
+      "startMs": 29081,
+      "endMs": 29388
+    },
+    {
+      "text": "vùng",
+      "startMs": 29388,
+      "endMs": 29634
+    },
+    {
+      "text": "điện",
+      "startMs": 29634,
+      "endMs": 29880
+    },
+    {
+      "text": "trường",
+      "startMs": 29880,
+      "endMs": 30249
+    },
+    {
+      "text": "đủ",
+      "startMs": 30249,
+      "endMs": 30372
+    },
+    {
+      "text": "mạnh,",
+      "startMs": 30372,
+      "endMs": 30680
+    },
+    {
+      "text": "các",
+      "startMs": 30680,
+      "endMs": 30864
+    },
+    {
+      "text": "hạt",
+      "startMs": 30864,
+      "endMs": 31048
+    },
+    {
+      "text": "mang",
+      "startMs": 31048,
+      "endMs": 31294
+    },
+    {
+      "text": "điện",
+      "startMs": 31294,
+      "endMs": 31540
+    },
+    {
+      "text": "được",
+      "startMs": 31540,
+      "endMs": 31786
+    },
+    {
+      "text": "gia",
+      "startMs": 31786,
+      "endMs": 31971
+    },
+    {
+      "text": "tốc,",
+      "startMs": 31971,
+      "endMs": 32217
+    },
+    {
+      "text": "va",
+      "startMs": 32217,
+      "endMs": 32340
+    },
+    {
+      "text": "chạm",
+      "startMs": 32340,
+      "endMs": 32586
+    },
+    {
+      "text": "với",
+      "startMs": 32586,
+      "endMs": 32770
+    },
+    {
+      "text": "phân",
+      "startMs": 32770,
+      "endMs": 33016
+    },
+    {
+      "text": "tử",
+      "startMs": 33016,
+      "endMs": 33139
+    },
+    {
+      "text": "không",
+      "startMs": 33139,
+      "endMs": 33446
+    },
+    {
+      "text": "khí",
+      "startMs": 33446,
+      "endMs": 33631
+    },
+    {
+      "text": "và",
+      "startMs": 33631,
+      "endMs": 33754
+    },
+    {
+      "text": "tạo",
+      "startMs": 33754,
+      "endMs": 33938
+    },
+    {
+      "text": "thêm",
+      "startMs": 33938,
+      "endMs": 34184
+    },
+    {
+      "text": "ion.",
+      "startMs": 34184,
+      "endMs": 34430
+    },
+    {
+      "text": "Những",
+      "startMs": 34778,
+      "endMs": 35051
+    },
+    {
+      "text": "đợt",
+      "startMs": 35051,
+      "endMs": 35215
+    },
+    {
+      "text": "phóng",
+      "startMs": 35215,
+      "endMs": 35488
+    },
+    {
+      "text": "điện",
+      "startMs": 35488,
+      "endMs": 35706
+    },
+    {
+      "text": "nhỏ",
+      "startMs": 35706,
+      "endMs": 35870
+    },
+    {
+      "text": "xuất",
+      "startMs": 35870,
+      "endMs": 36088
+    },
+    {
+      "text": "hiện",
+      "startMs": 36088,
+      "endMs": 36307
+    },
+    {
+      "text": "sát",
+      "startMs": 36307,
+      "endMs": 36471
+    },
+    {
+      "text": "bề",
+      "startMs": 36471,
+      "endMs": 36580
+    },
+    {
+      "text": "mặt",
+      "startMs": 36580,
+      "endMs": 36744
+    },
+    {
+      "text": "dây.",
+      "startMs": 36744,
+      "endMs": 36962
+    },
+    {
+      "text": "Đó",
+      "startMs": 37393,
+      "endMs": 37534
+    },
+    {
+      "text": "là",
+      "startMs": 37534,
+      "endMs": 37674
+    },
+    {
+      "text": "corona,",
+      "startMs": 37674,
+      "endMs": 38166
+    },
+    {
+      "text": "không",
+      "startMs": 38166,
+      "endMs": 38517
+    },
+    {
+      "text": "phải",
+      "startMs": 38517,
+      "endMs": 38798
+    },
+    {
+      "text": "tia",
+      "startMs": 38798,
+      "endMs": 39009
+    },
+    {
+      "text": "sét",
+      "startMs": 39009,
+      "endMs": 39220
+    },
+    {
+      "text": "nối",
+      "startMs": 39220,
+      "endMs": 39431
+    },
+    {
+      "text": "giữa",
+      "startMs": 39431,
+      "endMs": 39712
+    },
+    {
+      "text": "hai",
+      "startMs": 39712,
+      "endMs": 39923
+    },
+    {
+      "text": "dây.",
+      "startMs": 39923,
+      "endMs": 40204
+    },
+    {
+      "text": "Các",
+      "startMs": 40354,
+      "endMs": 40509
+    },
+    {
+      "text": "xung",
+      "startMs": 40509,
+      "endMs": 40717
+    },
+    {
+      "text": "phóng",
+      "startMs": 40717,
+      "endMs": 40976
+    },
+    {
+      "text": "điện",
+      "startMs": 40976,
+      "endMs": 41183
+    },
+    {
+      "text": "làm",
+      "startMs": 41183,
+      "endMs": 41339
+    },
+    {
+      "text": "không",
+      "startMs": 41339,
+      "endMs": 41598
+    },
+    {
+      "text": "khí",
+      "startMs": 41598,
+      "endMs": 41753
+    },
+    {
+      "text": "biến",
+      "startMs": 41753,
+      "endMs": 41961
+    },
+    {
+      "text": "đổi",
+      "startMs": 41961,
+      "endMs": 42116
+    },
+    {
+      "text": "áp",
+      "startMs": 42116,
+      "endMs": 42220
+    },
+    {
+      "text": "suất",
+      "startMs": 42220,
+      "endMs": 42427
+    },
+    {
+      "text": "rất",
+      "startMs": 42427,
+      "endMs": 42583
+    },
+    {
+      "text": "nhanh,",
+      "startMs": 42583,
+      "endMs": 42894
+    },
+    {
+      "text": "tạo",
+      "startMs": 42894,
+      "endMs": 43049
+    },
+    {
+      "text": "tiếng",
+      "startMs": 43049,
+      "endMs": 43308
+    },
+    {
+      "text": "rít",
+      "startMs": 43308,
+      "endMs": 43464
+    },
+    {
+      "text": "và",
+      "startMs": 43464,
+      "endMs": 43567
+    },
+    {
+      "text": "lách",
+      "startMs": 43567,
+      "endMs": 43775
+    },
+    {
+      "text": "tách.",
+      "startMs": 43775,
+      "endMs": 44034
+    },
+    {
+      "text": "Nhiều",
+      "startMs": 44525,
+      "endMs": 44793
+    },
+    {
+      "text": "điểm",
+      "startMs": 44793,
+      "endMs": 45008
+    },
+    {
+      "text": "cùng",
+      "startMs": 45008,
+      "endMs": 45222
+    },
+    {
+      "text": "hoạt",
+      "startMs": 45222,
+      "endMs": 45437
+    },
+    {
+      "text": "động",
+      "startMs": 45437,
+      "endMs": 45651
+    },
+    {
+      "text": "khiến",
+      "startMs": 45651,
+      "endMs": 45919
+    },
+    {
+      "text": "ta",
+      "startMs": 45919,
+      "endMs": 46026
+    },
+    {
+      "text": "nghe",
+      "startMs": 46026,
+      "endMs": 46241
+    },
+    {
+      "text": "như",
+      "startMs": 46241,
+      "endMs": 46402
+    },
+    {
+      "text": "tiếng",
+      "startMs": 46402,
+      "endMs": 46670
+    },
+    {
+      "text": "rè",
+      "startMs": 46670,
+      "endMs": 46777
+    },
+    {
+      "text": "kéo",
+      "startMs": 46777,
+      "endMs": 46938
+    },
+    {
+      "text": "dài.",
+      "startMs": 46938,
+      "endMs": 47152
+    },
+    {
+      "text": "Vì",
+      "startMs": 47593,
+      "endMs": 47743
+    },
+    {
+      "text": "vậy,",
+      "startMs": 47743,
+      "endMs": 48043
+    },
+    {
+      "text": "lúc",
+      "startMs": 48043,
+      "endMs": 48268
+    },
+    {
+      "text": "dây",
+      "startMs": 48268,
+      "endMs": 48492
+    },
+    {
+      "text": "bị",
+      "startMs": 48492,
+      "endMs": 48642
+    },
+    {
+      "text": "ướt,",
+      "startMs": 48642,
+      "endMs": 48942
+    },
+    {
+      "text": "âm",
+      "startMs": 48942,
+      "endMs": 49092
+    },
+    {
+      "text": "thanh",
+      "startMs": 49092,
+      "endMs": 49467
+    },
+    {
+      "text": "này",
+      "startMs": 49467,
+      "endMs": 49692
+    },
+    {
+      "text": "thường",
+      "startMs": 49692,
+      "endMs": 50141
+    },
+    {
+      "text": "rõ",
+      "startMs": 50141,
+      "endMs": 50291
+    },
+    {
+      "text": "hơn.",
+      "startMs": 50291,
+      "endMs": 50591
+    },
+    {
+      "text": "Điểm",
+      "startMs": 50741,
+      "endMs": 51024
+    },
+    {
+      "text": "quan",
+      "startMs": 51024,
+      "endMs": 51307
+    },
+    {
+      "text": "trọng",
+      "startMs": 51307,
+      "endMs": 51661
+    },
+    {
+      "text": "là",
+      "startMs": 51661,
+      "endMs": 51802
+    },
+    {
+      "text": "corona",
+      "startMs": 51802,
+      "endMs": 52227
+    },
+    {
+      "text": "chỉ",
+      "startMs": 52227,
+      "endMs": 52439
+    },
+    {
+      "text": "xảy",
+      "startMs": 52439,
+      "endMs": 52652
+    },
+    {
+      "text": "ra",
+      "startMs": 52652,
+      "endMs": 52793
+    },
+    {
+      "text": "cục",
+      "startMs": 52793,
+      "endMs": 53005
+    },
+    {
+      "text": "bộ",
+      "startMs": 53005,
+      "endMs": 53147
+    },
+    {
+      "text": "quanh",
+      "startMs": 53147,
+      "endMs": 53501
+    },
+    {
+      "text": "bề",
+      "startMs": 53501,
+      "endMs": 53642
+    },
+    {
+      "text": "mặt",
+      "startMs": 53642,
+      "endMs": 53855
+    },
+    {
+      "text": "dây.",
+      "startMs": 53855,
+      "endMs": 54138
+    },
+    {
+      "text": "Nó",
+      "startMs": 54534,
+      "endMs": 54666
+    },
+    {
+      "text": "không",
+      "startMs": 54666,
+      "endMs": 54995
+    },
+    {
+      "text": "nhất",
+      "startMs": 54995,
+      "endMs": 55258
+    },
+    {
+      "text": "thiết",
+      "startMs": 55258,
+      "endMs": 55587
+    },
+    {
+      "text": "tạo",
+      "startMs": 55587,
+      "endMs": 55784
+    },
+    {
+      "text": "cầu",
+      "startMs": 55784,
+      "endMs": 55982
+    },
+    {
+      "text": "dẫn",
+      "startMs": 55982,
+      "endMs": 56179
+    },
+    {
+      "text": "điện",
+      "startMs": 56179,
+      "endMs": 56442
+    },
+    {
+      "text": "giữa",
+      "startMs": 56442,
+      "endMs": 56705
+    },
+    {
+      "text": "các",
+      "startMs": 56705,
+      "endMs": 56903
+    },
+    {
+      "text": "pha,",
+      "startMs": 56903,
+      "endMs": 57166
+    },
+    {
+      "text": "hay",
+      "startMs": 57166,
+      "endMs": 57364
+    },
+    {
+      "text": "từ",
+      "startMs": 57364,
+      "endMs": 57495
+    },
+    {
+      "text": "dây",
+      "startMs": 57495,
+      "endMs": 57693
+    },
+    {
+      "text": "xuống",
+      "startMs": 57693,
+      "endMs": 58022
+    },
+    {
+      "text": "đất",
+      "startMs": 58022,
+      "endMs": 58219
+    },
+    {
+      "text": "như",
+      "startMs": 58219,
+      "endMs": 58416
+    },
+    {
+      "text": "hồ",
+      "startMs": 58416,
+      "endMs": 58548
+    },
+    {
+      "text": "quang",
+      "startMs": 58548,
+      "endMs": 58877
+    },
+    {
+      "text": "sự",
+      "startMs": 58877,
+      "endMs": 59009
+    },
+    {
+      "text": "cố.",
+      "startMs": 59009,
+      "endMs": 59206
+    },
+    {
+      "text": "Vầng",
+      "startMs": 59627,
+      "endMs": 59859
+    },
+    {
+      "text": "sáng",
+      "startMs": 59859,
+      "endMs": 60090
+    },
+    {
+      "text": "tím",
+      "startMs": 60090,
+      "endMs": 60264
+    },
+    {
+      "text": "cũng",
+      "startMs": 60264,
+      "endMs": 60495
+    },
+    {
+      "text": "thường",
+      "startMs": 60495,
+      "endMs": 60843
+    },
+    {
+      "text": "khó",
+      "startMs": 60843,
+      "endMs": 61016
+    },
+    {
+      "text": "thấy",
+      "startMs": 61016,
+      "endMs": 61248
+    },
+    {
+      "text": "trong",
+      "startMs": 61248,
+      "endMs": 61537
+    },
+    {
+      "text": "ánh",
+      "startMs": 61537,
+      "endMs": 61711
+    },
+    {
+      "text": "sáng",
+      "startMs": 61711,
+      "endMs": 61942
+    },
+    {
+      "text": "ban",
+      "startMs": 61942,
+      "endMs": 62116
+    },
+    {
+      "text": "ngày.",
+      "startMs": 62116,
+      "endMs": 62405
+    },
+    {
+      "text": "Để",
+      "startMs": 62555,
+      "endMs": 62699
+    },
+    {
+      "text": "hạn",
+      "startMs": 62699,
+      "endMs": 62914
+    },
+    {
+      "text": "chế",
+      "startMs": 62914,
+      "endMs": 63130
+    },
+    {
+      "text": "corona",
+      "startMs": 63130,
+      "endMs": 63561
+    },
+    {
+      "text": "và",
+      "startMs": 63561,
+      "endMs": 63705
+    },
+    {
+      "text": "tiếng",
+      "startMs": 63705,
+      "endMs": 64064
+    },
+    {
+      "text": "ồn,",
+      "startMs": 64064,
+      "endMs": 64280
+    },
+    {
+      "text": "kỹ",
+      "startMs": 64280,
+      "endMs": 64423
+    },
+    {
+      "text": "sư",
+      "startMs": 64423,
+      "endMs": 64567
+    },
+    {
+      "text": "lựa",
+      "startMs": 64567,
+      "endMs": 64783
+    },
+    {
+      "text": "chọn",
+      "startMs": 64783,
+      "endMs": 65070
+    },
+    {
+      "text": "kích",
+      "startMs": 65070,
+      "endMs": 65358
+    },
+    {
+      "text": "thước",
+      "startMs": 65358,
+      "endMs": 65717
+    },
+    {
+      "text": "dây,",
+      "startMs": 65717,
+      "endMs": 66004
+    },
+    {
+      "text": "dùng",
+      "startMs": 66004,
+      "endMs": 66292
+    },
+    {
+      "text": "dây",
+      "startMs": 66292,
+      "endMs": 66507
+    },
+    {
+      "text": "phân",
+      "startMs": 66507,
+      "endMs": 66795
+    },
+    {
+      "text": "pha",
+      "startMs": 66795,
+      "endMs": 67010
+    },
+    {
+      "text": "khi",
+      "startMs": 67010,
+      "endMs": 67226
+    },
+    {
+      "text": "phù",
+      "startMs": 67226,
+      "endMs": 67442
+    },
+    {
+      "text": "hợp,",
+      "startMs": 67442,
+      "endMs": 67729
+    },
+    {
+      "text": "và",
+      "startMs": 67729,
+      "endMs": 67873
+    },
+    {
+      "text": "giữ",
+      "startMs": 67873,
+      "endMs": 68088
+    },
+    {
+      "text": "bề",
+      "startMs": 68088,
+      "endMs": 68232
+    },
+    {
+      "text": "mặt",
+      "startMs": 68232,
+      "endMs": 68448
+    },
+    {
+      "text": "phụ",
+      "startMs": 68448,
+      "endMs": 68663
+    },
+    {
+      "text": "kiện",
+      "startMs": 68663,
+      "endMs": 68951
+    },
+    {
+      "text": "trơn",
+      "startMs": 68951,
+      "endMs": 69238
+    },
+    {
+      "text": "nhẵn.",
+      "startMs": 69238,
+      "endMs": 69597
+    },
+    {
+      "text": "Mục",
+      "startMs": 69898,
+      "endMs": 70054
+    },
+    {
+      "text": "tiêu",
+      "startMs": 70054,
+      "endMs": 70262
+    },
+    {
+      "text": "là",
+      "startMs": 70262,
+      "endMs": 70366
+    },
+    {
+      "text": "giảm",
+      "startMs": 70366,
+      "endMs": 70573
+    },
+    {
+      "text": "những",
+      "startMs": 70573,
+      "endMs": 70833
+    },
+    {
+      "text": "vị",
+      "startMs": 70833,
+      "endMs": 70937
+    },
+    {
+      "text": "trí",
+      "startMs": 70937,
+      "endMs": 71093
+    },
+    {
+      "text": "tập",
+      "startMs": 71093,
+      "endMs": 71248
+    },
+    {
+      "text": "trung",
+      "startMs": 71248,
+      "endMs": 71508
+    },
+    {
+      "text": "điện",
+      "startMs": 71508,
+      "endMs": 71716
+    },
+    {
+      "text": "trường",
+      "startMs": 71716,
+      "endMs": 72028
+    },
+    {
+      "text": "quá",
+      "startMs": 72028,
+      "endMs": 72183
+    },
+    {
+      "text": "mạnh.",
+      "startMs": 72183,
+      "endMs": 72443
+    },
+    {
+      "text": "Vậy",
+      "startMs": 72593,
+      "endMs": 72749
+    },
+    {
+      "text": "tiếng",
+      "startMs": 72749,
+      "endMs": 73009
+    },
+    {
+      "text": "rè",
+      "startMs": 73009,
+      "endMs": 73113
+    },
+    {
+      "text": "khi",
+      "startMs": 73113,
+      "endMs": 73269
+    },
+    {
+      "text": "mưa",
+      "startMs": 73269,
+      "endMs": 73425
+    },
+    {
+      "text": "không",
+      "startMs": 73425,
+      "endMs": 73685
+    },
+    {
+      "text": "có",
+      "startMs": 73685,
+      "endMs": 73789
+    },
+    {
+      "text": "nghĩa",
+      "startMs": 73789,
+      "endMs": 74049
+    },
+    {
+      "text": "dòng",
+      "startMs": 74049,
+      "endMs": 74257
+    },
+    {
+      "text": "điện",
+      "startMs": 74257,
+      "endMs": 74465
+    },
+    {
+      "text": "đang",
+      "startMs": 74465,
+      "endMs": 74672
+    },
+    {
+      "text": "chảy",
+      "startMs": 74672,
+      "endMs": 74880
+    },
+    {
+      "text": "theo",
+      "startMs": 74880,
+      "endMs": 75088
+    },
+    {
+      "text": "nước",
+      "startMs": 75088,
+      "endMs": 75296
+    },
+    {
+      "text": "xuống",
+      "startMs": 75296,
+      "endMs": 75556
+    },
+    {
+      "text": "đất.",
+      "startMs": 75556,
+      "endMs": 75764
+    },
+    {
+      "text": "Đó",
+      "startMs": 76046,
+      "endMs": 76164
+    },
+    {
+      "text": "có",
+      "startMs": 76164,
+      "endMs": 76282
+    },
+    {
+      "text": "thể",
+      "startMs": 76282,
+      "endMs": 76460
+    },
+    {
+      "text": "là",
+      "startMs": 76460,
+      "endMs": 76578
+    },
+    {
+      "text": "hàng",
+      "startMs": 76578,
+      "endMs": 76814
+    },
+    {
+      "text": "loạt",
+      "startMs": 76814,
+      "endMs": 77050
+    },
+    {
+      "text": "phóng",
+      "startMs": 77050,
+      "endMs": 77346
+    },
+    {
+      "text": "điện",
+      "startMs": 77346,
+      "endMs": 77582
+    },
+    {
+      "text": "nhỏ",
+      "startMs": 77582,
+      "endMs": 77759
+    },
+    {
+      "text": "quanh",
+      "startMs": 77759,
+      "endMs": 78054
+    },
+    {
+      "text": "dây.",
+      "startMs": 78054,
+      "endMs": 78290
+    },
+    {
+      "text": "Hãy",
+      "startMs": 78602,
+      "endMs": 78804
+    },
+    {
+      "text": "giữ",
+      "startMs": 78804,
+      "endMs": 79006
+    },
+    {
+      "text": "khoảng",
+      "startMs": 79006,
+      "endMs": 79409
+    },
+    {
+      "text": "cách",
+      "startMs": 79409,
+      "endMs": 79679
+    },
+    {
+      "text": "an",
+      "startMs": 79679,
+      "endMs": 79813
+    },
+    {
+      "text": "toàn;",
+      "startMs": 79813,
+      "endMs": 80150
+    },
+    {
+      "text": "nếu",
+      "startMs": 80150,
+      "endMs": 80351
+    },
+    {
+      "text": "có",
+      "startMs": 80351,
+      "endMs": 80486
+    },
+    {
+      "text": "dây",
+      "startMs": 80486,
+      "endMs": 80688
+    },
+    {
+      "text": "rơi",
+      "startMs": 80688,
+      "endMs": 80890
+    },
+    {
+      "text": "hoặc",
+      "startMs": 80890,
+      "endMs": 81159
+    },
+    {
+      "text": "dấu",
+      "startMs": 81159,
+      "endMs": 81361
+    },
+    {
+      "text": "hiệu",
+      "startMs": 81361,
+      "endMs": 81630
+    },
+    {
+      "text": "bất",
+      "startMs": 81630,
+      "endMs": 81832
+    },
+    {
+      "text": "thường,",
+      "startMs": 81832,
+      "endMs": 82303
+    },
+    {
+      "text": "tránh",
+      "startMs": 82303,
+      "endMs": 82640
+    },
+    {
+      "text": "xa",
+      "startMs": 82640,
+      "endMs": 82774
+    },
+    {
+      "text": "và",
+      "startMs": 82774,
+      "endMs": 82909
+    },
+    {
+      "text": "báo",
+      "startMs": 82909,
+      "endMs": 83111
+    },
+    {
+      "text": "điện",
+      "startMs": 83111,
+      "endMs": 83380
+    },
+    {
+      "text": "lực.",
+      "startMs": 83380,
+      "endMs": 83649
+    }
+  ],
+  "footage": {
+    "version": 1,
+    "provider": "wikimedia-commons",
+    "clips": [
+      {
+        "id": "c2880a8a21cf2218c687",
+        "sceneId": "field",
+        "startFrame": 273,
+        "endFrame": 423,
+        "layout": {
+          "mode": "inset",
+          "side": "right",
+          "x": 680,
+          "y": 390,
+          "width": 320,
+          "height": 180
+        },
+        "src": "generated/footage/c2880a8a21cf2218c687.mp4",
+        "trimBefore": 0,
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "color": {
+          "brightness": 1,
+          "contrast": 1.02,
+          "saturate": 0.95
+        },
+        "rights": {
+          "id": "c2880a8a21cf2218c687",
+          "title": "File:REN overhead power line maintenance PT 2018 E.webm",
+          "sourceMediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/REN_overhead_power_line_maintenance_PT_2018_E.webm",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "creator": "Fernando Moital",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:REN_overhead_power_line_maintenance_PT_2018_E.webm",
+          "rightsVerified": true,
+          "verification": "Commons file metadata: exact license URL, creator and no additional restrictions",
+          "verifiedAt": "2026-11-17T13:39:26.824Z",
+          "attributionRequired": true,
+          "attribution": "Fernando Moital — CC BY 2.0 — https://commons.wikimedia.org/wiki/File:REN_overhead_power_line_maintenance_PT_2018_E.webm — https://creativecommons.org/licenses/by/2.0",
+          "modifications": "trimmed, resized, muted and color adjusted for inset presentation",
+          "evidence": {
+            "LicenseShortName": {
+              "value": "CC BY 2.0",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "LicenseUrl": {
+              "value": "https://creativecommons.org/licenses/by/2.0",
+              "source": "commons-desc-page"
+            },
+            "Artist": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/alacraus/\">Fernando Moital</a>",
+              "source": "commons-desc-page"
+            },
+            "Restrictions": {
+              "value": "",
+              "source": "commons-desc-page",
+              "hidden": ""
+            },
+            "Credit": {
+              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/alacraus/42703955044/\">bicicleta em alta tensão</a>",
+              "source": "commons-desc-page"
+            }
+          },
+          "localPath": "generated/footage/c2880a8a21cf2218c687.mp4",
+          "sha256": "ce29d2055b0e27559235b0d37cf98b10ee7da1d03fc0db3177bd71d623c3d985",
+          "sourceSha256": "d60998d0144617dcc8589bcba7a72e19e71f990c5067fdc7bbab21966ce630be",
+          "trimStartSeconds": 0,
+          "trimDurationSeconds": 5,
+          "bytes": 560940,
+          "probe": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 960,
+                "height": 540
+              }
+            ],
+            "format": {
+              "duration": "5.000000"
+            }
+          }
+        },
+        "contentMatch": {
+          "subject": "transmission",
+          "query": "\"power line\" transmission filetype:video",
+          "title": "File:REN overhead power line maintenance PT 2018 E.webm",
+          "basis": "strict-title-anchor-and-description-rules",
+          "visualReview": "reviewed",
+          "reviewScope": "Real overhead transmission-line context only. Source shows maintenance in daylight, not rain or corona discharge. Do not imply it depicts the mechanism."
+        }
+      }
+    ],
+    "decisions": [
+      {
+        "sceneId": "rain",
+        "status": "reviewed-context-relocated",
+        "assetId": "c2880a8a21cf2218c687",
+        "targetScene": "field",
+        "reason": "Real overhead transmission-line context only. Source shows maintenance in daylight, not rain or corona discharge. Do not imply it depicts the mechanism."
+      },
+      {
+        "sceneId": "field",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "water",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "ion",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "sound",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "contrast",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "mitigation",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      },
+      {
+        "sceneId": "safety",
+        "status": "svg-only",
+        "reason": "no-precise-physical-subject"
+      }
+    ],
+    "policy": {
+      "provider": "wikimedia-commons",
+      "maxClips": 2,
+      "maxSeconds": 5,
+      "maxDownloadBytes": 41943040,
+      "requestTimeoutMs": 20000,
+      "minSceneSeconds": 2,
+      "minWidth": 480,
+      "licenses": [
+        "CC0",
+        "CC BY"
+      ],
+      "paidServices": false
+    },
+    "requiresEditorialReview": false
+  }
+}

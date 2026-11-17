@@ -19,6 +19,7 @@ Cập nhật: 2026-11-17
 | Demo màu tự nhiên 15 giây | Đã render, chờ đánh giá | `HVL-NATURAL-BIRD-15S`; ảnh mẫu + camera, lá/SVG động, sơ đồ nền sáng, Thái Sơn/karaoke; H.264 1080×1920/30 FPS |
 | Nhà máy điện → nhà dân | Đã render và QC | `HVL-POWER-JOURNEY-15S`; 450 frame, H.264/AAC 1080×1920/30 FPS; thư viện SVG độc lập, Thái Sơn, hạt năng lượng, camera parallax |
 | Nguyên lý SF6 15 giây | Đã render/QC | `HVL-SF6-PRINCIPLE-15S`; 450 frame H.264/AAC 1080×1920/30 FPS, Thái Sơn/karaoke; đóng → mở/hồ quang → khử ion → phục hồi cách điện |
+| Corona khi mưa | Đã render/QC | `HVL-CORONA-RAIN`, 84,3 giây, 2529 frame H.264/AAC 1080×1920/30 FPS; Thái Sơn/karaoke, SVG corona cục bộ và inset CC BY 2.0 đã review; xem `docs/corona-rain.md` |
 | Karaoke theo audio | Hoàn thành v1 | Dùng duration và vùng không im lặng của audio thực tế |
 | Automated Pipeline | Hoàn thành v1 | `npm run agent -- --topic "..."` |
 | QC | Hoàn thành v1 | Kiểm tra spec, audio, karaoke, H.264/1080×1920/30 FPS |
