@@ -44,7 +44,7 @@ async function runResearch({root, topic, instructions, skill}) {
   const work = await mkdtemp(join(tmpdir(), 'hvl-research-'));
   const output = join(work, 'result.json');
   try {
-    await exec('codex', [
+    const research = exec('codex', [
       '-c', 'approval_policy="never"', 'exec', '--ephemeral', '--sandbox', 'read-only',
       '-c', 'web_search="live"', '--output-schema', join(root, 'agent/research/schema.json'),
       '--output-last-message', output, '--cd', work, '--skip-git-repo-check',
@@ -65,6 +65,8 @@ two-terminal differential relay messaging (relay), or a single straight energize
 Use abstract unless the cited passages support the precise generic action. Never imply a manufacturer-specific model.
 If evidence is insufficient, return empty claims and explain no missing details in narration.`,
     ], {timeout: 240_000, maxBuffer: 4 * 1024 * 1024});
+    research.child.stdin.end();
+    await research;
     return JSON.parse(await readFile(output, 'utf8'));
   } catch (error) {
     const reason = error.killed ? 'hết thời gian chờ' : error.code === 'ENOENT' ? 'thiếu CLI hoặc kết quả JSON' : 'CLI trả lỗi hoặc JSON không hợp lệ';
