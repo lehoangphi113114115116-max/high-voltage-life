@@ -1,6 +1,6 @@
 # Phương pháp dựng hình dùng chung
 
-Phong cách: **Colorful Technical Animation**. Entry point: `src/illustration/index.ts`. Stack giữ nguyên Remotion + React + SVG; không thêm dependency, không thay TTS/karaoke. Mọi animation phụ thuộc frame/fps, không dùng CSS animation, đồng hồ thực hoặc random không seed.
+Phong cách: **Colorful Technical Animation**. Entry point: `src/illustration/index.ts`. Stack chính dùng Remotion, React và SVG. Cảnh cần giải thích khoảng hở hoặc chuyển động tiếp điểm theo trục có thể dùng Three.js. Mọi animation phụ thuộc frame/fps, không dùng CSS animation, đồng hồ thực hoặc random không seed.
 
 ## Nguồn và phạm vi trích xuất
 
@@ -41,3 +41,10 @@ import {IllustrationScene, ParallaxLayer, EnergyWire, Transformer, motionProgres
 `agent/storyboard.mjs` đã đính đường dẫn hệ thống và ví dụ vào `visualDirection.illustrationSystem`. Đây là thư viện để Agent lắp và animate scene cho mỗi chủ đề; chưa phải engine tự suy ra hình học chính xác từ một câu nhập. Các cấu tạo thiết bị thật vẫn cần tài liệu kỹ thuật.
 
 Lượt tích hợp này chỉ typecheck, kiểm tra cú pháp/manifest, xác minh nguồn và hàm SVG bằng code. Không cài lại package/model, không tạo preview, không render ảnh/video mới.
+
+## Chọn renderer theo phân cảnh
+
+- Visual Director chọn SVG cho sơ đồ điện và tín hiệu, hoặc SVG nhiều lớp với `ParallaxLayer` cho bối cảnh có chiều sâu.
+- Khi câu thuyết minh về máy cắt mô tả tách tiếp điểm và cần thấy mặt cắt, khoảng hở hay chuyển động theo trục, storyboard chọn `ContactCutaway`. Đây là mô hình nguyên lý có nhãn minh họa. Chỉ dựng hình học thiết bị cụ thể khi có tài liệu kỹ thuật. Component nhận tiến độ chuyển động và góc nhìn từ frame của Remotion. Pipeline chọn SwiftShader cho các video có cảnh này.
+- Auto Footage Director tiếp tục chọn clip thực tế theo câu, giấy phép và vùng hiển thị an toàn. Footage có vai trò bổ trợ cho hoạt cảnh.
+- Dùng CSS và SVG cho vật liệu, bóng và gradient tĩnh. Chỉ cân nhắc Lottie khi có asset 2D tái sử dụng. Chỉ thêm GSAP hoặc Anime.js khi có timeline vector cụ thể cần khả năng vượt quá các helper hiện có, với thời gian seek lấy từ frame / fps.

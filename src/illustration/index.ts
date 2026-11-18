@@ -1,6 +1,7 @@
 export {illustrationTokens} from './tokens';
 export {motionProgress, loopPhase, bob, smoothStep} from './motion';
 export {MaterialSurface} from './material';
+export {ContactCutaway} from './contact-cutaway';
 export {IllustrationScene, ParallaxLayer, SceneReveal} from './scene';
 export {EnergyWire, Arc, ContactSwitch, Smoke} from './electrical';
 // Re-export existing artwork: one implementation, no duplicated component library.

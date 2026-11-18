@@ -18,7 +18,7 @@ Phong cách đã chốt: **Colorful Technical Animation** — Remotion + React +
 
 Mẫu phong cách đã duyệt là preview điện gió V2 (`HVL-WIND-POWER-PREVIEW`). Giữ mật độ hình có chủ đích, điểm nhìn chính rõ, chuyển động độc lập theo lớp, camera bám đối tượng và chuyển cảnh ăn khớp hình hoặc hành động. Mỗi nhịp 1–2 giây nên có một diễn biến có ý nghĩa. Chọn bối cảnh, hành động và sơ đồ theo chủ đề mới.
 
-Thuyết minh khoa học dùng Thái Sơn và hồ sơ `voice/config/narration-direction.json`. Viết câu hỏi thật ngắn để mở ý, tách phát hiện và cao trào thành câu riêng, dùng dấu câu và khoảng nghỉ để tạo nhịp. Giữ từ điển phát âm, đối chiếu karaoke với WAV đã hoàn tất. VieNeu v3 Turbo không đọc chỉ thị cảm xúc riêng.
+Thuyết minh khoa học dùng Adam và hồ sơ `voice/config/narration-direction.json`. Viết câu hỏi thật ngắn để mở ý, tách phát hiện và cao trào thành câu riêng, dùng dấu câu và khoảng nghỉ để tạo nhịp. Giữ từ điển phát âm, đối chiếu karaoke với WAV đã hoàn tất. VieNeu v3 Turbo không đọc chỉ thị cảm xúc riêng.
 
 Ưu tiên kể chuyện bằng hoạt cảnh minh họa màu sắc có chiều sâu; footage chỉ dùng khi cần và có quyền sử dụng được xác minh. Cảnh vật dùng màu tự nhiên, đa dạng theo bối cảnh/vật liệu; màu thương hiệu chỉ dành cho nhận diện, nhãn kỹ thuật và karaoke. Hạn chế chữ, không giữ tiêu đề lớn xuyên suốt; chỉ hiện sơ đồ/công thức/đồ thị ở câu cần giải thích nguyên lý.
 

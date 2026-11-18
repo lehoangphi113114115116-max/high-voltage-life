@@ -20,14 +20,18 @@
     "agent:skills:test": "node agent/skill-router.test.mjs"
   },
   "dependencies": {
+    "@react-three/fiber": "9.8.2",
     "@remotion/cli": "4.0.543",
+    "@remotion/three": "4.0.543",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "remotion": "4.0.543"
+    "remotion": "4.0.543",
+    "three": "0.183.2"
   },
   "devDependencies": {
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@types/three": "0.183.1",
     "typescript": "^5.9.3"
   }
 }

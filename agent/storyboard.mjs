@@ -1,3 +1,5 @@
+import {chooseSceneRenderer} from './visual-director.mjs';
+
 // Scene boundaries come from narrated sentences, not a fixed scene count.
 export const buildStoryboard = (words, fps = 30, visualDefaults = null, context = {}) => {
   const groups = [];
@@ -18,8 +20,8 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
       : /chênh lệch|dòng điện|cực thấp/iu.test(text) ? 'principle' : 'depth';
     const bird = context.category === 'electricity-in-life' && /chim.*dây điện|dây điện.*chim/iu.test(context.topic ?? '');
     const comparison = /chênh lệch|điện thế|sụt áp/iu.test(text);
-    const breaker = /máy cắt|sf6/iu.test(context.topic ?? '') && /mở tiếp điểm|tiếp điểm tách/iu.test(text)
-      && !/không (?:được |thể )?(?:mở tiếp điểm|để tiếp điểm tách)/iu.test(text);
+    const breaker = /máy cắt|sf6/iu.test(context.topic ?? '') && /mở tiếp điểm|tiếp điểm tách|tách tiếp điểm/iu.test(text)
+      && !/không (?:được |thể )?(?:mở tiếp điểm|để tiếp điểm tách|tách tiếp điểm)/iu.test(text);
     const relay = /\b87l\b|so lệch đường dây/iu.test(context.topic ?? '') && /rơ le|tín hiệu|so lệch/iu.test(text);
     const subject = bird ? 'bird' : breaker ? 'breaker' : relay ? 'relay' : 'conductor';
     const action = bird ? (mode === 'danger' ? 'compare-paths' : index === 0 ? 'land' : 'perch')
@@ -33,6 +35,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
     const shot = {subject, action, framing, transition,
       actionFrame: breaker && cue ? Math.round(cue.startMs * fps / 1000) : undefined,
       technicalCue: framing === 'diagram' ? 'potential' : null};
+    const renderer = chooseSceneRenderer({shot, text, policy: visualDefaults?.sceneRenderers});
     previousShot = shot;
     return {id: `sentence-${index}`, text, mode,
       startFrame: Math.round(group[0].startMs * fps / 1000),
@@ -40,7 +43,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
       transition: index % 2 ? 'cross-dissolve' : 'directional-reveal',
       camera: mode === 'depth' ? 'parallax-dolly' : mode === 'wire-detail' ? 'macro-track' : 'diagram-push',
       ...(visualDefaults ? {visualDirection: {
-        ...(visualDefaults.storytelling === 'visual-first-scientific-explainer' ? {shot} : {}),
+        ...(visualDefaults.storytelling === 'visual-first-scientific-explainer' ? {shot: {...shot, renderer}} : {}),
         style: visualDefaults.style,
         styleName: visualDefaults.styleName,
         illustrationSystem: visualDefaults.illustrationSystem,
@@ -56,7 +59,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
         objectAnimationRequired: visualDefaults.motion.objectAnimationRequired,
         maxUnmotivatedStillSeconds: visualDefaults.motion.maxUnmotivatedStillSeconds,
         onScreenText: ['karaoke', 'essential-technical-labels'],
-        representation: mode === 'principle' ? 'animated-2D' : 'depth-illustration',
+        representation: renderer === 'breaker-contact-3d' ? 'schematic-3D' : renderer === 'svg' ? 'animated-2D' : 'depth-illustration',
         formulaPolicy: mode === 'principle' || mode === 'wire-detail' ? 'only-if-needed-for-this-sentence' : 'omit',
         footage: {status: 'optional-only-if-topic-requires', policy: visualDefaults.footage.selection, assets: [], requireVerifiedRights: true, fallback: 'original-animation'},
         synchronizeTo: 'scene-narration-timestamps',

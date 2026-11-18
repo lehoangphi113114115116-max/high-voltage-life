@@ -208,7 +208,7 @@ await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null
 await writeFile(resolve(root, 'src/generated/current-video.json'), `${JSON.stringify(project, null, 2)}\n`);
 
 const output = resolve(root, 'out', `hvl-agent-${slug}.mp4`);
-run('node_modules/.bin/remotion', ['render', 'src/index.ts', 'HVL-AUTONOMOUS-EXPLAINER', output, '--codec=h264', '--browser-executable=/usr/bin/chromium', '--jpeg-quality=95', '--crf=18', '--concurrency=1', '--is-production=false']);
+run('node_modules/.bin/remotion', ['render', 'src/index.ts', 'HVL-AUTONOMOUS-EXPLAINER', output, '--codec=h264', '--browser-executable=/usr/bin/chromium', '--jpeg-quality=95', '--crf=18', '--concurrency=1', ...(project.scenes.some(scene => scene.visualDirection?.shot?.renderer === 'breaker-contact-3d') ? ['--gl=swangle'] : []), '--is-production=false']);
 const qc = qcVideo(output, durationInFrames);
 const report = {status: 'passed', topic, output, audioDuration, durationInFrames, karaokeWords: karaoke.length, footage:{selected:project.footage.clips.length,requiresEditorialReview:project.footage.requiresEditorialReview,manifest:resolve(runDir,'footage-manifest.json'),credits:resolve(runDir,'footage-credits.txt')}, ...qc};
 await writeFile(resolve(runDir, 'qc.json'), `${JSON.stringify(report, null, 2)}\n`);
