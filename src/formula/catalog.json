@@ -1,0 +1,20 @@
+{
+  "ohm": {
+    "left": "U", "right": ["R", " × ", "I"],
+    "units": "U (V) · R (Ω) · I (A)",
+    "scope": "Phần tử thuần trở trong miền tuân theo định luật Ôm",
+    "source": "https://openstax.org/books/university-physics-volume-2/pages/9-4-ohms-law"
+  },
+  "joule": {
+    "left": "P", "right": ["I²", " × ", "R"],
+    "units": "P (tổn hao, W) · I (A, hiệu dụng nếu AC) · R (Ω)",
+    "scope": "Công suất tổn hao do điện trở, tính cho dây dẫn đang xét",
+    "source": "https://openstax.org/books/physics/pages/20-2-motors-generators-and-transformers"
+  },
+  "dc-power": {
+    "left": "P", "right": ["U", " × ", "I"],
+    "units": "P (W) · U (V) · I (A)",
+    "scope": "Điện áp và dòng điện một chiều không đổi",
+    "source": "https://openstax.org/books/university-physics-volume-2/pages/9-5-electrical-energy-and-power"
+  }
+}

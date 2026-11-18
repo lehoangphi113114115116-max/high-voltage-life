@@ -23,3 +23,17 @@ Chỉ cân nhắc footage khi nội dung thực sự cần hình quay thực. Tr
 Bộ dựng có hoạt cảnh chim đáp dây, sơ đồ hiệu điện thế, tiếp điểm minh họa và truyền tín hiệu 87L. Chủ đề chưa có minh họa riêng dùng đường dây khái niệm. Khi video cần mô tả thiết bị hoặc hiện tượng cụ thể hơn, chọn hình minh họa có căn cứ cho đề tài. Footage vẫn đi qua bộ chọn và khung inset hiện có. Kiểm tra hình và tiếng thực tế ở lần sản xuất tiếp theo trước khi báo đạt phong cách.
 
 Preview điện gió V2 đã được duyệt là mẫu chuẩn. Mã ở `src/compositions/WindPowerPreview.tsx`, composition `HVL-WIND-POWER-PREVIEW`, bản MP4 tham chiếu trong Cloud ở `out/hvl-wind-power-preview-v2.mp4`. Mã dựng, timeline karaoke và công cụ chuẩn bị WAV nằm trong Git. WAV và MP4 là đầu ra sinh tự động. Dùng mẫu để so sánh cách đặt điểm nhìn, ánh sáng, các lớp chuyển động, cú máy bám chủ thể và chuyển cảnh khớp hành động. Chọn diễn tiến hình ảnh mới cho mỗi chủ đề. Dùng footage có quyền sử dụng như một lớp bổ trợ khi nó làm rõ lời đọc.
+
+## Công thức trong video mặc định
+
+`agent/formula-director.mjs` dò quan hệ vật lý trong câu thoại có bằng chứng
+Technical Research. Danh mục `src/formula/catalog.json` chứa công thức, đơn vị,
+phạm vi áp dụng và đường dẫn tham chiếu. Danh mục ban đầu có định luật Ôm,
+tổn hao nhiệt trên điện trở và công suất một chiều không đổi.
+
+Remotion dựng công thức bằng SVG và nhấn đại lượng theo timestamp karaoke.
+Mỗi video tối đa hai công thức, mỗi công thức tối đa 4,8 giây. Công thức dùng
+vùng trống trên hoạt cảnh và được ưu tiên hơn inset ảnh thật trong cùng cảnh.
+Khi thiếu nguồn, quan hệ chưa rõ hoặc không đủ thời lượng đọc, cảnh chỉ dùng
+hoạt cảnh. Mở rộng danh mục bằng công thức đã kiểm chứng và quy tắc khớp
+ngữ cảnh cụ thể.

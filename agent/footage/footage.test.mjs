@@ -43,3 +43,17 @@ test('HTTP failure and unapproved license gracefully preserve SVG',async()=>{
   const denied=await directFootage({topic:'Điện gió',scenes:[scene],layout},{search:async()=>[blocked],prepare:async()=>{downloads++;}});
   assert.equal(denied.clips.length,0);assert.equal(downloads,0);
 });
+
+test('right-cleared photo fills a safe slot when footage is unavailable',async()=>{
+  const image={...candidate,pageId:2,kind:'image',title:'File:Wind turbine in a field.jpg',info:{...info,mime:'image/jpeg'}};
+  const queries=[];
+  const plan=await directFootage({topic:'Điện gió',scenes:[scene,{...scene,id:'math',formula:true}],layout},{
+    search:async(_,{kind})=>{queries.push(kind);return kind==='image'?[image]:[];},
+    prepare:async(asset)=>({...verifyLicense(asset.info),id:'photo',localPath:'generated/footage/photo.jpg'}),
+  });
+  assert.deepEqual(queries,['video','image']);
+  assert.equal(plan.clips[0].kind,'image');
+  assert.equal(plan.clips[0].rights.attributionRequired,true);
+  assert.match(plan.clips[0].contentMatch.query,/filetype:bitmap$/);
+  assert.equal(plan.decisions[1].reason,'technical-artwork-has-priority');
+});

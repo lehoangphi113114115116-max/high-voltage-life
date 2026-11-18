@@ -7,7 +7,8 @@ Cập nhật: 2026-11-17
 | Remotion Cloud render | Hoàn thành | 1080×1920, 30 FPS, H.264 |
 | Nhận diện hình ảnh + 2D MUSE 87L | Hoàn thành | Technical components tái sử dụng |
 | Hệ dựng hình reusable | Đã tích hợp | `src/illustration`: tokens/materials, layer/parallax, motion, transition, dây/hồ quang/tiếp điểm/khói; tái sử dụng object cũ. Mã SF6 V2 giữ tại `src/examples/sf6-v2`; không render trong lượt này |
-| Auto Footage Director | Đã tích hợp, kiểm thử mới đạt | Commons CC0/CC BY, lọc chủ đề theo câu, tải/cache/cắt clip, safe layout và FootageLayer. Live tải clip đạt; QC nội dung hình thực tế vẫn do Agent kiểm tra, chưa có model thị giác. Không render trong lượt này |
+| Auto Footage Director | Đã tích hợp, kiểm thử mới đạt | Commons CC0/CC BY, lọc theo câu, xử lý video và ảnh fallback, safe layout và FootageLayer. Live tải clip đạt; QC nội dung hình thực tế vẫn do Agent kiểm tra, chưa có model thị giác. Không render trong lượt này |
+| Formula Director | Đã nối workflow mặc định | SVG có đơn vị và nguồn, nhấn đại lượng theo karaoke, nhường chỗ cho mặt cắt 3D. |
 | TTS cục bộ | Hoàn thành | VieNeu-TTS v3 Turbo 3.8.4, Adam, tốc độ cơ sở 1,027× |
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
 | Technical Research | Tích hợp trước kịch bản | Tìm nguồn bằng Codex CLI, tái sử dụng scientific-critical-thinking, lưu hồ sơ theo chủ đề và gắn bằng chứng theo cảnh. Có chế độ research-only. |
@@ -16,7 +17,7 @@ Cập nhật: 2026-11-17
 | Mặc định minh họa code động | Đã cập nhật | `CurrentFlow` hạt vàng theo dây thẳng/cong, chiều nguồn→tải, nháy đầu nối tùy chọn; tích hợp cảnh chim SVG và StoryMotion. Chưa render mới ở cập nhật này |
 | Storyboard Generator | Visual-first v5 | Chia theo câu/mệnh đề và timestamp; chọn góc nhìn, hành động và lớp giải thích |
 | Visual Director | Đã nối composition chính | Toàn/cận/sơ đồ, hoạt cảnh theo nhịp lời, chuyển cảnh và footage inset; chưa kiểm tra bằng video render |
-| Phong cách sản xuất mặc định | Điện gió V2 đã duyệt | Visual Director v7, Colorful Technical Animation; dùng composition `HVL-WIND-POWER-PREVIEW` để tham chiếu mật độ hình, chuyển động theo lớp và camera |
+| Phong cách sản xuất mặc định | Điện gió V2 đã duyệt | Visual Director v8, Colorful Technical Animation; dùng composition `HVL-WIND-POWER-PREVIEW` để tham chiếu mật độ hình, chuyển động theo lớp và camera |
 | Nhịp thuyết minh | Science storytelling v1 | Adam, dấu câu và nhịp phát hiện/cao trào/giải thích, tốc độ và khoảng nghỉ theo nhịp. VieNeu v3 Turbo bỏ qua `style`; độ biểu cảm chưa được nghe duyệt |
 | Demo màu tự nhiên 15 giây | Đã render, chờ đánh giá | `HVL-NATURAL-BIRD-15S`; ảnh mẫu + camera, lá/SVG động, sơ đồ nền sáng, Thái Sơn/karaoke; H.264 1080×1920/30 FPS |
 | Nhà máy điện → nhà dân | Đã render và QC | `HVL-POWER-JOURNEY-15S`; 450 frame, H.264/AAC 1080×1920/30 FPS; thư viện SVG độc lập, Thái Sơn, hạt năng lượng, camera parallax |

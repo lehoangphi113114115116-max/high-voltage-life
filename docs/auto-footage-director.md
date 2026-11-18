@@ -43,3 +43,17 @@ Nguồn, license, tác giả, evidence snapshot, ngày xác minh, thay đổi cl
 Chạy `node --test agent/footage/footage.test.mjs` và TypeScript: đã đạt. Live smoke test thành công với `File:Wind turbines in the snow as viewed from FPV drone.webm`, tác giả SE FPV, CC BY 3.0, source `https://commons.wikimedia.org/wiki/File:Wind_turbines_in_the_snow_as_viewed_from_FPV_drone.webm`. Đã tải nguồn, chuẩn hóa clip 3,8 giây (~515 KB), kiểm tra FFprobe; không render video/preview Remotion.
 
 Bộ chọn hiện là rule-based dựa tên/mô tả và license, chưa có model thị giác tự xác minh nội dung từng frame. Plan ghi `contentMatch.visualReview: not-automatically-verified` và `requiresEditorialReview`; Agent phải kiểm tra clip được chọn trong QC trước khi bàn giao video tiếp theo. Không coi match metadata là bằng chứng mọi frame khớp chính xác lời thoại. Chưa dùng nguồn trả phí, chưa thêm adapter cho nguồn khác. Không thay đổi TTS, karaoke hoặc hình học hoạt cảnh.
+
+## Video và ảnh thật theo lời thoại
+
+Workflow mặc định thử video trước, rồi dùng ảnh bitmap khi chưa có clip phù
+hợp hoặc clip lỗi. Commons phải cung cấp tác giả, URL và giấy phép CC BY hoặc
+CC0 cụ thể. JPEG, PNG và WebP được chuẩn hóa thành JPEG cho Remotion. Mỗi
+video tối đa hai inset, mỗi inset tối đa năm giây. Candidate phải có tên file
+khớp chủ thể được nhắc trong cảnh và lọt vùng trống của bố cục.
+
+Inset video tắt tiếng. Cả video và ảnh hiện, ẩn theo frame, kèm ghi công trong
+khung và thông tin đầy đủ trong `footage-credits.txt` và `footage-manifest.json`.
+Cảnh ưu tiên công thức hoặc mặt cắt 3D nhường toàn bộ vùng inset cho nội dung
+kỹ thuật. Độ khớp nội dung được lọc theo metadata và vẫn có cờ QC thị giác
+trong manifest.

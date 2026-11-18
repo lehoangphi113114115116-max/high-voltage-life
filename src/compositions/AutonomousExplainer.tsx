@@ -4,6 +4,7 @@ import {AnimatedTransmissionLine, CurrentFlow, RelaySymbol, TechnicalLabel, Wate
 import currentVideo from '../generated/current-video.json';
 import {colors, technicalFont} from '../theme';
 import {StoryMotion, type MotionScene} from './StoryMotion';
+import {FormulaLayer} from '../formula/FormulaLayer';
 import {FootageLayer, type FootagePlan} from '../footage/FootageLayer';
 import {ScientificShots, type ScientificScene} from './ScientificShots';
 
@@ -111,7 +112,10 @@ export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: bo
       </div> : null}
       <Karaoke />
       <Watermark />
-      {!motionPreview && <FootageLayer plan={(currentVideo as unknown as {footage?:FootagePlan}).footage}/>}
+      {!motionPreview && <>
+        <FootageLayer plan={(currentVideo as unknown as {footage?:FootagePlan}).footage}/>
+        <FormulaLayer formulas={(currentVideo as unknown as Parameters<typeof FormulaLayer>[0]).formulas}/>
+      </>}
     </AbsoluteFill>
   );
 };

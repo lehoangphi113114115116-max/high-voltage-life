@@ -5,6 +5,7 @@ import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {selectAgentSkills} from './skill-router.mjs';
 import {buildStoryboard} from './storyboard.mjs';
+import {directFormulas} from './formula-director.mjs';
 import {directFootage} from './footage/director.mjs';
 import {autonomousFootageLayout} from './footage/layout.mjs';
 import {researchTopic} from './research/director.mjs';
@@ -189,7 +190,17 @@ const project = {
   scenes: buildStoryboard(karaoke, fps, visualDefaults, {topic, category: profile.id, research}),
   karaoke,
 };
-project.footage = visualDefaults.footageDirector?.enabled===false?{version:1,clips:[],decisions:[],requiresEditorialReview:false}:await directFootage({topic,scenes:project.scenes,fps,root,layout:autonomousFootageLayout(project.headline, false, project.scenes.some(scene => scene.visualDirection?.shot))});
+const insetLayout = autonomousFootageLayout(project.headline, false, project.scenes.some(scene => scene.visualDirection?.shot));
+project.formulas = insetLayout ? directFormulas({scenes:project.scenes,words:karaoke,research,fps,policy:visualDefaults.formulaDirector}) : [];
+const formulaScenes = new Set(project.formulas.map(card=>card.sceneId));
+const mediaPolicy = visualDefaults.footageDirector;
+project.footage = mediaPolicy?.enabled === false
+  ? {version:1,clips:[],decisions:[],requiresEditorialReview:false}
+  : await directFootage({
+    topic,fps,root,layout:insetLayout,
+    scenes:project.scenes.map(scene=>({...scene,formula:formulaScenes.has(scene.id)})),
+    policy:{mediaKinds:mediaPolicy?.mediaKinds??['video'],maxClips:mediaPolicy?.maxClips??2,maxSeconds:mediaPolicy?.maxSecondsPerClip??5},
+  });
 await writeFile(resolve(runDir,'footage-manifest.json'),`${JSON.stringify(project.footage,null,2)}\n`);
 await writeFile(resolve(runDir,'footage-credits.txt'),project.footage.clips.map(c=>`${c.rights.attribution}\nModifications: ${c.rights.modifications}`).join('\n\n')+'\n');
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);
