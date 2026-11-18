@@ -7,6 +7,7 @@ import {selectAgentSkills} from './skill-router.mjs';
 import {buildStoryboard} from './storyboard.mjs';
 import {directFootage} from './footage/director.mjs';
 import {autonomousFootageLayout} from './footage/layout.mjs';
+import {uploadVideo} from './drive-upload.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
@@ -203,4 +204,8 @@ run('node_modules/.bin/remotion', ['render', 'src/index.ts', 'HVL-AUTONOMOUS-EXP
 const qc = qcVideo(output, durationInFrames);
 const report = {status: 'passed', topic, output, audioDuration, durationInFrames, karaokeWords: karaoke.length, footage:{selected:project.footage.clips.length,requiresEditorialReview:project.footage.requiresEditorialReview,manifest:resolve(runDir,'footage-manifest.json'),credits:resolve(runDir,'footage-credits.txt')}, ...qc};
 await writeFile(resolve(runDir, 'qc.json'), `${JSON.stringify(report, null, 2)}\n`);
+if (process.env.HVL_DRIVE_ENABLED === '1') {
+  try { console.log(JSON.stringify({delivery: await uploadVideo(output)})); }
+  catch (error) { console.error(`Bàn giao Drive chưa thành công: ${error.message}`); process.exitCode = 1; }
+}
 console.log(JSON.stringify({status: 'completed', topic, category: profile.id, output, durationSeconds: durationInFrames / fps, qc: qc.checks}, null, 2));
