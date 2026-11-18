@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "topic": "Vì sao gió có thể tạo ra điện? Từ tua-bin điện gió đến hệ thống truyền tải và nơi sử dụng.",
+  "sources": [
+    {
+      "id": "doe",
+      "title": "Explore a Wind Turbine – Text Version",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/systems/explore-wind-turbine-text-version",
+      "version": null,
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "aero",
+      "title": "Dynamic Models for Wind Turbines and Wind Power Plants",
+      "publisher": "NREL",
+      "url": "https://docs.nrel.gov/docs/fy12osti/52780.pdf",
+      "version": "NREL/SR-5500-52780",
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "cutaway",
+      "title": "Definition of the IEA Wind 15-Megawatt Offshore Reference Wind Turbine",
+      "publisher": "IEA Wind TCP Task 37 / NREL",
+      "url": "https://docs.nrel.gov/docs/fy20osti/75698.pdf",
+      "version": "NREL/TP-5000-75698, March 2020",
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "pmg",
+      "title": "Permanent magnet generators",
+      "publisher": "IEEE",
+      "url": "https://technav.ieee.org/topic/permanent-magnet-generators/",
+      "version": null,
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "grid-nrel",
+      "title": "Characteristics of Variable Speed Wind Turbines Under Normal and Fault Conditions",
+      "publisher": "NREL / PNM",
+      "url": "https://www.nrel.gov/docs/fy07osti/41051.pdf",
+      "version": "NREL/CP-500-41051",
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "grid-ieee",
+      "title": "Wind Power – General",
+      "publisher": "FPL Energy",
+      "url": "https://ewh.ieee.org/soc/pes/saintlouis/10-16-06/WindPower-General.pdf",
+      "version": "IEEE PES Saint Louis, Oct 2006",
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "physics",
+      "title": "Physics 20.2: Motors, Generators, and Transformers",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/books/physics/pages/20-2-motors-generators-and-transformers",
+      "version": "§20.2",
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "eia",
+      "title": "Electricity Explained: How Electricity Is Delivered to Consumers",
+      "publisher": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/electricity/delivery-to-consumers.php",
+      "version": null,
+      "accessedOn": "2026-11-18"
+    }
+  ],
+  "claims": [
+    {
+      "start": 0,
+      "end": 23,
+      "narration": "Cánh có dạng khí động. Chênh lệch áp suất tạo lực nâng. Thành phần lực tiếp tuyến tạo mô-men làm quay rô to.",
+      "limits": "Chỉ giải thích cơ chế, không định lượng mô-men, áp suất hoặc năng lượng thu được.",
+      "visual": "abstract",
+      "visualReview": "Tiết diện và các đường gió cách điệu, không phải kết quả mô phỏng dòng khí.",
+      "citations": [
+        {
+          "sourceId": "doe",
+          "locator": "How a Wind Turbine Works; Direct-Drive Generator Blades",
+          "paraphrase": "Lực nâng trên các cánh là nguyên nhân chính làm rô to quay."
+        },
+        {
+          "sourceId": "aero",
+          "locator": "§2.2.1, Fig. 2.2",
+          "paraphrase": "Lực nâng vuông góc dòng tương đối và là thành phần chính tạo mô-men trên loại cánh minh họa."
+        }
+      ]
+    },
+    {
+      "start": 23,
+      "end": 38,
+      "narration": "Ở cấu hình truyền động trực tiếp, cánh, moay ơ, trục và rô to máy phát quay cùng tốc độ. Nam châm đi qua các cuộn dây đứng yên.",
+      "limits": "Cấu hình tham chiếu rô to ngoài nam châm vĩnh cửu. Không thể hiện kích thước, số cực hay tốc độ của sản phẩm thật.",
+      "visual": "abstract",
+      "visualReview": "Trục, vành rô to và moay ơ xoay cùng góc. Vành nam châm ngoài và cuộn dây phía trong có khe hở. Vỏ tách ra chỉ để minh họa.",
+      "citations": [
+        {
+          "sourceId": "doe",
+          "locator": "Direct-Drive Rotor; Direct-Drive Generator",
+          "paraphrase": "Cánh và moay ơ là rô to, nối với vành nam châm quay cạnh các cuộn dây đứng yên, không có hộp số."
+        },
+        {
+          "sourceId": "cutaway",
+          "locator": "§5.1, Fig. 5-1; §5.6, Fig. 5-4",
+          "paraphrase": "Thiết kế tham chiếu có máy phát từ thông hướng kính rô to ngoài, nam châm trên rô to và stato cuộn dây."
+        }
+      ]
+    },
+    {
+      "start": 38,
+      "end": 53,
+      "narration": "Từ thông qua cuộn dây thay đổi sinh ra điện áp cảm ứng. Có mạch tải phù hợp thì dòng điện chạy và cơ năng chuyển thành điện năng.",
+      "limits": "Đường sóng là ví dụ định tính của điện áp cảm ứng, không suy ra dạng sóng, tần số hoặc chất lượng điện của một máy cụ thể.",
+      "visual": "abstract",
+      "visualReview": "Giữ cuộn dây đứng yên, cho nam châm quay. Đồ thị chỉ xuất hiện sau khi giải thích cảm ứng.",
+      "citations": [
+        {
+          "sourceId": "physics",
+          "locator": "Generators; Figure 20.28",
+          "paraphrase": "Chuyển động tương đối giữa dây quấn và từ trường tạo điện áp, mạch kín nối tải cho dòng điện chạy."
+        },
+        {
+          "sourceId": "pmg",
+          "locator": "Operating Principles",
+          "paraphrase": "Nam châm quay làm biến thiên từ thông móc vòng với stato, gây sức điện động cảm ứng."
+        }
+      ]
+    },
+    {
+      "start": 53,
+      "end": 65,
+      "narration": "Bộ biến đổi toàn công suất tách tần số máy phát khỏi tần số lưới bằng khâu chỉnh lưu và nghịch lưu. Các máy biến áp và nhánh cáp đưa công suất về trạm thu gom.",
+      "limits": "Đây là một cấu hình toàn công suất. Không mặc định mọi tua-bin đều có cùng mạch hoặc vị trí thiết bị.",
+      "visual": "abstract",
+      "visualReview": "Vẽ bộ biến đổi như một khối chức năng. Các nhánh tụ về thanh cái chung, không mắc nối tiếp các máy phát.",
+      "citations": [
+        {
+          "sourceId": "pmg",
+          "locator": "Grid Integration and Control",
+          "paraphrase": "Đầu ra biến đổi theo tốc độ được nối tới bộ chỉnh lưu và nghịch lưu phía lưới."
+        },
+        {
+          "sourceId": "grid-nrel",
+          "locator": "Abstract; Introduction; wind plant configuration",
+          "paraphrase": "Tua-bin toàn công suất có khâu giao tiếp điện tử công suất, các đường dây nhánh thu gom về trạm chung."
+        },
+        {
+          "sourceId": "grid-ieee",
+          "locator": "WTG/Padmount Connection; Collector System",
+          "paraphrase": "Máy biến áp từng tua-bin nối tới lộ thu gom và thanh cái trạm."
+        }
+      ]
+    },
+    {
+      "start": 65,
+      "end": 78,
+      "narration": "Máy biến áp trạm nâng điện áp tới cấp phù hợp với điểm đấu nối. Cùng công suất tác dụng và hệ số công suất, nâng điện áp giảm dòng và tổn thất nhiệt trên cùng dây.",
+      "limits": "So sánh khi công suất, hệ số công suất và điện trở dây giữ nguyên. Không nêu cấp điện áp cụ thể.",
+      "visual": "abstract",
+      "visualReview": "Hình so sánh định tính. Không biểu diễn giảm tổn thất bằng một tỉ lệ giả định.",
+      "citations": [
+        {
+          "sourceId": "physics",
+          "locator": "Transformers; equations 20.22–20.23",
+          "paraphrase": "Ở cùng công suất, dòng thấp hơn làm giảm tổn thất Joule theo bình phương dòng."
+        },
+        {
+          "sourceId": "eia",
+          "locator": "Delivering electricity",
+          "paraphrase": "Trạm biến áp nâng hoặc hạ áp theo từng cấp; truyền điện ở cấp cao hơn giúp đi xa hiệu quả hơn."
+        },
+        {
+          "sourceId": "grid-ieee",
+          "locator": "Collector System",
+          "paraphrase": "Ví dụ thanh cái thu gom cấp vào máy biến áp chính trước điểm đấu nối."
+        }
+      ]
+    },
+    {
+      "start": 78,
+      "end": 100,
+      "narration": "Ở một cấu hình đấu nối truyền tải, công suất đi qua trạm nâng áp, lưới truyền tải, trạm hạ áp và lưới phân phối trước khi đến phụ tải.",
+      "limits": "Lưới liên kết có nhiều tuyến và nhiều nguồn. Không giả định mọi nhà máy đấu nối truyền tải hay cấp thẳng cho một phụ tải cụ thể.",
+      "visual": "abstract",
+      "visualReview": "Dùng sơ đồ nguyên lý, thêm nhánh lưới và hạt sáng biểu thị hướng truyền năng lượng quy ước, không biểu diễn electron.",
+      "citations": [
+        {
+          "sourceId": "eia",
+          "locator": "The electric power grid; Delivering electricity; U.S. electrical system interconnections",
+          "paraphrase": "Lưới có nhiều tuyến và cấp biến áp. Phân phối đưa công suất tới hộ dân và cơ sở sản xuất."
+        },
+        {
+          "sourceId": "physics",
+          "locator": "Transformers; Figure 20.32",
+          "paraphrase": "Sơ đồ giáo khoa thể hiện nâng áp trước truyền tải và hạ áp cho phân phối/phụ tải."
+        }
+      ]
+    }
+  ]
+}

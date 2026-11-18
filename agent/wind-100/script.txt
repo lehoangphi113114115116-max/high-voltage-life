@@ -1,0 +1,29 @@
+Bạn có bao giờ tự hỏi, một cơn gió lướt qua cánh đồng làm sao thắp sáng được căn nhà ở xa?
+Hãy theo chân dòng năng lượng, từ ngọn cánh đang quay đến thiết bị bạn dùng mỗi ngày.
+
+Nhìn gần, mỗi cánh có tiết diện như cánh máy bay.
+Không khí lướt quanh cánh, tạo chênh lệch áp suất và sinh ra lực nâng.
+Một phần lực khí động hướng theo chiều quay, tạo mô men quanh trục. Ba cánh và moay ơ cùng quay, biến động năng của gió thành cơ năng.
+
+Vậy chuyển động đó đi đâu? Hãy nhìn vào khoang máy.
+Ở kiểu truyền động trực tiếp này, moay ơ và trục chính kéo rô to máy phát quay cùng tốc độ, không qua hộp số.
+Vành rô to mang nam châm. Các cuộn dây ở phần đứng yên, gọi là sta to. Ổ đỡ giữ cụm quay đúng vị trí.
+
+Bây giờ hãy để mắt tới một cuộn dây đứng yên.
+Khi các cực nam châm lần lượt đi qua, từ thông móc vòng qua cuộn dây thay đổi.
+Sự thay đổi ấy sinh ra điện áp cảm ứng. Nối với mạch điện phù hợp, có dòng điện chạy. Máy phát nhận cơ năng từ trục và đưa ra điện năng.
+
+Tốc độ gió thay đổi, nên tần số điện từ máy phát cũng có thể thay đổi.
+Trong cấu hình này, bộ biến đổi công suất chỉnh lưu rồi tạo lại điện xoay chiều phù hợp với lưới.
+Máy biến áp của từng tua bin đưa điện lên cấp thu gom. Các nhánh cáp gom công suất về trạm.
+
+Tại trạm nhà máy, máy biến áp chính đưa điện áp lên cấp phù hợp với điểm đấu nối.
+Nếu truyền cùng công suất và giữ nguyên hệ số công suất, điện áp cao hơn thì dòng điện nhỏ hơn.
+Trên cùng đường dây, dòng nhỏ hơn làm giảm tổn thất do dây dẫn phát nhiệt.
+
+Trong sơ đồ này, điện đi từ nhà máy gió qua trạm nâng áp, vào lưới truyền tải.
+Ở phía nhận, trạm hạ áp đưa điện về lưới phân phối rồi đến nơi sử dụng.
+Lưới thực có nhiều nguồn và nhiều tuyến. Những chấm sáng chỉ hướng truyền năng lượng trong ví dụ này.
+
+Đèn sáng, máy móc hoạt động. Năng lượng của gió đã đi qua cả một chuỗi chuyển đổi.
+Gió tạo chuyển động quay, máy phát tạo điện, còn hệ thống điện đưa công suất đến nơi cần dùng.

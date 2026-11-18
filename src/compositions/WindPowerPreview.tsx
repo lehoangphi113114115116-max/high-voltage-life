@@ -5,7 +5,7 @@ import {Karaoke} from './AutonomousExplainer';
 import media from '../generated/wind-preview.json';
 
 const ink = '#153a4e';
-const Rotor = ({angle}: {angle: number}) => {
+export const Rotor = ({angle}: {angle: number}) => {
   const id = useId().replace(/[^a-zA-Z0-9_-]/g, '');
   return <g transform={`rotate(${angle})`}>
     <defs><linearGradient id={id}><stop stopColor="#9cbcca"/><stop offset=".55" stopColor="#f8ffff"/><stop offset="1" stopColor="#d2e8ec"/></linearGradient></defs>
@@ -17,7 +17,7 @@ const Rotor = ({angle}: {angle: number}) => {
   </g>;
 };
 
-const Turbine = ({x,y,scale,angle}: {x:number;y:number;scale:number;angle:number}) => <g transform={`translate(${x} ${y}) scale(${scale})`}>
+export const Turbine = ({x,y,scale,angle}: {x:number;y:number;scale:number;angle:number}) => <g transform={`translate(${x} ${y}) scale(${scale})`}>
   <ellipse cx="46" cy="482" rx="145" ry="18" fill="#285841" opacity=".17"/>
   <path d="M -13 0 L 16 0 L 35 482 H -31 Z" fill="#f3fbf9" stroke="#82a8b7" strokeWidth="4"/>
   <path d="M 9 16 L 16 16 L 35 482 H 11 Z" fill="#b0cdd3"/>
@@ -31,7 +31,7 @@ const Heading = ({children}: {children:ReactNode}) => <div style={{
   letterSpacing:-1.5,color:ink,textWrap:'balance',
 }}>{children}</div>;
 
-const Grass = ({frame,y}: {frame:number;y:number}) => <g>
+export const Grass = ({frame,y}: {frame:number;y:number}) => <g>
   {Array.from({length:29},(_,i)=>{
     const x=i*43-40;const h=30+(i*17)%78;const base=y+((i*53)%100)-50;
     const lean=22+Math.sin(frame*.13+i*.61)*15;
@@ -42,7 +42,7 @@ const Grass = ({frame,y}: {frame:number;y:number}) => <g>
   })}
 </g>;
 
-const Landscape = ({frame, seconds}: {frame:number;seconds:number}) => {
+export const Landscape = ({frame, seconds}: {frame:number;seconds:number}) => {
   const push=motionProgress(seconds,0,6.8);
   const approach=motionProgress(seconds,5.5,8);
   const mainX=520-235*approach;

@@ -8,7 +8,7 @@ import {promisify} from 'node:util';
 const exec = promisify(execFile);
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const normalize = value => value.normalize('NFKC').toLowerCase().trim().replace(/\s+/gu, ' ');
-const trustedHost = /(?:^|\.)(?:iec\.ch|ieee\.org|siemens(?:-energy)?\.com|abb\.com|hitachienergy\.com|se\.com|gevernova\.com|nrel\.gov|energy\.gov|doe\.gov|osti\.gov|ornl\.gov|pnnl\.gov|sandia\.gov|springer(?:nature)?\.com|sciencedirect\.com|wiley\.com|nature\.com|eaton\.com|selinc\.com|openstax\.org)$|(?:^|\.)(?:edu(?:\.[a-z]{2})?|ac\.[a-z]{2})$/iu;
+const trustedHost = /(?:^|\.)(?:iec\.ch|ieee\.org|siemens(?:-energy)?\.com|abb\.com|hitachienergy\.com|se\.com|gevernova\.com|nrel\.gov|energy\.gov|eia\.gov|doe\.gov|osti\.gov|ornl\.gov|pnnl\.gov|sandia\.gov|springer(?:nature)?\.com|sciencedirect\.com|wiley\.com|nature\.com|eaton\.com|selinc\.com|openstax\.org)$|(?:^|\.)(?:edu(?:\.[a-z]{2})?|ac\.[a-z]{2})$/iu;
 const visuals = ['abstract', 'bird', 'breaker', 'relay', 'conductor'];
 
 export function validateResearch({sources, claims}) {

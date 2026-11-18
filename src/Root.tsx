@@ -10,10 +10,12 @@ import {SF6Principle15} from './compositions/SF6Principle15';
 import {CoronaRain} from './compositions/CoronaRain';
 import coronaRain from './generated/corona-rain.json';
 import {WindPowerPreview} from './compositions/WindPowerPreview';
+import {Wind100} from './compositions/Wind100';
 
 export const RemotionRoot = () => {
   return (
     <>
+      <Composition id="HVL-WIND-100" component={Wind100} defaultProps={{}} durationInFrames={3000} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-WIND-POWER-PREVIEW" component={WindPowerPreview} durationInFrames={540} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-CORONA-RAIN" component={CoronaRain} durationInFrames={coronaRain.durationInFrames} fps={30} width={1080} height={1920}/>
       <Composition id="HVL-SF6-PRINCIPLE-15S" component={SF6Principle15} durationInFrames={450} fps={30} width={1080} height={1920}/>
