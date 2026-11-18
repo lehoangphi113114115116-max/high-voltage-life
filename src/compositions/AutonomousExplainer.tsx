@@ -5,9 +5,11 @@ import currentVideo from '../generated/current-video.json';
 import {colors, technicalFont} from '../theme';
 import {StoryMotion, type MotionScene} from './StoryMotion';
 import {FootageLayer, type FootagePlan} from '../footage/FootageLayer';
+import {ScientificShots, type ScientificScene} from './ScientificShots';
 
 type KaraokeWord = {text: string; startMs: number; endMs: number};
 const videoData = currentVideo as unknown as Omit<typeof currentVideo, 'karaoke'> & {karaoke: KaraokeWord[]};
+const plannedScenes = (currentVideo.scenes as unknown as ScientificScene[]).filter(scene => scene.visualDirection?.shot);
 
 export const Karaoke = ({untilMs = Infinity, words: inputWords = videoData.karaoke}: {untilMs?: number; words?: KaraokeWord[]}) => {
   const frame = useCurrentFrame();
@@ -84,8 +86,8 @@ export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: bo
   return (
     <AbsoluteFill style={{background: `radial-gradient(circle at 50% 30%, #173a58 0%, ${colors.navy} 54%, #050d18 100%)`, color: colors.white, overflow: 'hidden'}}>
       <Audio src={staticFile(currentVideo.audioPath)} />
-      <DepthGrid />
-      {motionPreview ? <StoryMotion scenes={(currentVideo.scenes as unknown as MotionScene[]).filter(scene => scene.startFrame < durationInFrames)} /> : isBird ? <div style={{position: 'absolute', inset: 0, transform: `translateX(${pan}px)`}}>
+      {(!plannedScenes.length || motionPreview) && <DepthGrid />}
+      {motionPreview ? <StoryMotion scenes={(currentVideo.scenes as unknown as MotionScene[]).filter(scene => scene.startFrame < durationInFrames)} /> : plannedScenes.length ? <ScientificShots scenes={plannedScenes}/> : isBird ? <div style={{position: 'absolute', inset: 0, transform: `translateX(${pan}px)`}}>
         <svg width="1080" height="1540" viewBox="0 0 1080 1540" style={{position: 'absolute', top: 190}}>
           <TransmissionPole x={105} scale={0.86} opacity={0.68} />
           <TransmissionPole x={975} scale={0.86} opacity={0.68} />
@@ -99,12 +101,12 @@ export const AutonomousExplainer = ({motionPreview = false}: {motionPreview?: bo
           {diagram ? <PotentialDiagram danger={danger} /> : null}
         </svg>
       </div> : <GenericElectricalScene category={currentVideo.category} />}
-      <div style={{position: 'absolute', top: 86, left: 62, right: 62, opacity: reveal}}>
+      {(!plannedScenes.length || motionPreview) && <div style={{position: 'absolute', top: 86, left: 62, right: 62, opacity: reveal}}>
         <TechnicalLabel>{currentVideo.category.toUpperCase()} · TECHNICAL ILLUSTRATION</TechnicalLabel>
         <div style={{fontFamily: technicalFont, fontSize: 59, fontWeight: 950, lineHeight: 1.02, marginTop: 26, maxWidth: 950, textTransform: 'uppercase'}}>{currentVideo.headline}</div>
         <div style={{width: 230, height: 7, marginTop: 22, background: colors.yellow, boxShadow: `0 0 20px ${colors.yellow}`}} />
-      </div>
-      {isBird && !motionPreview ? <div style={{position: 'absolute', top: 950, left: 72, opacity: diagram ? 1 : 0, color: danger ? colors.arcOrange : colors.green, fontFamily: technicalFont, fontSize: 27, fontWeight: 900, letterSpacing: 2}}>
+      </div>}
+      {isBird && !motionPreview && !plannedScenes.length ? <div style={{position: 'absolute', top: 950, left: 72, opacity: diagram ? 1 : 0, color: danger ? colors.arcOrange : colors.green, fontFamily: technicalFont, fontSize: 27, fontWeight: 900, letterSpacing: 2}}>
         {danger ? 'NGUY HIỂM: CHẠM HAI ĐIỆN THẾ KHÁC NHAU' : 'HAI CHÂN GẦN NHƯ CÙNG ĐIỆN THẾ'}
       </div> : null}
       <Karaoke />

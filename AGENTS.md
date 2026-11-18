@@ -16,6 +16,10 @@ Phong cách đã chốt: **Colorful Technical Animation** — Remotion + React +
 
 Đọc và áp dụng `agent/visual-defaults.json` và `docs/visual-direction.md` khi lập storyboard hoặc dựng video. Mặc định sản xuất video hoàn chỉnh; chỉ làm preview khi người dùng yêu cầu. Yêu cầu cập nhật cấu hình/tài liệu không tự cấp phép render.
 
+Mẫu phong cách đã duyệt là preview điện gió V2 (`HVL-WIND-POWER-PREVIEW`). Giữ mật độ hình có chủ đích, điểm nhìn chính rõ, chuyển động độc lập theo lớp, camera bám đối tượng và chuyển cảnh ăn khớp hình hoặc hành động. Mỗi nhịp 1–2 giây nên có một diễn biến có ý nghĩa. Chọn bối cảnh, hành động và sơ đồ theo chủ đề mới.
+
+Thuyết minh khoa học dùng Thái Sơn và hồ sơ `voice/config/narration-direction.json`. Viết câu hỏi thật ngắn để mở ý, tách phát hiện và cao trào thành câu riêng, dùng dấu câu và khoảng nghỉ để tạo nhịp. Giữ từ điển phát âm, đối chiếu karaoke với WAV đã hoàn tất. VieNeu v3 Turbo không đọc chỉ thị cảm xúc riêng.
+
 Ưu tiên kể chuyện bằng hoạt cảnh minh họa màu sắc có chiều sâu; footage chỉ dùng khi cần và có quyền sử dụng được xác minh. Cảnh vật dùng màu tự nhiên, đa dạng theo bối cảnh/vật liệu; màu thương hiệu chỉ dành cho nhận diện, nhãn kỹ thuật và karaoke. Hạn chế chữ, không giữ tiêu đề lớn xuyên suốt; chỉ hiện sơ đồ/công thức/đồ thị ở câu cần giải thích nguyên lý.
 
 Chia cảnh theo nội dung và timestamp lời đọc, số cảnh không cố định. Mỗi cảnh có chuyển động đối tượng và camera phù hợp, chuyển cảnh mượt có liên kết; không đứng hình quá 3 giây nếu thiếu lý do kỹ thuật. Chọn 2D/2.5D/3D theo nhu cầu giải thích, giữ đúng nguyên lý và cấu tạo có tài liệu. Khi bắt đầu video mới, đưa các chỉ dẫn `visualDirection` trong storyboard vào renderer thực tế; không coi metadata là hình ảnh đã được triển khai.

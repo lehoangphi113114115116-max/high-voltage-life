@@ -1,0 +1,9 @@
+{
+  "profile": "science-storytelling-v1",
+  "roles": {
+    "hook": {"speedFactor": 0.97, "pauseAfterMs": 340},
+    "discovery": {"speedFactor": 0.95, "pauseAfterMs": 290},
+    "climax": {"speedFactor": 1.03, "pauseAfterMs": 360},
+    "explanation": {"speedFactor": 0.98, "pauseAfterMs": 155}
+  }
+}

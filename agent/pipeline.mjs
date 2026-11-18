@@ -104,9 +104,8 @@ const speechIntervals = (audioPath, duration) => {
   return intervals.length ? intervals : [{start: 0, end: duration}];
 };
 
-const buildKaraoke = (text, audioPath, duration) => {
+const buildKaraoke = (text, intervals, duration) => {
   const words = text.split(/\s+/u).filter(Boolean);
-  const intervals = speechIntervals(audioPath, duration);
   const activeDuration = intervals.reduce((sum, item) => sum + item.end - item.start, 0);
   const weights = words.map((word) => Math.max(1, word.replace(/[^\p{L}\p{N}]/gu, '').length) + (/[.!?]$/u.test(word) ? 4 : /[,;:]$/u.test(word) ? 2 : 0));
   const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
@@ -163,13 +162,22 @@ const manifestPath = resolve(runDir, 'voice.manifest.json');
 const audioPath = resolve(runDir, 'voice.wav');
 await writeFile(narrationPath, `${content.narration}\n`, 'utf8');
 
-run('node', ['voice/scripts/prepare-script.mjs', narrationPath, manifestPath]);
+run('node', ['voice/scripts/prepare-script.mjs', narrationPath, manifestPath, '--science-storytelling']);
 run('.venv-tts/bin/python', ['voice/python/synthesize_vieneu.py', manifestPath, audioPath]);
 const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 const audioDuration = probeDuration(audioPath);
 const fps = 30;
 const durationInFrames = Math.ceil((audioDuration + 0.35) * fps);
-const karaoke = buildKaraoke(manifest.displayText, audioPath, audioDuration);
+const voiceReport = JSON.parse(await readFile(resolve(runDir, 'voice.report.json'), 'utf8'));
+const intervals = speechIntervals(audioPath, audioDuration);
+const beats = voiceReport.narration?.beats;
+const karaoke = beats?.length ? beats.flatMap(beat => {
+  const start = beat.startMs / 1000;
+  const end = Math.min(audioDuration, beat.endMs / 1000);
+  const speech = intervals.map(part => ({start: Math.max(start, part.start), end: Math.min(end, part.end)}))
+    .filter(part => part.end > part.start);
+  return buildKaraoke(beat.displayText, speech.length ? speech : [{start, end}], end);
+}) : buildKaraoke(manifest.displayText, intervals, audioDuration);
 await copyFile(audioPath, resolve(publicDir, 'voice.wav'));
 
 const project = {
@@ -190,10 +198,10 @@ const project = {
   height: 1920,
   durationInFrames,
   audioDurationMs: Math.round(audioDuration * 1000),
-  scenes: buildStoryboard(karaoke, fps, visualDefaults),
+  scenes: buildStoryboard(karaoke, fps, visualDefaults, {topic, category: profile.id}),
   karaoke,
 };
-project.footage = visualDefaults.footageDirector?.enabled===false?{version:1,clips:[],decisions:[],requiresEditorialReview:false}:await directFootage({topic,scenes:project.scenes,fps,root,layout:autonomousFootageLayout(project.headline)});
+project.footage = visualDefaults.footageDirector?.enabled===false?{version:1,clips:[],decisions:[],requiresEditorialReview:false}:await directFootage({topic,scenes:project.scenes,fps,root,layout:autonomousFootageLayout(project.headline, false, project.scenes.some(scene => scene.visualDirection?.shot))});
 await writeFile(resolve(runDir,'footage-manifest.json'),`${JSON.stringify(project.footage,null,2)}\n`);
 await writeFile(resolve(runDir,'footage-credits.txt'),project.footage.clips.map(c=>`${c.rights.attribution}\nModifications: ${c.rights.modifications}`).join('\n\n')+'\n');
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 6,
   "illustrationSystem": {"entrypoint": "src/illustration/index.ts", "guide": "docs/illustration-system.md", "example": "src/examples/ReusableIllustrationExample.tsx", "sf6Reference": "src/examples/sf6-v2/SF6BreakerScene.tsx"},
   "production": {"defaultOutput": "full-video", "previewOnlyOnRequest": true},
   "style": "colorful-technical-animation",
@@ -12,7 +12,15 @@
   "depthDirection": {"layers": ["background", "midground", "foreground"], "perspective": "coherent", "parallax": "layer-dependent", "camera": "smooth-pan-or-zoom-motivated-by-story"},
   "scenePacing": "few-focused-scenes-with-motivated-transitions",
   "electricalAnimation": {"requiredOnEnergizedWires": true, "particles": "small-yellow-dots-with-subtle-glow", "motion": "continuous-frame-driven-along-conductor", "direction": "declared-source-to-load-with-explicit-reverse", "terminalPulse": "subtle-optional", "deenergized": "no-flow", "meaning": "conventional-energy-flow-indicator-not-electron-speed-or-instantaneous-AC-current"},
-  "storytelling": "visual-first",
+  "storytelling": "visual-first-scientific-explainer",
+  "approvedReference": {
+    "compositionId": "HVL-WIND-POWER-PREVIEW",
+    "source": "src/compositions/WindPowerPreview.tsx",
+    "mediaPreparation": "agent/prepare-wind-preview.mjs",
+    "renderedReference": "out/hvl-wind-power-preview-v2.mp4",
+    "transferable": ["rich-scenery-with-a-clear-focal-point", "independent-motion-and-parallax", "continuous-camera-around-a-consistent-subject", "match-cut-and-motivated-reveal", "narration-led-technical-diagrams", "minimal-labels-and-optional-licensed-inset"],
+    "reuseSceneLayoutsAcrossTopics": false
+  },
   "palette": {
     "scene": "natural-contextual-material-colors",
     "brandScope": ["logo", "technical-labels", "karaoke", "identity-overlays"],

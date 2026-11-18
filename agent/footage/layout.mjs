@@ -9,8 +9,8 @@ export const chooseFootageLayout = ({width=1080,height=1920,reservedAreas,candid
 /** Measured safe band for current AutonomousExplainer's normal SVG layout.
  * Other renderers must declare their own rectangles; no generic unsafe guess.
  */
-export const autonomousFootageLayout = (headline, motionPreview=false) => {
-  if(motionPreview||headline.length>80) return null;
+export const autonomousFootageLayout = (headline, motionPreview=false, visualFirst=false) => {
+  if(motionPreview||(!visualFirst && headline.length>80)) return null;
   return {
     reservedAreas:[{x:0,y:0,width:1080,height:390},{x:0,y:560,width:1080,height:1000},{x:0,y:1580,width:1080,height:340}],
     candidates:[{mode:'inset',side:'right',x:730,y:396,width:280,height:158},{mode:'picture-in-picture',side:'left',x:70,y:396,width:280,height:158}],

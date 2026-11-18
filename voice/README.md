@@ -47,3 +47,10 @@ npm run voice:synthesize-local -- \
 ```
 
 Weights chính thức được cache trong `voice/models/`. Policy Cloud phải cho phép các miền Hugging Face trước lần chạy đầu tiên. Cấu hình giọng và sampling nằm tại `voice/config/local-vieneu.json`.
+# Nhịp kể chuyện khoa học
+
+Pipeline Agent dùng `voice/config/narration-direction.json` để tạo nhịp câu hỏi, phát hiện, cao trào và giải thích. Viết lời thoại thành câu ngắn có dấu kết câu. Dùng câu hỏi khi mở một điều đáng tò mò và tách phát hiện hoặc tình huống bất ngờ thành một nhịp riêng. Nối các câu giải thích ngắn để giữ mạch đọc. Dùng từ điển hiện có cho bản đọc và giữ nguyên từ kỹ thuật trên phụ đề.
+
+VieNeu v3 Turbo giữ ngữ điệu của preset Thái Sơn và xử lý dấu câu theo bộ tách đoạn của engine. Tham số `style` bị bỏ qua. Tốc độ từng nhịp được điều chỉnh bằng `atempo` và khoảng nghỉ được chèn khi ghép WAV. Timestamp từ lấy theo thời lượng thực của từng nhịp và vùng có tiếng, với mức chính xác ước lượng đến từng từ. Các script dành cho video tham chiếu giữ chế độ chuẩn bị lời đọc hiện có.
+
+Nếu nghe thử mà cao trào vẫn thiếu lực, hãy chỉnh lời và khoảng nghỉ trên một đoạn ngắn trước. Cần biểu cảm có thể chỉ đạo chính xác thì dùng bản thu người đọc đã chấp thuận hoặc đánh giá một engine có điều khiển biểu cảm rõ ràng trong một nhiệm vụ riêng.

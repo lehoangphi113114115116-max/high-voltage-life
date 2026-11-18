@@ -13,9 +13,10 @@ Cập nhật: 2026-11-17
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
 | Agent Skills chuyên môn | Hoàn thành | `social`, `scientific-critical-thinking`, `anatomy`; định tuyến theo chủ đề và khóa phiên bản |
 | Mặc định minh họa code động | Đã cập nhật | `CurrentFlow` hạt vàng theo dây thẳng/cong, chiều nguồn→tải, nháy đầu nối tùy chọn; tích hợp cảnh chim SVG và StoryMotion. Chưa render mới ở cập nhật này |
-| Storyboard Generator | Preview v2 chờ duyệt | Chia cảnh theo câu và timestamp lời đọc; số cảnh không cố định |
-| Visual Director | Preview v2 chờ duyệt | Dolly/parallax, animation SVG, cross-dissolve và directional reveal; chưa áp dụng video đầy đủ |
-| Phong cách sản xuất mặc định | Đã chốt cấu hình v3 | Colorful Technical Animation; Remotion/React/SVG, component độc lập, màu tự nhiên, hành động theo lời thoại, hạt năng lượng quy ước; footage/3D khi cần. Lượt này chỉ cấu hình, không render |
+| Storyboard Generator | Visual-first v5 | Chia theo câu/mệnh đề và timestamp; chọn góc nhìn, hành động và lớp giải thích |
+| Visual Director | Đã nối composition chính | Toàn/cận/sơ đồ, hoạt cảnh theo nhịp lời, chuyển cảnh và footage inset; chưa kiểm tra bằng video render |
+| Phong cách sản xuất mặc định | Điện gió V2 đã duyệt | Visual Director v6, Colorful Technical Animation; dùng composition `HVL-WIND-POWER-PREVIEW` để tham chiếu mật độ hình, chuyển động theo lớp và camera |
+| Nhịp thuyết minh | Science storytelling v1 | Thái Sơn, dấu câu và nhịp phát hiện/cao trào/giải thích, tốc độ và khoảng nghỉ theo nhịp. VieNeu v3 Turbo bỏ qua `style`; độ biểu cảm chưa được nghe duyệt |
 | Demo màu tự nhiên 15 giây | Đã render, chờ đánh giá | `HVL-NATURAL-BIRD-15S`; ảnh mẫu + camera, lá/SVG động, sơ đồ nền sáng, Thái Sơn/karaoke; H.264 1080×1920/30 FPS |
 | Nhà máy điện → nhà dân | Đã render và QC | `HVL-POWER-JOURNEY-15S`; 450 frame, H.264/AAC 1080×1920/30 FPS; thư viện SVG độc lập, Thái Sơn, hạt năng lượng, camera parallax |
 | Nguyên lý SF6 15 giây | Đã render/QC | `HVL-SF6-PRINCIPLE-15S`; 450 frame H.264/AAC 1080×1920/30 FPS, Thái Sơn/karaoke; đóng → mở/hồ quang → khử ion → phục hồi cách điện |

@@ -88,21 +88,57 @@ def main() -> None:
             "Chưa chọn preset mặc định. Hãy truyền --voice với một giọng miền Nam đã duyệt."
         )
     infer_started = time.perf_counter()
-    audio = tts.infer(
-        text,
-        voice=voice,
+    sample_rate = int(config["sampleRate"])
+    sampling = dict(
         temperature=float(config["temperature"]),
         top_k=int(config["topK"]),
         top_p=float(config["topP"]),
         repetition_penalty=float(config["repetitionPenalty"]),
     )
+    beats = manifest.get("narration", {}).get("beats", [])
+    beat_timings = []
+    if beats:
+        import numpy as np
+
+        sections = []
+        cursor = 0
+        for index, beat in enumerate(beats):
+            rate = min(1.25, max(0.8, speed * float(beat["speedFactor"])))
+            waveform = tts.infer(beat["spokenText"], voice=voice, **sampling)
+            paced = subprocess.run(
+                ["ffmpeg", "-v", "error", "-f", "f32le", "-ar", str(sample_rate),
+                 "-ac", "1", "-i", "pipe:0", "-af", f"atempo={rate}",
+                 "-f", "f32le", "pipe:1"],
+                input=np.asarray(waveform, dtype="<f4").tobytes(),
+                capture_output=True,
+                check=True,
+            )
+            samples = np.frombuffer(paced.stdout, dtype="<f4")
+            if not samples.size:
+                raise ValueError(f"Nhịp lời {index + 1} không có âm thanh.")
+            sections.append(samples)
+            beat_timings.append({
+                "role": beat["role"], "displayText": beat["displayText"],
+                "startMs": round(cursor * 1000 / sample_rate),
+                "endMs": round((cursor + samples.size) * 1000 / sample_rate),
+                "speed": round(rate, 4),
+            })
+            pause_ms = max(0, min(1000, int(beat["pauseAfterMs"]))) if index + 1 < len(beats) else 0
+            pause = round(pause_ms * sample_rate / 1000)
+            if pause:
+                sections.append(np.zeros(pause, dtype=np.float32))
+            cursor += samples.size + pause
+        audio = np.concatenate(sections)
+    else:
+        audio = tts.infer(text, voice=voice, **sampling)
     infer_seconds = time.perf_counter() - infer_started
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temporary:
         raw_path = Path(temporary.name)
     try:
-        sf.write(raw_path, audio, int(config["sampleRate"]), subtype="PCM_16")
+        sf.write(raw_path, audio, sample_rate, subtype="PCM_16")
+        normalize = f"loudnorm=I={config['targetLufs']}:TP=-1.5:LRA=7"
         subprocess.run(
             [
                 "ffmpeg",
@@ -112,7 +148,7 @@ def main() -> None:
                 "-i",
                 str(raw_path),
                 "-af",
-                f"atempo={speed},loudnorm=I={config['targetLufs']}:TP=-1.5:LRA=7",
+                normalize if beats else f"atempo={speed},{normalize}",
                 "-c:a",
                 "pcm_s16le",
                 "-ar",
@@ -141,6 +177,11 @@ def main() -> None:
         "durationSeconds": round(duration_seconds, 3),
         "rtf": round(infer_seconds / duration_seconds, 4),
     }
+    if beat_timings:
+        report["narration"] = {
+            "profile": manifest["narration"]["profile"],
+            "beats": beat_timings,
+        }
     report_path = args.output.with_suffix(".report.json")
     report_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
