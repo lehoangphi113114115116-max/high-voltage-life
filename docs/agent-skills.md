@@ -23,3 +23,28 @@ Kiểm tra riêng bộ định tuyến mới:
 ```bash
 npm run agent:skills:test
 ```
+
+## Technical Research
+
+`agent/research/SKILL.md` bổ sung tìm và đọc nguồn. Module dùng lại
+`scientific-critical-thinking` theo bản đã khóa. Khi chưa có bản sao cục bộ, module đọc
+hướng dẫn từ commit upstream đã ghim. Tìm kiếm trực tiếp cần Codex CLI đã đăng nhập
+và có quyền web search. Không cần API key mới.
+
+```bash
+npm run agent -- --topic "Điện năng lượng mặt trời được tạo ra như thế nào?" --research-only
+npm run agent -- --topic "Điện năng lượng mặt trời được tạo ra như thế nào?"
+```
+
+Lệnh thứ nhất chỉ lưu/in hồ sơ. Lệnh thứ hai dùng kết luận có nguồn để lập
+lời đọc, storyboard và chạy pipeline hiện có. Hồ sơ theo chủ đề nằm trong
+`agent/research/cache` và bản sao của lượt sản xuất nằm trong `agent/runs`.
+Dùng `--refresh-research` khi tiêu chuẩn/phiên bản thay đổi. Hồ sơ giữ link,
+phiên bản nếu có, ngày truy cập, vị trí trong tài liệu và diễn giải bằng lời
+của dự án. Các hồ sơ sinh tự động được giữ cục bộ. Hồ sơ mẫu đã đối chiếu về quang điện nằm ở `agent/research/verified`. Để kiểm tra riêng luồng nghiên cứu và ánh xạ storyboard, chạy `node --test agent/research/director.test.mjs`.
+
+Mỗi kết luận cần hai nguồn độc lập. Việc đối chiếu nội dung do phiên nghiên cứu
+thực hiện, validator kiểm tra cấu trúc, domain và liên kết nguồn. Storyboard chỉ
+mở hoạt cảnh thiết bị có bằng chứng khớp với câu thuyết minh và luôn gắn nhãn
+minh họa nguyên lý. Nếu chưa đủ bằng chứng, cảnh giữ bối cảnh biểu trưng.
+Thiếu hồ sơ hợp lệ sẽ dừng trước TTS.

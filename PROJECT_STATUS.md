@@ -10,6 +10,7 @@ Cập nhật: 2026-11-17
 | Auto Footage Director | Đã tích hợp, kiểm thử mới đạt | Commons CC0/CC BY, lọc chủ đề theo câu, tải/cache/cắt clip, safe layout và FootageLayer. Live tải clip đạt; QC nội dung hình thực tế vẫn do Agent kiểm tra, chưa có model thị giác. Không render trong lượt này |
 | TTS cục bộ | Hoàn thành | VieNeu-TTS v3 Turbo 3.8.4, Adam, tốc độ cơ sở 1,027× |
 | Từ điển phát âm | Hoàn thành | Thuật ngữ điện trong `pronunciation.vi.json` |
+| Technical Research | Tích hợp trước kịch bản | Tìm nguồn bằng Codex CLI, tái sử dụng scientific-critical-thinking, lưu hồ sơ theo chủ đề và gắn bằng chứng theo cảnh. Có chế độ research-only. |
 | Content Director | Hoàn thành v1 | Phân loại chủ đề/audience/độ sâu bằng rule + knowledge profile |
 | Agent Skills chuyên môn | Hoàn thành | `social`, `scientific-critical-thinking`, `anatomy`; định tuyến theo chủ đề và khóa phiên bản |
 | Mặc định minh họa code động | Đã cập nhật | `CurrentFlow` hạt vàng theo dây thẳng/cong, chiều nguồn→tải, nháy đầu nối tùy chọn; tích hợp cảnh chim SVG và StoryMotion. Chưa render mới ở cập nhật này |

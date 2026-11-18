@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "topic": "Điện năng lượng mặt trời được tạo ra như thế nào?",
+  "sources": [
+    {
+      "id": "doe",
+      "title": "PV Cells 101: A Primer on the Solar Photovoltaic Cell",
+      "publisher": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/cmei/systems/articles/pv-cells-101-primer-solar-photovoltaic-cell",
+      "version": null,
+      "accessedOn": "2026-11-18"
+    },
+    {
+      "id": "stanford",
+      "title": "Understand Solar Energy",
+      "publisher": "Stanford University",
+      "url": "https://understandenergy-prod.stanford.edu/news/understand-solar-energy",
+      "version": null,
+      "accessedOn": "2026-11-18"
+    }
+  ],
+  "claims": [
+    {
+      "narration": "Khi ánh sáng được hấp thụ trong chất bán dẫn của tế bào quang điện, năng lượng ánh sáng làm xuất hiện các hạt tải điện có thể chuyển động.",
+      "limits": "Giải thích hiệu ứng quang điện trong tế bào bán dẫn. Không mô tả cấu trúc một sản phẩm cụ thể.",
+      "visualReview": "Có cơ sở minh họa ánh sáng và hạt tải. Hệ dựng tự động hiện chưa có mô hình riêng cho tế bào quang điện, nên dùng nền minh họa.",
+      "citations": [
+        {
+          "sourceId": "doe",
+          "locator": "How a Solar Cell Works",
+          "paraphrase": "Bán dẫn hấp thụ ánh sáng và truyền năng lượng cho electron."
+        },
+        {
+          "sourceId": "stanford",
+          "locator": "What you need to know · How does solar PV work?",
+          "paraphrase": "Năng lượng ánh sáng tạo electron có thể chuyển động và lỗ trống."
+        }
+      ],
+      "visual": "abstract"
+    },
+    {
+      "narration": "Tấm pin cấp điện một chiều. Bộ biến tần chuyển điện một chiều sang điện xoay chiều để hệ thống có thể cấp điện xoay chiều.",
+      "limits": "Áp dụng cho hệ quang điện có bộ biến tần. Không chỉ định cách đấu nối, mức điện áp hay công suất.",
+      "visualReview": "Chỉ xác nhận luồng chức năng từ pin đến đầu ra xoay chiều. Không suy ra cấu tạo bên trong của bộ biến tần.",
+      "citations": [
+        {
+          "sourceId": "doe",
+          "locator": "How a Solar Cell Works",
+          "paraphrase": "Dòng điện lấy qua tiếp xúc kim loại được đưa tới bộ biến tần, nơi đổi sang điện xoay chiều."
+        },
+        {
+          "sourceId": "stanford",
+          "locator": "What you need to know · How does solar PV work?",
+          "paraphrase": "Tế bào tạo điện một chiều và bộ biến tần cung cấp đầu ra xoay chiều."
+        }
+      ],
+      "visual": "abstract"
+    }
+  ]
+}

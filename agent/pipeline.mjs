@@ -7,6 +7,7 @@ import {selectAgentSkills} from './skill-router.mjs';
 import {buildStoryboard} from './storyboard.mjs';
 import {directFootage} from './footage/director.mjs';
 import {autonomousFootageLayout} from './footage/layout.mjs';
+import {researchTopic} from './research/director.mjs';
 import {uploadVideo} from './drive-upload.mjs';
 
 const root = resolve(import.meta.dirname, '..');
@@ -53,36 +54,6 @@ const classify = (input) => {
   ];
   return profiles.find((profile) => profile.words.some((word) => normalized.includes(word))) ?? {
     id: 'other-electrical', audience: 'người học kỹ thuật điện', depth: 'tổng quan có kiểm chứng', visual: 'animated-2d-schematic',
-  };
-};
-
-const directContent = (input, profile) => {
-  if (input.toLowerCase().includes('chim') && input.toLowerCase().includes('dây điện')) {
-    return {
-      headline: 'VÌ SAO CHIM ĐẬU TRÊN DÂY ĐIỆN KHÔNG BỊ GIẬT?',
-      narration: 'Chim đậu trên một sợi dây điện thường không bị giật, vì hai chân của nó gần như cùng một điện thế. Dòng điện chỉ chạy mạnh qua cơ thể khi có chênh lệch điện áp giữa hai điểm tiếp xúc. Trên đoạn dây rất ngắn giữa hai chân chim, điện trở của dây nhỏ nên độ sụt áp gần như bằng không. Vì vậy, dòng điện đi qua cơ thể chim cực thấp. Nguy hiểm xuất hiện nếu chim đồng thời chạm vào dây khác điện thế, hoặc chạm dây điện và cột nối đất. Khi đó cơ thể tạo thành một đường dẫn, dòng điện có thể chạy qua và gây điện giật.',
-      research: [
-        'Dòng qua cơ thể phụ thuộc chênh lệch điện thế giữa hai điểm tiếp xúc: I = ΔV / R.',
-        'Hai chân gần nhau trên cùng dây dẫn có ΔV rất nhỏ vì điện trở đoạn dây rất thấp.',
-        'Chạm đồng thời hai điện thế khác nhau hoặc dây pha và đất tạo đường dẫn nguy hiểm.',
-      ],
-      scenes: [
-        {id: 'hook', from: 0, to: 0.2, visual: 'Chim và đường dây có chiều sâu, câu hỏi mở đầu', camera: 'slow push-in'},
-        {id: 'same-potential', from: 0.2, to: 0.52, visual: 'Hai chân trên cùng dây, V1 gần bằng V2', camera: 'technical close-up'},
-        {id: 'voltage-difference', from: 0.52, to: 0.76, visual: 'Sơ đồ ΔV = V1 - V2 gần bằng 0', camera: 'diagram lock'},
-        {id: 'danger', from: 0.76, to: 1, visual: 'Chạm hai điện thế khác nhau, đường dòng điện cảnh báo', camera: 'pull-back warning'},
-      ],
-    };
-  }
-  return {
-    headline: input.toUpperCase(),
-    narration: `${input} là một chủ đề cần được nhìn qua ba lớp: hiện tượng quan sát được, nguyên lý điện chi phối, và điều kiện vận hành an toàn. Trước hết, hãy xác định dòng điện đi theo đường nào và điện áp xuất hiện giữa những điểm nào. Tiếp theo, sơ đồ kỹ thuật giúp tách phần tử chính khỏi chi tiết không cần thiết. Cuối cùng, mọi kết luận phải được đối chiếu với thông số thiết bị và quy trình an toàn tại hiện trường. Cách phân tích này giúp biến một hiện tượng phức tạp thành chuỗi nguyên nhân và kết quả có thể kiểm chứng.`,
-    research: ['Xác định đường dòng điện.', 'Xác định chênh lệch điện thế.', 'Đối chiếu thông số và điều kiện an toàn.'],
-    scenes: [
-      {id: 'hook', from: 0, to: 0.25, visual: profile.visual, camera: 'slow push-in'},
-      {id: 'principle', from: 0.25, to: 0.62, visual: 'animated technical schematic', camera: 'diagram close-up'},
-      {id: 'application', from: 0.62, to: 1, visual: 'technical summary and safety boundary', camera: 'wide summary'},
-    ],
   };
 };
 
@@ -143,6 +114,16 @@ const qcVideo = (videoPath, expectedFrames) => {
   return {checks, probe};
 };
 
+const research = await researchTopic({root, topic, refresh: args.includes('--refresh-research')});
+if (args.includes('--research-only')) {
+  console.log(JSON.stringify(research, null, 2));
+  process.exit(0);
+}
+const content = {
+  headline: topic.toLocaleUpperCase('vi'),
+  narration: research.claims.map(claim => claim.narration.trim().replace(/(?<![.!?])$/u, '.')).join(' '),
+};
+
 for (const required of ['node_modules/.bin/remotion', '.venv-tts/bin/python', 'voice/python/synthesize_vieneu.py']) {
   if (!existsSync(resolve(root, required))) throw new Error(`Thiếu thành phần đã cài: ${required}`);
 }
@@ -155,7 +136,7 @@ await mkdir(publicDir, {recursive: true});
 
 const profile = classify(topic);
 const visualDefaults = JSON.parse(await readFile(resolve(root, 'agent/visual-defaults.json'), 'utf8'));
-const content = directContent(topic, profile);
+await writeFile(resolve(runDir, 'research.json'), `${JSON.stringify(research, null, 2)}\n`);
 const skillRouting = selectAgentSkills({topic, category: profile.id, visualMode: profile.visual});
 const narrationPath = resolve(runDir, 'narration.txt');
 const manifestPath = resolve(runDir, 'voice.manifest.json');
@@ -191,14 +172,14 @@ const project = {
   headline: content.headline,
   narration: manifest.displayText,
   spokenNarration: manifest.spokenText,
-  research: content.research,
+  research,
   audioPath: 'generated/current/voice.wav',
   fps,
   width: 1080,
   height: 1920,
   durationInFrames,
   audioDurationMs: Math.round(audioDuration * 1000),
-  scenes: buildStoryboard(karaoke, fps, visualDefaults, {topic, category: profile.id}),
+  scenes: buildStoryboard(karaoke, fps, visualDefaults, {topic, category: profile.id, research}),
   karaoke,
 };
 project.footage = visualDefaults.footageDirector?.enabled===false?{version:1,clips:[],decisions:[],requiresEditorialReview:false}:await directFootage({topic,scenes:project.scenes,fps,root,layout:autonomousFootageLayout(project.headline, false, project.scenes.some(scene => scene.visualDirection?.shot))});

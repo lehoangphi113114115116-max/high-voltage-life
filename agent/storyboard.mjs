@@ -12,6 +12,17 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
     }
   }
   if (sentence.length) groups.push(sentence);
+  const claimSpans = [];
+  const claims = context.research?.claims ?? [];
+  const claimWords = claims.map(claim => claim.narration.trim().replace(/(?<![.!?])$/u, '.').split(/\s+/u));
+  if (claimWords.flat().join(' ') === words.map(word => word.text).join(' ')) {
+    let offset = 0;
+    for (const [index, tokens] of claimWords.entries()) {
+      claimSpans.push({claim: claims[index], index, from: offset, to: offset + tokens.length});
+      offset += tokens.length;
+    }
+  }
+  let wordOffset = 0;
   let previousShot;
   return groups.map((group, index) => {
     const text = group.map((word) => word.text).join(' ');
@@ -23,8 +34,11 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
     const breaker = /máy cắt|sf6/iu.test(context.topic ?? '') && /mở tiếp điểm|tiếp điểm tách|tách tiếp điểm/iu.test(text)
       && !/không (?:được |thể )?(?:mở tiếp điểm|để tiếp điểm tách|tách tiếp điểm)/iu.test(text);
     const relay = /\b87l\b|so lệch đường dây/iu.test(context.topic ?? '') && /rơ le|tín hiệu|so lệch/iu.test(text);
-    const subject = bird ? 'bird' : breaker ? 'breaker' : relay ? 'relay' : 'conductor';
-    const action = bird ? (mode === 'danger' ? 'compare-paths' : index === 0 ? 'land' : 'perch')
+    const support = claimSpans.find(span => span.from <= wordOffset && wordOffset + group.length <= span.to);
+    wordOffset += group.length;
+    const candidate = bird ? 'bird' : breaker ? 'breaker' : relay ? 'relay' : 'conductor';
+    const subject = context.research && support?.claim.visual !== candidate ? 'abstract' : candidate;
+    const action = subject === 'abstract' ? 'illustrate' : bird ? (mode === 'danger' ? 'compare-paths' : index === 0 ? 'land' : 'perch')
       : breaker ? 'open-contacts' : relay ? 'relay-signal' : 'trace-energy';
     const phase = comparison && !breaker && !relay ? 'diagram' : previousShot?.framing === 'wide' || breaker ? 'detail' : 'wide';
     const framing = bird && index === 0 ? 'wide'
@@ -34,8 +48,8 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
     const cue = group.find(word => /^(mở|tách)[,.;]?$/iu.test(word.text));
     const shot = {subject, action, framing, transition,
       actionFrame: breaker && cue ? Math.round(cue.startMs * fps / 1000) : undefined,
-      technicalCue: framing === 'diagram' ? 'potential' : null};
-    const renderer = chooseSceneRenderer({shot, text, policy: visualDefaults?.sceneRenderers});
+      technicalCue: subject !== 'abstract' && framing === 'diagram' ? 'potential' : null};
+    const renderer = subject === 'abstract' ? 'parallax' : chooseSceneRenderer({shot, text, policy: visualDefaults?.sceneRenderers});
     previousShot = shot;
     return {id: `sentence-${index}`, text, mode,
       startFrame: Math.round(group[0].startMs * fps / 1000),
@@ -44,6 +58,11 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
       camera: mode === 'depth' ? 'parallax-dolly' : mode === 'wire-detail' ? 'macro-track' : 'diagram-push',
       ...(visualDefaults ? {visualDirection: {
         ...(visualDefaults.storytelling === 'visual-first-scientific-explainer' ? {shot: {...shot, renderer}} : {}),
+        ...(context.research ? {technicalEvidence: {
+          claimIndex: support?.index ?? null,
+          sourceIds: support?.claim.citations.map(cite => cite.sourceId) ?? [],
+          depiction: 'principle-illustration',
+        }} : {}),
         style: visualDefaults.style,
         styleName: visualDefaults.styleName,
         illustrationSystem: visualDefaults.illustrationSystem,

@@ -4,15 +4,15 @@ import {RelaySymbol, SignalFlow} from '../components/technical';
 import type {MotionScene} from './StoryMotion';
 
 type Shot = {
-  subject: 'bird' | 'breaker' | 'relay' | 'conductor';
-  action: 'land' | 'perch' | 'compare-paths' | 'open-contacts' | 'relay-signal' | 'trace-energy';
+  subject: 'bird' | 'breaker' | 'relay' | 'conductor' | 'abstract';
+  action: 'land' | 'perch' | 'compare-paths' | 'open-contacts' | 'relay-signal' | 'trace-energy' | 'illustrate';
   framing: 'wide' | 'detail' | 'diagram';
   transition: 'none' | 'match-cut' | 'directional-reveal' | 'cross-dissolve';
   actionFrame?: number;
   renderer?: 'svg' | 'parallax' | 'breaker-contact-3d';
   technicalCue: 'potential' | null;
 };
-export type ScientificScene = MotionScene & {visualDirection: {shot: Shot}};
+export type ScientificScene = MotionScene & {visualDirection: {shot: Shot; technicalEvidence?: {depiction: string}}};
 
 const ShotArtwork = ({scene, frame, fps}: {scene: ScientificScene; frame: number; fps: number}) => {
   const {subject, framing, action, actionFrame, technicalCue} = scene.visualDirection.shot;
@@ -34,7 +34,7 @@ const ShotArtwork = ({scene, frame, fps}: {scene: ScientificScene; frame: number
         <path d="M -100 1350 Q 200 1000 570 1290 Q 900 1110 1200 1290 V 1920 H -100 Z" fill="#83ad8f"/>
         <path d="M -100 1500 Q 340 1270 610 1460 Q 940 1290 1200 1450 V 1920 H -100 Z" fill="#557e60"/>
       </ParallaxLayer>}
-      midground={<g transform={detail ? `translate(${-190 - move * 40} -300) scale(1.4)` : undefined}>
+      midground={subject === 'abstract' ? null : <g transform={detail ? `translate(${-190 - move * 40} -300) scale(1.4)` : undefined}>
         {subject === 'breaker' ? <g transform="translate(220 960) scale(2.45)">
           <MaterialSurface x={-15} y={-56} width={290} height={112} radius={18}/>
           <ContactSwitch opening={opening}/>
@@ -51,6 +51,8 @@ const ShotArtwork = ({scene, frame, fps}: {scene: ScientificScene; frame: number
         </>}
       </g>}
       foreground={useDepth && framing === 'wide' && <ParallaxLayer cameraX={move*55} depth={1}><Tree x={75} y={1470}/><Tree x={1030} y={1500}/></ParallaxLayer>}
+      labels={scene.visualDirection.technicalEvidence && <div style={{position: 'absolute', top: '69%', width: '100%',
+        textAlign: 'center', color: '#203e4f', font: '700 32px Arial'}}>Minh họa nguyên lý</div>}
       technicalOverlay={technicalCue === 'potential' && <g fontFamily="Arial" fontWeight="700" fill="#203e4f" textAnchor="middle">
         {subject === 'bird' && danger && <path d="M 350 990 Q 490 850 730 878" stroke="#c95427" strokeWidth="5" fill="none" strokeDasharray="14 8" strokeDashoffset={-age * 2}/>}
         {[350,730].map((x,i) => <g key={x} transform={`translate(${x} ${danger && i ? 878 : 990})`}>

@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sources", "claims"],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "publisher", "url", "version"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "publisher": {"type": "string"},
+          "url": {"type": "string"},
+          "version": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["narration", "limits", "visual", "visualReview", "citations"],
+        "properties": {
+          "narration": {"type": "string"},
+          "limits": {"type": "string"},
+          "visual": {"enum": ["abstract", "bird", "breaker", "relay", "conductor"]},
+          "visualReview": {"type": "string"},
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sourceId", "locator", "paraphrase"],
+              "properties": {
+                "sourceId": {"type": "string"},
+                "locator": {"type": "string"},
+                "paraphrase": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

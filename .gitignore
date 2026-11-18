@@ -53,3 +53,6 @@ __pycache__/
 # Autonomous agent generated assets and run reports
 agent/runs/
 public/generated/
+
+# Local topic research manifests (only reviewed records are shared intentionally)
+agent/research/cache/

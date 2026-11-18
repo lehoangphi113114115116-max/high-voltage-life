@@ -6,6 +6,8 @@
 
 Đọc `PROJECT_STATUS.md` trước khi làm việc. Chỉ mở module liên quan đến nhiệm vụ hiện tại; không xây lại module đã đánh dấu hoàn thành.
 
+Trước khi viết kịch bản kỹ thuật, áp dụng `agent/research/SKILL.md` và kiểm tra hỗ trợ tài liệu theo từng cảnh. Dùng chế độ `--research-only` để kiểm tra hồ sơ mà không chạy TTS hoặc render.
+
 Phương pháp dựng hình chung: đọc `docs/illustration-system.md`; import component/token/motion/transition từ `src/illustration/index.ts`. Tái sử dụng trước khi bổ sung. `src/examples/sf6-v2` giữ mã Remotion V2 người dùng cung cấp và cực máy cắt đã tách thành React; đây là ví dụ nguyên lý, không giới hạn hệ dựng hình vào SF6. Ví dụ tổng quát: `src/examples/ReusableIllustrationExample.tsx`.
 
 Auto Footage Director: `agent/footage/director.mjs`, hướng dẫn `docs/auto-footage-director.md`. Pipeline đã nối tìm/license/tải/cắt/khung footage; ưu tiên SVG, chỉ thêm clip khớp câu và có safe slot. Layout mới phải khai báo reserved areas (thiết bị, sơ đồ, nhãn, karaoke) và candidate rectangles. Kiểm tra contentMatch/clip thực tế và credits trong QC trước khi bàn giao; không coi metadata match là xác minh thị giác. Không dùng clip chưa xác minh license.
