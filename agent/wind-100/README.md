@@ -28,4 +28,4 @@ node agent/wind-100/prepare.mjs
 bash agent/wind-100/render.sh
 ```
 
-Bước render tách vùng dùng WebGL khỏi các cảnh SVG rồi ghép H.264 theo cùng trục thời gian 30 FPS. Audio Adam được ghép một lần vào MP4 fast-start.
+Bước render tách đoạn mặt cắt 3D để có thể kiểm tra hoặc dựng lại riêng, rồi ghép H.264 theo cùng trục thời gian 30 FPS. Audio Adam được ghép một lần vào MP4 fast-start.

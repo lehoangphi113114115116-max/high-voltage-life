@@ -30,7 +30,7 @@ export const WindDrivetrain = ({seconds}: {seconds: number}) => {
     <ThreeCanvas width={width} height={height} camera={{position:[0, .15, 10.4], fov:37}} dpr={1}>
       <ambientLight intensity={1.55}/><directionalLight position={[2, 4, 5]} intensity={2.65}/>
       <directionalLight position={[-4, 0, -2]} color="#acdfff" intensity={1.1}/>
-      <group scale={.82 + .07 * view} rotation={[.12, -.31 + .57 * view, -.13 + .1 * view]} position={[.08,-.04,0]}>
+      <group scale={.65 + .06 * view} rotation={[.12, -.31 + .57 * view, -.13 + .1 * view]} position={[.15,-.04,0]}>
         <mesh position={[.6, -1.75, -.23]}>
           <cylinderGeometry args={[.39, .51, 1.82, 28]}/>
           <meshStandardMaterial color="#e1eeea"/>

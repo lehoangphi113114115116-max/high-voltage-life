@@ -11,8 +11,8 @@ render_segment() {
     --frames="$frames" --props="$assets/timeline.json" --browser-executable=/usr/bin/chromium \
     --muted --concurrency=2 --codec=h264 --x264-preset=veryfast --jpeg-quality=87 --crf=18 "$@"
 }
-render_segment landscape 0-681
-render_segment drivetrain 682-1148 --gl=swangle
+if [[ ${1:-} != --reuse-opening ]]; then render_segment landscape 0-681; fi
+render_segment drivetrain 682-1148
 render_segment system 1149-2999
 printf "file 'landscape.mp4'\nfile 'drivetrain.mp4'\nfile 'system.mp4'\n" > "$parts/segments.txt"
 ffmpeg -v error -y -f concat -safe 0 -i "$parts/segments.txt" -i "$assets/adam.wav" \
