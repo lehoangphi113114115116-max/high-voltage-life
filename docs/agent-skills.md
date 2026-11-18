@@ -48,3 +48,9 @@ thực hiện, validator kiểm tra cấu trúc, domain và liên kết nguồn.
 mở hoạt cảnh thiết bị có bằng chứng khớp với câu thuyết minh và luôn gắn nhãn
 minh họa nguyên lý. Nếu chưa đủ bằng chứng, cảnh giữ bối cảnh biểu trưng.
 Thiếu hồ sơ hợp lệ sẽ dừng trước TTS.
+
+Trong môi trường Cloud giới hạn khởi tạo Codex CLI con, dùng web search của
+phiên Agent hiện tại để tra cứu và kiểm chứng. Agent truyền hồ sơ đã đối chiếu
+bằng `--research-file <đường-dẫn>`. Hồ sơ nhập phải có `schemaVersion: 1`,
+`topic` trùng chủ đề, và `accessedOn` trên từng nguồn, theo cấu trúc tệp mẫu.
+Pipeline kiểm tra và lưu hồ sơ trước khi cho phép bước kịch bản.

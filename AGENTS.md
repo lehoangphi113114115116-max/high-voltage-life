@@ -6,7 +6,7 @@
 
 Đọc `PROJECT_STATUS.md` trước khi làm việc. Chỉ mở module liên quan đến nhiệm vụ hiện tại; không xây lại module đã đánh dấu hoàn thành.
 
-Trước khi viết kịch bản kỹ thuật, áp dụng `agent/research/SKILL.md` và kiểm tra hỗ trợ tài liệu theo từng cảnh. Dùng chế độ `--research-only` để kiểm tra hồ sơ mà không chạy TTS hoặc render.
+Trước khi viết kịch bản kỹ thuật, áp dụng `agent/research/SKILL.md` và kiểm tra hỗ trợ tài liệu theo từng cảnh. Dùng chế độ `--research-only` để kiểm tra hồ sơ mà không chạy TTS hoặc render. Khi Codex CLI con không khởi tạo được nhưng phiên làm việc có web search, tự nghiên cứu trong phiên hiện tại, đối chiếu theo skill, tạo hồ sơ JSON theo schema kèm chủ đề và ngày truy cập nguồn, rồi truyền `--research-file` để pipeline dùng và lưu hồ sơ đó.
 
 Phương pháp dựng hình chung: đọc `docs/illustration-system.md`; import component/token/motion/transition từ `src/illustration/index.ts`. Tái sử dụng trước khi bổ sung. `src/examples/sf6-v2` giữ mã Remotion V2 người dùng cung cấp và cực máy cắt đã tách thành React; đây là ví dụ nguyên lý, không giới hạn hệ dựng hình vào SF6. Ví dụ tổng quát: `src/examples/ReusableIllustrationExample.tsx`.
 

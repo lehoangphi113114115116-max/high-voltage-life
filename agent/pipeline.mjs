@@ -114,7 +114,14 @@ const qcVideo = (videoPath, expectedFrames) => {
   return {checks, probe};
 };
 
-const research = await researchTopic({root, topic, refresh: args.includes('--refresh-research')});
+const sourceRecord = valueAfter('--research-file');
+if (args.includes('--research-file') && (!sourceRecord || sourceRecord.startsWith('--'))) {
+  throw new Error('--research-file cần đường dẫn đến hồ sơ đã kiểm chứng.');
+}
+const research = await researchTopic({
+  root, topic, refresh: args.includes('--refresh-research'),
+  recordPath: sourceRecord ? resolve(sourceRecord) : undefined,
+});
 if (args.includes('--research-only')) {
   console.log(JSON.stringify(research, null, 2));
   process.exit(0);

@@ -76,12 +76,12 @@ If evidence is insufficient, return empty claims and explain no missing details 
   }
 }
 
-export async function researchTopic({root, topic, refresh = false, discover = runResearch}) {
+export async function researchTopic({root, topic, refresh = false, recordPath, discover = runResearch}) {
   const key = createHash('sha256').update(normalize(topic)).digest('hex');
   const dir = join(root, 'agent/research/cache');
   const path = join(dir, `${key}.json`);
   const reviewed = join(root, 'agent/research/verified', `${key}.json`);
-  for (const candidate of refresh ? [] : [path, reviewed]) {
+  for (const candidate of recordPath ? [recordPath] : refresh ? [] : [path, reviewed]) {
     try {
       const cached = JSON.parse(await readFile(candidate, 'utf8'));
       if (cached.schemaVersion !== 1 || normalize(cached.topic) !== normalize(topic)
@@ -89,9 +89,11 @@ export async function researchTopic({root, topic, refresh = false, discover = ru
         throw new Error('Hồ sơ nghiên cứu không khớp chủ đề hoặc thiếu ngày truy cập.');
       }
       validateResearch(cached);
+      if (!recordPath) return cached;
+      await saveRecord(dir, path, cached);
       return cached;
     } catch (error) {
-      if (error.code !== 'ENOENT') throw error;
+      if (recordPath || error.code !== 'ENOENT') throw error;
     }
   }
   const instructions = await readFile(join(root, 'agent/research/SKILL.md'), 'utf8');
@@ -117,6 +119,11 @@ export async function researchTopic({root, topic, refresh = false, discover = ru
   validateResearch(result);
   const accessedOn = new Date().toLocaleDateString('sv-SE', {timeZone: 'Asia/Bangkok'});
   const record = {schemaVersion: 1, topic, sources: result.sources.map(source => ({...source, accessedOn})), claims: result.claims};
+  await saveRecord(dir, path, record);
+  return record;
+}
+
+async function saveRecord(dir, path, record) {
   await mkdir(dir, {recursive: true});
   const staging = await mkdtemp(join(dir, '.research-'));
   try {
@@ -125,5 +132,4 @@ export async function researchTopic({root, topic, refresh = false, discover = ru
   } finally {
     await rm(staging, {recursive: true, force: true});
   }
-  return record;
 }
