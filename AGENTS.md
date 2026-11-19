@@ -10,6 +10,8 @@ Trước khi viết kịch bản kỹ thuật, áp dụng `agent/research/SKILL.
 
 Phương pháp dựng hình chung: đọc `docs/illustration-system.md`; import component/token/motion/transition từ `src/illustration/index.ts`. Tái sử dụng trước khi bổ sung. `src/examples/sf6-v2` giữ mã Remotion V2 người dùng cung cấp và cực máy cắt đã tách thành React; đây là ví dụ nguyên lý, không giới hạn hệ dựng hình vào SF6. Ví dụ tổng quát: `src/examples/ReusableIllustrationExample.tsx`.
 
+Chọn công cụ theo [Auto Tool & Repository Director](docs/tool-director.md), `agent/tool-manifest.json` và `tool-plan.json` của lượt dựng. Với cảnh tự viết, ghi yêu cầu kỹ thuật cụ thể vào `toolRequirement` khi component hiện có thật sự thiếu. Kiểm tra ghi chú tích hợp và giấy phép trước khi thêm dependency.
+
 Auto Footage Director: `agent/footage/director.mjs`, hướng dẫn `docs/auto-footage-director.md`. Pipeline đã nối tìm/license/tải/cắt/khung footage; ưu tiên SVG, chỉ thêm clip khớp câu và có safe slot. Layout mới phải khai báo reserved areas (thiết bị, sơ đồ, nhãn, karaoke) và candidate rectangles. Kiểm tra contentMatch/clip thực tế và credits trong QC trước khi bàn giao; không coi metadata match là xác minh thị giác. Không dùng clip chưa xác minh license.
 
 ## Phong cách mặc định cho mọi video mới

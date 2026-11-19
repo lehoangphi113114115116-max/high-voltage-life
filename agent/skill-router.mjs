@@ -17,7 +17,7 @@ const includesAny = (text, terms) => terms.some((term) => text.includes(term));
  * Chọn hướng dẫn chuyên môn cho Content Director. Hàm này chỉ định tuyến Skill;
  * Remotion vẫn là renderer và mọi hình học thiết bị thật phải có tài liệu nguồn.
  */
-export const selectAgentSkills = ({topic, category, visualMode, format = 'short-form-video'}) => {
+export const selectAgentSkills = ({topic, category, visualMode, format = 'short-form-video', sceneTools}) => {
   const normalized = topic.toLocaleLowerCase('vi');
   const selected = [];
 
@@ -36,7 +36,8 @@ export const selectAgentSkills = ({topic, category, visualMode, format = 'short-
 
   const needsDepth = category === 'high-voltage-equipment'
     || includesAny(normalized, DEPTH_TERMS)
-    || visualMode?.includes('cutaway');
+    || visualMode?.includes('cutaway')
+    || sceneTools?.some(plan=>plan.selected.includes('three'));
 
   if (needsDepth) {
     selected.push({
@@ -53,5 +54,10 @@ export const selectAgentSkills = ({topic, category, visualMode, format = 'short-
     anatomyEnabled: needsDepth,
     anatomyEvidenceReady: false,
     paidServicesAllowed: false,
+    ...(sceneTools ? {sceneSkills:sceneTools.map(plan=>({
+      sceneId:plan.sceneId,
+      skills:['scientific-critical-thinking',...(plan.selected.includes('three')?['anatomy']:[])],
+      tools:plan.selected,
+    }))} : {}),
   };
 };

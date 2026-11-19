@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "engine": "remotion",
+  "maxRepositoryLookupsPerVideo": 2,
+  "selectionOrder": ["reuse-project-component", "reuse-installed-adapter", "review-official-repository"],
+  "tools": {
+    "remotion": {"packages":["remotion","@remotion/cli"],"use":"Timeline, audio, karaoke and MP4","compatibility":"Frame/fps, exact version parity for all Remotion packages"},
+    "svg": {"packages":["react","react-dom"],"use":"Diagrams, vector artwork, current paths and lightweight effects","compatibility":"React DOM and SVG driven by Remotion frames"},
+    "parallax": {"packages":["react","remotion"],"use":"2.5D camera and independent SVG layers","compatibility":"Existing ParallaxLayer and motion helpers"},
+    "three": {"packages":["three","@react-three/fiber","@remotion/three"],"use":"Spatial relationships, mechanical motion and technical cutaways","compatibility":"ThreeCanvas; use Remotion frame, WebGL only in the applicable shot"},
+    "footage": {"packages":[],"use":"Licensed photo or video inset","compatibility":"Existing FFmpeg preparation, rights metadata and safe slots"},
+    "formula": {"packages":[],"use":"Verified equations and units","compatibility":"Existing SVG formula catalog and karaoke timestamps"},
+    "rough": {"repository":"rough-stuff/rough","package":"roughjs","use":"Intentional hand-drawn schematic","compatibility":"Seed sketches and render SVG within Remotion"},
+    "flubber": {"repository":"veltman/flubber","package":"flubber","use":"Morph dissimilar SVG paths when interpolation is insufficient","compatibility":"Seek by passing Remotion progress to the interpolator"},
+    "zdog": {"repository":"metafizzy/zdog","package":"zdog","use":"Lightweight pseudo-3D when parallax or existing Three objects do not fit","compatibility":"Draw deterministically from frame"},
+    "particles": {"repository":"tsparticles/tsparticles","package":"@tsparticles/engine","packagePath":"engine/package.json","use":"Complex particle fields exceeding seeded SVG helpers","compatibility":"Deterministic stepping and repeatable seeks; verify before integration"},
+    "lottie": {"repository":"airbnb/lottie-web","package":"lottie-web","use":"Reusable licensed Lottie asset","compatibility":"Disable autoplay and seek to exact frame"},
+    "theatre": {"repository":"theatre-js/theatre","package":"@theatre/core","packagePath":"packages/core/package.json","use":"Interactive keyframe authoring when needed","compatibility":"Studio for authoring only; seek sequence position from frame/fps"},
+    "fluid": {"repository":"PavelDoGreat/WebGL-Fluid-Simulation","use":"Decorative or validated fluid effects when SVG smoke is insufficient","compatibility":"No autonomous GPU clock; requires deterministic bake or stepping"},
+    "hydra": {"repository":"hydra-synth/hydra-synth","package":"hydra-synth","use":"Procedural abstract shader when inline shaders are insufficient","compatibility":"Supply deterministic time and seed or bake before import"},
+    "lygia": {"repository":"patriciogonzalezvivo/lygia","use":"Reuse required GLSL routines for advanced shading","compatibility":"Pin shader files and bind uniforms from frame"},
+    "gsap": {"repository":"greensock/GSAP","package":"gsap","use":"Seekable complex timeline when Remotion interpolation is insufficient","compatibility":"Paused timeline with explicit time; check license terms"},
+    "anime": {"repository":"juliangarnier/anime","package":"animejs","use":"Seekable vector sequencing when native effects are insufficient","compatibility":"Disable autoplay; seek from frame/fps"},
+    "motion-canvas": {"repository":"motion-canvas/motion-canvas","package":"@motion-canvas/core","packagePath":"packages/core/package.json","use":"Complicated diagrams or mathematical scenes with demonstrated benefit","compatibility":"Separate project, deterministic media export into Remotion"}
+  }
+}

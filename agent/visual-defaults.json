@@ -1,5 +1,6 @@
 {
-  "version": 8,
+  "version": 9,
+  "toolDirector": {"manifest": "agent/tool-manifest.json", "plan": "tool-plan.json", "engine": "remotion"},
   "illustrationSystem": {"entrypoint": "src/illustration/index.ts", "guide": "docs/illustration-system.md", "example": "src/examples/ReusableIllustrationExample.tsx", "sf6Reference": "src/examples/sf6-v2/SF6BreakerScene.tsx"},
   "production": {"defaultOutput": "full-video", "previewOnlyOnRequest": true},
   "style": "colorful-technical-animation",

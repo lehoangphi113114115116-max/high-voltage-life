@@ -3,6 +3,8 @@ import {copyFile, mkdir, readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
+import toolManifest from './tool-manifest.json' with {type:'json'};
+import {directTools, inspectTools} from './tool-director.mjs';
 import {selectAgentSkills} from './skill-router.mjs';
 import {buildStoryboard} from './storyboard.mjs';
 import {directFormulas} from './formula-director.mjs';
@@ -17,6 +19,10 @@ const valueAfter = (flag) => {
   const index = args.indexOf(flag);
   return index === -1 ? null : args[index + 1];
 };
+if (args.includes('--tool-inventory')) {
+  console.log(JSON.stringify(await inspectTools(root,toolManifest),null,2));
+  process.exit(0);
+}
 const topic = valueAfter('--topic')?.trim();
 if (!topic) {
   console.error('Cách dùng: npm run agent -- --topic "Chủ đề về điện"');
@@ -145,7 +151,6 @@ await mkdir(publicDir, {recursive: true});
 const profile = classify(topic);
 const visualDefaults = JSON.parse(await readFile(resolve(root, 'agent/visual-defaults.json'), 'utf8'));
 await writeFile(resolve(runDir, 'research.json'), `${JSON.stringify(research, null, 2)}\n`);
-const skillRouting = selectAgentSkills({topic, category: profile.id, visualMode: profile.visual});
 const narrationPath = resolve(runDir, 'narration.txt');
 const manifestPath = resolve(runDir, 'voice.manifest.json');
 const audioPath = resolve(runDir, 'voice.wav');
@@ -176,7 +181,6 @@ const project = {
   depth: profile.depth,
   visualMode: profile.visual,
   visualDefaults,
-  skillRouting,
   headline: content.headline,
   narration: manifest.displayText,
   spokenNarration: manifest.spokenText,
@@ -201,6 +205,9 @@ project.footage = mediaPolicy?.enabled === false
     scenes:project.scenes.map(scene=>({...scene,formula:formulaScenes.has(scene.id)})),
     policy:{mediaKinds:mediaPolicy?.mediaKinds??['video'],maxClips:mediaPolicy?.maxClips??2,maxSeconds:mediaPolicy?.maxSecondsPerClip??5},
   });
+project.toolPlan = await directTools({root,project,manifest:toolManifest});
+project.skillRouting = selectAgentSkills({topic,category:profile.id,visualMode:profile.visual,sceneTools:project.toolPlan.scenes});
+await writeFile(resolve(runDir,'tool-plan.json'),`${JSON.stringify(project.toolPlan,null,2)}\n`);
 await writeFile(resolve(runDir,'footage-manifest.json'),`${JSON.stringify(project.footage,null,2)}\n`);
 await writeFile(resolve(runDir,'footage-credits.txt'),project.footage.clips.map(c=>`${c.rights.attribution}\nModifications: ${c.rights.modifications}`).join('\n\n')+'\n');
 await writeFile(resolve(runDir, 'project.json'), `${JSON.stringify(project, null, 2)}\n`);
