@@ -87,11 +87,11 @@ const buildKaraoke = (text, intervals, duration) => {
   const activeDuration = intervals.reduce((sum, item) => sum + item.end - item.start, 0);
   const weights = words.map((word) => Math.max(1, word.replace(/[^\p{L}\p{N}]/gu, '').length) + (/[.!?]$/u.test(word) ? 4 : /[,;:]$/u.test(word) ? 2 : 0));
   const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
-  const activeToWall = (activeSecond) => {
+  const activeToWall = (activeSecond, startOfWord = false) => {
     let remaining = activeSecond;
     for (const interval of intervals) {
       const length = interval.end - interval.start;
-      if (remaining <= length) return interval.start + remaining;
+      if (remaining < length || (!startOfWord && remaining === length)) return interval.start + remaining;
       remaining -= length;
     }
     return duration;
@@ -101,7 +101,7 @@ const buildKaraoke = (text, intervals, duration) => {
     const startActive = (weightCursor / totalWeight) * activeDuration;
     weightCursor += weights[index];
     const endActive = (weightCursor / totalWeight) * activeDuration;
-    return {text: word, startMs: Math.round(activeToWall(startActive) * 1000), endMs: Math.round(activeToWall(endActive) * 1000)};
+    return {text: word, startMs: Math.round(activeToWall(startActive, true) * 1000), endMs: Math.round(activeToWall(endActive) * 1000)};
   });
 };
 
@@ -191,6 +191,7 @@ const project = {
   height: 1920,
   durationInFrames,
   audioDurationMs: Math.round(audioDuration * 1000),
+  narrationTiming: {profile:voiceReport.narration?.profile, alignment:"estimated-words-on-final-wav", beats:beats??[]},
   scenes: buildStoryboard(karaoke, fps, visualDefaults, {topic, category: profile.id, research}),
   karaoke,
 };

@@ -1,9 +1,11 @@
 {
-  "profile": "science-storytelling-v1",
+  "profile": "science-storytelling-v2",
   "roles": {
-    "hook": {"speedFactor": 0.97, "pauseAfterMs": 340},
-    "discovery": {"speedFactor": 0.95, "pauseAfterMs": 290},
-    "climax": {"speedFactor": 1.03, "pauseAfterMs": 360},
-    "explanation": {"speedFactor": 0.98, "pauseAfterMs": 155}
+    "hook": {"speedFactor": 0.99, "pauseAfterMs": 330},
+    "question": {"speedFactor": 1.0, "pauseAfterMs": 225},
+    "phenomenon": {"speedFactor": 1.045, "pauseAfterMs": 185},
+    "discovery": {"speedFactor": 0.945, "pauseBeforeMs": 345, "pauseAfterMs": 230},
+    "explanation": {"speedFactor": 0.985, "pauseAfterMs": 150},
+    "conclusion": {"speedFactor": 0.945, "pauseBeforeMs": 240, "pauseAfterMs": 225}
   }
 }

@@ -54,3 +54,23 @@ Pipeline Agent dùng `voice/config/narration-direction.json` để tạo nhịp 
 VieNeu v3 Turbo giữ ngữ điệu của preset Thái Sơn và xử lý dấu câu theo bộ tách đoạn của engine. Tham số `style` bị bỏ qua. Tốc độ từng nhịp được điều chỉnh bằng `atempo` và khoảng nghỉ được chèn khi ghép WAV. Timestamp từ lấy theo thời lượng thực của từng nhịp và vùng có tiếng, với mức chính xác ước lượng đến từng từ. Các script dành cho video tham chiếu giữ chế độ chuẩn bị lời đọc hiện có.
 
 Nếu nghe thử mà cao trào vẫn thiếu lực, hãy chỉnh lời và khoảng nghỉ trên một đoạn ngắn trước. Cần biểu cảm có thể chỉ đạo chính xác thì dùng bản thu người đọc đã chấp thuận hoặc đánh giá một engine có điều khiển biểu cảm rõ ràng trong một nhiệm vụ riêng.
+
+## Voice Director cho video mới
+
+Pipeline mặc định dùng `--science-storytelling` để áp dụng
+`config/narration-direction.json` qua `scripts/voice-director.mjs`. Bộ lập kế hoạch
+nhận diện câu mở, câu hỏi giữa bài, giới thiệu hiện tượng, giải thích, phát hiện
+và kết luận. Câu được tách theo ranh giới câu tiếng Việt, rồi mới chuẩn hóa
+phát âm từ điển. Dấu câu dẫn nhịp chỉ có trong lời đưa vào TTS. Văn bản hiển
+thị giữ nguyên từ ngữ và cách viết thuật ngữ.
+
+VieNeu v3 Turbo dùng âm sắc preset Adam và bỏ qua tham số `style`. Voice
+Director dùng ngữ điệu do engine sinh từ dấu câu, tốc độ từng câu và khoảng
+nghỉ ngắn trước câu tiết lộ hoặc kết luận. Sau tổng hợp, rìa waveform được
+giữ đệm và giảm âm vài mili giây để nối êm. Không đổi pitch.
+
+Report ghi mốc đầu/cuối từng câu theo mẫu âm sau xử lý. Pipeline đối chiếu
+các mốc đó với khoảng có tiếng trong WAV cuối để ước lượng timestamp từng từ,
+rồi dùng cùng timestamp cho karaoke và storyboard. Timestamp từng từ là
+ước lượng, chưa phải căn chỉnh ngữ âm. Manifest cũ và chế độ không truyền
+`--science-storytelling` vẫn dùng cách tổng hợp tương ứng trước đó.

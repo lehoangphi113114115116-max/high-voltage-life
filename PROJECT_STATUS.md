@@ -18,7 +18,7 @@ Cập nhật: 2026-11-17
 | Storyboard Generator | Visual-first v5 | Chia theo câu/mệnh đề và timestamp; chọn góc nhìn, hành động và lớp giải thích |
 | Visual Director | Đã nối composition chính | Toàn/cận/sơ đồ, hoạt cảnh theo nhịp lời, chuyển cảnh và footage inset; chưa kiểm tra bằng video render |
 | Phong cách sản xuất mặc định | Điện gió V2 đã duyệt | Visual Director v8, Colorful Technical Animation; dùng composition `HVL-WIND-POWER-PREVIEW` để tham chiếu mật độ hình, chuyển động theo lớp và camera |
-| Nhịp thuyết minh | Science storytelling v1 | Adam, dấu câu và nhịp phát hiện/cao trào/giải thích, tốc độ và khoảng nghỉ theo nhịp. VieNeu v3 Turbo bỏ qua `style`; độ biểu cảm chưa được nghe duyệt |
+| Nhịp thuyết minh | Science storytelling v2 | Adam, nhịp theo vai trò từng câu, khoảng nghỉ trước phát hiện/kết luận và nối waveform có taper. Các mốc karaoke và storyboard dựa vào WAV cuối |
 | Demo màu tự nhiên 15 giây | Đã render, chờ đánh giá | `HVL-NATURAL-BIRD-15S`; ảnh mẫu + camera, lá/SVG động, sơ đồ nền sáng, Thái Sơn/karaoke; H.264 1080×1920/30 FPS |
 | Nhà máy điện → nhà dân | Đã render và QC | `HVL-POWER-JOURNEY-15S`; 450 frame, H.264/AAC 1080×1920/30 FPS; thư viện SVG độc lập, Thái Sơn, hạt năng lượng, camera parallax |
 | Nguyên lý SF6 15 giây | Đã render/QC | `HVL-SF6-PRINCIPLE-15S`; 450 frame H.264/AAC 1080×1920/30 FPS, Thái Sơn/karaoke; đóng → mở/hồ quang → khử ion → phục hồi cách điện |

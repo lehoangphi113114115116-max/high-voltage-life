@@ -101,6 +101,7 @@ def main() -> None:
         import numpy as np
 
         sections = []
+        directed = manifest["narration"]["profile"] == "science-storytelling-v2"
         cursor = 0
         for index, beat in enumerate(beats):
             rate = min(1.25, max(0.8, speed * float(beat["speedFactor"])))
@@ -116,6 +117,19 @@ def main() -> None:
             samples = np.frombuffer(paced.stdout, dtype="<f4")
             if not samples.size:
                 raise ValueError(f"Nhịp lời {index + 1} không có âm thanh.")
+            if directed:
+                # Keep a quiet margin around the speech and remove only longer
+                # engine padding. A short taper avoids clicks at beat boundaries.
+                active = np.flatnonzero(np.abs(samples) >= 0.002)
+                if active.size:
+                    first = max(0, active[0] - round(0.045 * sample_rate))
+                    last = min(samples.size, active[-1] + 1 + round(0.065 * sample_rate))
+                    samples = samples[first:last].copy()
+                    fade = min(round(0.006 * sample_rate), samples.size // 2)
+                    if fade:
+                        ramp = np.linspace(0, 1, fade, dtype=np.float32)
+                        samples[:fade] *= ramp
+                        samples[-fade:] *= ramp[::-1]
             sections.append(samples)
             beat_timings.append({
                 "role": beat["role"], "displayText": beat["displayText"],
@@ -123,7 +137,10 @@ def main() -> None:
                 "endMs": round((cursor + samples.size) * 1000 / sample_rate),
                 "speed": round(rate, 4),
             })
-            pause_ms = max(0, min(1000, int(beat["pauseAfterMs"]))) if index + 1 < len(beats) else 0
+            pause_ms = 0
+            if index + 1 < len(beats):
+                before_next = beats[index + 1].get("pauseBeforeMs", 0) if directed else 0
+                pause_ms = max(0, min(1000, max(int(beat["pauseAfterMs"]), int(before_next))))
             pause = round(pause_ms * sample_rate / 1000)
             if pause:
                 sections.append(np.zeros(pause, dtype=np.float32))
