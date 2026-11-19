@@ -64,9 +64,11 @@ và kết luận. Câu được tách theo ranh giới câu tiếng Việt, rồ
 phát âm từ điển. Dấu câu dẫn nhịp chỉ có trong lời đưa vào TTS. Văn bản hiển
 thị giữ nguyên từ ngữ và cách viết thuật ngữ.
 
-VieNeu v3 Turbo dùng âm sắc preset Adam và bỏ qua tham số `style`. Voice
-Director dùng ngữ điệu do engine sinh từ dấu câu, tốc độ từng câu và khoảng
-nghỉ ngắn trước câu tiết lộ hoặc kết luận. Sau tổng hợp, rìa waveform được
+VieNeu v3 Turbo dùng âm sắc preset Adam, bỏ qua tham số `style` và
+không có tham số tốc độ tổng hợp cho preset này. Tốc độ cơ sở trong
+`config/local-vieneu.json` là `1.18105×` (`1.027× × 1.15`). Voice Director
+giữ ngữ điệu sinh từ dấu câu và dùng `atempo` theo vai trò của từng câu.
+Khoảng nghỉ giữa các câu được chèn riêng theo mili giây. Sau tổng hợp, rìa waveform được
 giữ đệm và giảm âm vài mili giây để nối êm. Không đổi pitch.
 
 Report ghi mốc đầu/cuối từng câu theo mẫu âm sau xử lý. Pipeline đối chiếu

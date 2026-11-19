@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "toolDirector": {"manifest": "agent/tool-manifest.json", "plan": "tool-plan.json", "engine": "remotion"},
   "illustrationSystem": {"entrypoint": "src/illustration/index.ts", "guide": "docs/illustration-system.md", "example": "src/examples/ReusableIllustrationExample.tsx", "sf6Reference": "src/examples/sf6-v2/SF6BreakerScene.tsx"},
   "production": {"defaultOutput": "full-video", "previewOnlyOnRequest": true},
@@ -33,6 +33,13 @@
   "motion": {"sentenceAligned": true, "fixedSceneCount": false, "objectAnimationRequired": true, "camera": ["pan", "zoom", "parallax", "dolly"], "transitions": "smooth-motivated-by-story", "maxUnmotivatedStillSeconds": 3},
   "text": {"allowed": ["karaoke", "essential-keywords", "essential-technical-labels"], "persistentHeadline": false, "paragraphs": false},
   "explanation": {"schematics": "only-when-needed", "formulas": "only-when-needed", "charts": "only-when-needed"},
+  "sceneDetail": {
+    "backgroundTravel": 112,
+    "foregroundTravel": 96,
+    "detailZoom": 1.32,
+    "transitionSeconds": 0.46,
+    "cutawaySweep": 0.82
+  },
   "sceneRenderers": {"breakerContact3D": true},
   "dimensions": {"default": "2.5D-illustration", "principles": "animated-2D", "3D": "only-when-spatial-understanding-requires-it"},
   "footage": {"selection": "supplement-only-when-topic-needs-real-footage", "use": "short-relevant-consistent-clips", "requireVerifiedRights": true, "requiredMetadata": ["sourceUrl", "creator", "license", "licenseUrl", "attribution", "rightsVerified"], "missingRightsFallback": "reuse-original-animation", "paidAcquisitionAllowed": false},

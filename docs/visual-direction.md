@@ -37,3 +37,19 @@ vùng trống trên hoạt cảnh và được ưu tiên hơn inset ảnh thật
 Khi thiếu nguồn, quan hệ chưa rõ hoặc không đủ thời lượng đọc, cảnh chỉ dùng
 hoạt cảnh. Mở rộng danh mục bằng công thức đã kiểm chứng và quy tắc khớp
 ngữ cảnh cụ thể.
+
+## Mật độ và chiều sâu cho storyboard mới
+
+Visual Director dùng `sceneDetail` trong `agent/visual-defaults.json`.
+Bối cảnh 2.5D chọn lớp trung cảnh nhà máy, sân trạm hoặc cảnh quan theo câu
+thoại, với mây và cây chuyển động độc lập và parallax theo lớp. Cảnh cận tăng
+zoom quanh điểm nhìn chính. Chuyển cảnh chọn match cut khi cùng góc nhìn, mở
+sơ đồ theo hướng khi cần làm rõ logic, hoặc hòa hình khi đổi nội dung. Thời
+lượng hiệu ứng được giới hạn theo thời lượng cảnh thực tế.
+
+Mặt cắt 3D nguyên lý hiện có dùng góc nhìn rộng hơn, độ phân giải bề mặt cao
+hơn và ánh sáng viền để thấy rõ vỏ và tiếp điểm. Cấu tạo, số lượng bộ phận và
+chuyển động kỹ thuật vẫn theo bằng chứng hay theo mẫu nguyên lý đã ghi rõ.
+Với chủ đề mới cần thiết bị cụ thể, ưu tiên component có nguồn kỹ thuật hoặc
+ảnh/footage có quyền sử dụng. Các bố cục thủ công vẫn chọn thiết lập theo
+từng cảnh. Storyboard cũ thiếu `visualDirection.detail` tiếp tục đọc bằng đường dựng cũ.

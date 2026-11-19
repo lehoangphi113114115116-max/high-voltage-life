@@ -9,6 +9,16 @@ export const chooseSceneRenderer = ({shot, text, policy}) => {
     ? 'svg' : 'parallax';
 };
 
+export const planSceneDetail = ({text, renderer, policy}) => {
+  if (!policy) return undefined;
+  // Scene text can justify contextual scenery. Equipment geometry remains under
+  // the separate evidence gate used by the storyboard.
+  const setting = renderer === 'parallax' && /sân trạm|trạm biến áp|trạm điện/iu.test(text) ? 'substation'
+    : renderer === 'parallax' && /nhà máy|xưởng sản xuất/iu.test(text) ? 'plant'
+    : 'landscape';
+  return {...policy, setting};
+};
+
 const primaryTools = {svg:'svg', parallax:'parallax', 'breaker-contact-3d':'three'};
 
 // All these gaps require a concrete production note, not just a topic keyword.

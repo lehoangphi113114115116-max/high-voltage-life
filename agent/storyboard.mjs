@@ -1,4 +1,4 @@
-import {chooseSceneRenderer} from './visual-director.mjs';
+import {chooseSceneRenderer, planSceneDetail} from './visual-director.mjs';
 
 // Scene boundaries come from narrated sentences, not a fixed scene count.
 export const buildStoryboard = (words, fps = 30, visualDefaults = null, context = {}) => {
@@ -43,14 +43,18 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
     const phase = comparison && !breaker && !relay ? 'diagram' : previousShot?.framing === 'wide' || breaker ? 'detail' : 'wide';
     const framing = bird && index === 0 ? 'wide'
       : phase === 'diagram' && previousShot?.framing === 'diagram' ? 'detail' : phase;
-    const transition = !previousShot ? 'none' : previousShot.framing === framing ? 'match-cut'
-      : framing === 'diagram' ? 'directional-reveal' : 'cross-dissolve';
+    const shotLayout = {subject, action, framing};
+    const renderer = subject === 'abstract' ? 'parallax' : chooseSceneRenderer({shot: shotLayout, text, policy: visualDefaults?.sceneRenderers});
+    const detail = planSceneDetail({text, renderer, policy: visualDefaults?.sceneDetail});
+    const sameView = previousShot?.framing === framing && (!detail ||
+      (previousShot.subject === subject && previousShot.setting === detail.setting));
+    const transition = !previousShot ? 'none' : sameView ? 'match-cut'
+      : framing === 'diagram' && previousShot.framing !== framing ? 'directional-reveal' : 'cross-dissolve';
     const cue = group.find(word => /^(mở|tách)[,.;]?$/iu.test(word.text));
-    const shot = {subject, action, framing, transition,
+    const shot = {...shotLayout, transition,
       actionFrame: breaker && cue ? Math.round(cue.startMs * fps / 1000) : undefined,
       technicalCue: subject !== 'abstract' && framing === 'diagram' ? 'potential' : null};
-    const renderer = subject === 'abstract' ? 'parallax' : chooseSceneRenderer({shot, text, policy: visualDefaults?.sceneRenderers});
-    previousShot = shot;
+    previousShot = {...shotLayout, setting: detail?.setting};
     return {id: `sentence-${index}`, text, mode,
       startFrame: Math.round(group[0].startMs * fps / 1000),
       endFrame: Math.ceil(group.at(-1).endMs * fps / 1000),
@@ -71,6 +75,7 @@ export const buildStoryboard = (words, fps = 30, visualDefaults = null, context 
         componentArchitecture: visualDefaults.componentArchitecture,
         actionDirection: visualDefaults.actionDirection,
         depthDirection: visualDefaults.depthDirection,
+        ...(detail ? {detail} : {}),
         electricalAnimation: visualDefaults.electricalAnimation,
         palette: visualDefaults.palette.scene,
         brandScope: visualDefaults.palette.brandScope,
